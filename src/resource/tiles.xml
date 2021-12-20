@@ -1,0 +1,5092 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/WEB-INF/layout/baseLayout.jsp">
+		<put-attribute name="title" value="Union Bank Of Nigeria" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+
+	<definition name="Home" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Ceva/home.jsp" />
+	</definition>
+	
+	<definition name="DashboardHome" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Ceva/dashboardhome.jsp" />
+	</definition>
+	
+	
+		<definition name="GraphHome" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+	</definition>
+	
+	<definition name="graphview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/County/GraphicalReportPage.jsp" />
+	</definition>
+
+	<definition name="GraphicalReportDashBoardScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/County/GraphicalReportDashBoard.jsp" />
+	</definition>
+
+	<!-- Agency Banking -->
+
+	<definition name="BankDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="BankAcctDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankAccountDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="documentsConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DocumentDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="locationConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LocationDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="TerminalMakeConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalMakeDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="PanRangeConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PanRangeDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="TransactionConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TransactionDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="DiscountConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DiscountDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="BankConfigModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankDetailsModify.jsp" />
+	</definition>
+
+	<definition name="BankInfoModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankDetailsModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="BankInfoViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankDetailsView.jsp" />
+	</definition>
+
+	<definition name="BankAcctConfigModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankAcctDetailsModify.jsp" />
+	</definition>
+
+	<definition name="BankAcctInfoModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankAcctDetailsModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="BankAcctInfoViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankAcctDetailsView.jsp" />
+	</definition>
+
+	<definition name="DocumentsModifyConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DocumentDetailsModify.jsp" />
+	</definition>
+
+	<definition name="DocumntDetailsModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DocumentDetailsModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="DocumentDetailsViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DocumentDetailsView.jsp" />
+	</definition>
+
+	<definition name="TerminalMakeModifyConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalMakeModify.jsp" />
+	</definition>
+
+	<definition name="TerminalMakeModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalMakeDetailsModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="TerminalMakeViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalMakeDetailsView.jsp" />
+	</definition>
+
+	<definition name="LocationsModifyConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LocationDetailsModify.jsp" />
+	</definition>
+
+	<definition name="LocationsModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LocationDetailsModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="LocationsViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LocationDetailsView.jsp" />
+	</definition>
+
+	<definition name="PanRangeModifyConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PanRangeModify.jsp" />
+	</definition>
+
+	<definition name="PanRangeModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PanRangeDetailsModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="PanRangeViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PanRangeDetailsView.jsp" />
+	</definition>
+
+	<definition name="TransactionModifyConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TransactionInformationModify.jsp" />
+	</definition>
+
+	<definition name="TransactionModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TransactionInformationModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="TransactionViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TransactionInformationView.jsp" />
+	</definition>
+
+	<definition name="DiscountConfigModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DiscountInformationModify.jsp" />
+	</definition>
+
+	<definition name="DiscountConfigModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DiscountDetailsModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="DiscountConfigViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DiscountDetailsView.jsp" />
+	</definition>
+
+	<!-- Merchant Management Stared -->
+
+	<definition name="CreateMerchantScreen1" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantCreation.jsp" />
+	</definition>
+
+	<definition name="CreateMerchantScreen6" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantAcknowledgement.jsp" />
+	</definition>
+
+	<!-- Store -->
+
+	<definition name="CreateStoreScreen1" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StorePrimaryDetails.jsp" />
+	</definition>
+
+	<definition name="CreateStoreScreen2" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCommunicationDetails.jsp" />
+	</definition>
+
+	<definition name="CreateStoreScreen3" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StorePaymentDetails.jsp" />
+	</definition>
+
+	<definition name="CreateStoreScreen4" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreFeesDetails.jsp" />
+	</definition>
+
+	<definition name="CreateStoreScreen5" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreVerifications.jsp" />
+	</definition>
+
+	<definition name="CreateStoreScreen6" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreAcknowledgement.jsp" />
+	</definition>
+
+	<definition name="AssignTerminalScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignTerminals.jsp" />
+	</definition>
+
+<!-- 	<definition name="reports" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/InstantReports.jsp" />
+	</definition> -->
+	<definition name="reportsall" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GetAllInstantReports.jsp" />
+	</definition>
+
+	<definition name="reportgensuccess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ListOfInstantReports.jsp" />
+	</definition>
+	<definition name="noreportfound" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/InstantNoRecords.jsp" />
+	</definition>
+	<definition name="reporterror" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ReportsErrorPage.jsp" />
+	</definition>
+
+	<definition name="reportschedular" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/reportschedular.jsp" />
+	</definition>
+
+	<!-- ICTADMIN -->
+
+	<definition name="IctAdminRegGridScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/IctAdminRegGridScreen.jsp" />
+	</definition>
+
+	<definition name="geTICTAdmincreatePgae" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UserICTAdminDetailsCapture.jsp" />
+	</definition>
+
+	<definition name="merchantICTAdmincreatePgae" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/merchantICTAdminDetails.jsp" />
+	</definition>
+
+	<definition name="ictAdmincreatePageConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ictAdminDetailsConfirm.jsp" />
+	</definition>
+
+	<definition name="MerchantictAdmincreatePageConfirm"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantAdminDetailsConfirm.jsp" />
+	</definition>
+
+
+	<definition name="ICTADMINCreateScreen1" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UserICTAdminCreate.jsp" />
+	</definition>
+
+	<definition name="ICTADMINViewScreen1" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UserICTAdminview.jsp" />
+	</definition>
+
+
+	<definition name="ICTADMINModifyScreen1" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UserICTAdminModify.jsp" />
+	</definition>
+
+
+	<definition name="ictAdminCreationAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/IctAdminCreationAck.jsp" />
+	</definition>
+
+	<!-- <definition name="UserGroupGridScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/userGroupsGridScreen.jsp" />
+	</definition> -->
+	
+	<definition name="UserGroupGridScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/NewUserManagementGridScreen.jsp" />
+	</definition>
+
+	<definition name="UserGroupAssignGridScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/userDetailsGridScreen.jsp" />
+	</definition>
+
+	<!-- ICTADMIN -->
+
+	<definition name="UserGroupCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/newUserGroupCreation.jsp" />
+	</definition>
+
+	<definition name="UserGroupConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/newUserGroupCreationConf.jsp" />
+	</definition>
+	<definition name="UserGroupAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/newUserGroupCreationAck.jsp" />
+	</definition>
+
+
+	<definition name="setAdminAssignRights" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/setRightsToICTAdmin.jsp" />
+	</definition>
+
+	<definition name="redirectAdminAssignRights" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/redirectRightsToICTAdmin.jsp" />
+	</definition>
+
+	<definition name="confirmAdminAssignRights" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/setRightsToICTAdminConfirm.jsp" />
+	</definition>
+
+	<definition name="UserGroupConfirmationScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/newUserGroupCreation.jsp" />
+	</definition>
+
+	<!-- Dashboard Tiles Starting -->
+
+	<definition name="DashBoardGridScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/dashboardGridScreen.jsp" />
+	</definition>
+	<definition name="userDashboardInformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewDashboardInformation.jsp" />
+	</definition>
+	<definition name="userGroupDashboardInformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewGroupDashboardInformation.jsp" />
+	</definition>
+
+	<!-- Dashboard Tiles Ending -->
+
+	<!-- New Merchant Flow Start -->
+	<definition name="GenerateMerchantScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GenerateMerchant.jsp" />
+	</definition>
+
+	<definition name="GenerateStoreScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ExistingStores.jsp" />
+	</definition>
+
+	<definition name="MerchantCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewMerchant.jsp" />
+	</definition>
+
+	<definition name="MerchantCreateConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewMerchantConfirm.jsp" />
+	</definition>
+
+	<definition name="MerchantCreateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewMerchantAck.jsp" />
+	</definition>
+
+	<definition name="MerchantViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantView.jsp" />
+	</definition>
+
+	<definition name="MerchantFeeViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/assigningMerchantFee.jsp" />
+	</definition>
+
+	<definition name="MerchantTerminateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantTerminate.jsp" />
+	</definition>
+
+	<definition name="MerchantTerminateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantTerminateAck.jsp" />
+	</definition>
+	<definition name="MerchantTerminateStatusAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantTerminatStatusACK.jsp" />
+	</definition>
+
+	<definition name="MerchantModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantModify.jsp" />
+	</definition>
+
+
+	<definition name="MerchantUsersScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantUsersView.jsp" />
+	</definition>
+	
+	<definition name="StoreCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewStore.jsp" />
+	</definition>
+
+	<definition name="CreateStoreConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewStoreConfirm.jsp" />
+	</definition>
+
+	<definition name="CreateStoreAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewStoreAck.jsp" />
+	</definition>
+
+	<definition name="StoreViewScreen" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/StoreView.jsp" />
+	</definition>
+
+	<definition name="StoreTerminateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreTerminate.jsp" />
+	</definition>
+
+	<definition name="StoreTerminateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreTerminateAck.jsp" />
+	</definition>
+
+	<definition name="StoreActiveDeactiveAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/storeActiveDeactiveACK.jsp" />
+	</definition>
+
+	<definition name="StoreModifyAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreModifyAck.jsp" />
+	</definition>
+
+<definition name="TerminalGridScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalGridScreen.jsp" />
+	</definition>
+
+	<definition name="CreateTerminalScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateTerminal.jsp" />
+	</definition>
+	<definition name="CreateTerminalConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewTerminalConfirm.jsp" />
+	</definition>
+
+	<definition name="CreateTerminalAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewTerminalAck.jsp" />
+	</definition>
+
+	<definition name="TerminalDetailsViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ViewTerminalDetails.jsp" />
+	</definition>
+	<definition name="TerminalDetailsTerminateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminateTerminalConf.jsp" />
+	</definition>
+
+	<definition name="TerminalStatusTerminateScreenACK" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalStatusActiveDeactive.jsp" />
+	</definition>
+	<definition name="TerminalTerminateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminateTerminalAck.jsp" />
+	</definition>
+
+	<definition name="TerminalDetailsModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalModify.jsp" />
+	</definition>
+
+	<definition name="TerminalModifyAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalModifyAck.jsp" />
+	</definition>
+
+	<definition name="TerminalDetailsStatusModifyScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminatStatusACK.jsp" />
+	</definition>
+
+	<definition name="StoreModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreModify.jsp" />
+	</definition>
+
+	<definition name="assignUserTerminalScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignTerminalToUser.jsp" />
+	</definition>
+
+	<definition name="assignUserTerminalConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignTerminalToUserConfirm.jsp" />
+	</definition>
+
+	<definition name="assignUserTerminalAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignTerminalToUserAck.jsp" />
+	</definition>
+
+	<definition name="MerchantDashBoard" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantDashBoard.jsp" />
+	</definition>
+
+
+	<!-- New Merchant Flow End -->
+
+	<!-- Float Management Starts -->
+
+	<definition name="GenerateLimitScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GenerateLimitScreen.jsp" />
+	</definition>
+
+	<definition name="StoreLimitCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreLimit.jsp" />
+	</definition>
+
+	<definition name="StoreLimitCreateConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreLimitConfirm.jsp" />
+	</definition>
+
+	<definition name="StoreLimitCreateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreLimitAck.jsp" />
+	</definition>
+
+	<definition name="StoreLimitModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreLimitModify.jsp" />
+	</definition>
+
+	<definition name="StoreLimitModifyConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreLimitModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="StoreLimitModifyAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreLimitModifyAck.jsp" />
+	</definition>
+
+	<definition name="StoreLimitViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreLimitView.jsp" />
+	</definition>
+
+	<definition name="TerminalLimitCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitCreate.jsp" />
+	</definition>
+
+	<definition name="TerminalLimitCreateConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitCreateConfirm.jsp" />
+	</definition>
+
+	<definition name="TerminalLimitCreateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitCreateAck.jsp" />
+	</definition>
+
+	<definition name="TerminalLimitModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitModify.jsp" />
+	</definition>
+
+	<definition name="TerminalLimitModifyConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="TerminalLimitModifyAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitModifyAck.jsp" />
+	</definition>
+
+
+
+	<definition name="TerminalLimitViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitView.jsp" />
+	</definition>
+
+	<definition name="GenerateCreditAmtScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GenerateCreditAmtScreen.jsp" />
+	</definition>
+
+	<definition name="StoreCreditCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreCredit.jsp" />
+	</definition>
+
+	<definition name="StoreCreditCreateConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreCreditConfirm.jsp" />
+	</definition>
+
+	<definition name="StoreCreditCreateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreCreditAck.jsp" />
+	</definition>
+
+	<definition name="StoreCreditViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreCreditView.jsp" />
+	</definition>
+
+	<definition name="TerminalCreditCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateTerminalCredit.jsp" />
+	</definition>
+
+	<definition name="TerminalCreditCreateConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateTerminalCreditConfirm.jsp" />
+	</definition>
+
+	<definition name="TerminalCreditCreateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateTerminalCreditAck.jsp" />
+	</definition>
+
+	<definition name="TerminalCreditViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalCreditView.jsp" />
+	</definition>
+
+	<definition name="MerchantViewDashboardScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantViewDashboard.jsp" />
+	</definition>
+
+	<definition name="StoreViewDashboardScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreViewDashboard.jsp" />
+	</definition>
+	<definition name="TerminalDashDetailsViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalViewDashboard.jsp" />
+	</definition>
+
+	<definition name="BranchTicketViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BranchTicketView.jsp" />
+	</definition>
+
+
+	<!-- Float Management Auth Starts -->
+
+	<definition name="LimitAuthGenerateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GenerateLimitAuthScreen.jsp" />
+	</definition>
+
+	<definition name="getStoreLimitApproveScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreLimitApprove.jsp" />
+	</definition>
+
+	<definition name="getStoreLimitApproveConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreLimitApproveConfirm.jsp" />
+	</definition>
+
+	<definition name="getStoreLimitApproveAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreLimitApproveAck.jsp" />
+	</definition>
+
+	<definition name="StoreLimitApproveViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreLimitApproveView.jsp" />
+	</definition>
+
+	<definition name="getterminalLimitApproveScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitApprove.jsp" />
+	</definition>
+
+	<definition name="getterminalLimitApproveConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitApproveConfirm.jsp" />
+	</definition>
+
+	<definition name="getterminalLimitApproveAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitApproveAck.jsp" />
+	</definition>
+
+	<definition name="getTerminalLimitApproveView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalLimitApproveView.jsp" />
+	</definition>
+
+	<definition name="CreditAuthGenerateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GenerateCreditAuthScreen.jsp" />
+	</definition>
+
+	<definition name="getStoreCreditApproveScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCreditApprove.jsp" />
+	</definition>
+
+	<definition name="getStoreCreditApproveConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCreditApproveConfirm.jsp" />
+	</definition>
+
+	<definition name="getStoreCreditApproveAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCreditApproveAck.jsp" />
+	</definition>
+
+	<definition name="getStoreCreditApproveViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCreditApproveView.jsp" />
+	</definition>
+
+	<definition name="getTerminalCreditApproveScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalCreditApprove.jsp" />
+	</definition>
+
+	<definition name="getTerminalCreditApproveConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalCreditApproveConfirm.jsp" />
+	</definition>
+
+	<definition name="getTerminalCreditApproveAckScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalCreditApproveAck.jsp" />
+	</definition>
+
+	<definition name="getTerminalCreditApproveViewScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalCreditApproveView.jsp" />
+	</definition>
+
+	<definition name="InboxScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/InboxCreate.jsp" />
+	</definition>
+
+	<definition name="InboxConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/InboxCreateConfirm.jsp" />
+	</definition>
+
+	<definition name="InboxAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/InboxCreateAck.jsp" />
+	</definition>
+
+	<definition name="FloatDashBoard" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FloatDashBoard.jsp" />
+	</definition>
+
+		<!-- Service Management Starts -->
+
+		<definition name="ServiceMgmtScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GenerateService.jsp" />
+	</definition>
+
+	<definition name="ServiceCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewService.jsp" />
+	</definition>
+
+	<definition name="ServiceCreateConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewServiceConfirm.jsp" />
+	</definition>
+	
+	<definition name="ServiceCreateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewServiceAck.jsp" />
+	</definition>
+	
+	<definition name="FeeDashBoard" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FeeDashBoard.jsp" />
+	</definition>
+	
+	<definition name="SubServiceCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewSubService.jsp" />
+	</definition>
+
+	<definition name="SubServiceCreateConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewSubServiceConfirm.jsp" />
+	</definition>
+
+	<definition name="SubServiceCreateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewSubServiceAck.jsp" />
+	</definition>
+	
+	<definition name="ServiceViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ServiceView.jsp" />
+	</definition>
+	
+	<definition name="FeeCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FeeCreateCapture.jsp" />
+	</definition>
+
+	<definition name="FeeCreateConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FeeCreateConfirm.jsp" />
+	</definition>
+
+	<definition name="FeeCreateAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FeeCreateAck.jsp" />
+	</definition>
+	
+	<definition name="SubServiceViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SubServiceView.jsp" />
+	</definition>
+	
+	<definition name="ModifyFeeCodeDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FeeCodeModify.jsp" />
+	</definition>
+	
+	<definition name="UpdateFeeSlabDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UpdateFeeSlabDetails.jsp" />
+	</definition>
+	
+	<definition name="MerchantFeeViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/assigningMerchantFee.jsp" />
+	</definition>
+	
+	<definition name="FeeViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FeeView.jsp" />
+	</definition>
+	
+	<definition name="merchantFeeAssign" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignFeeToMerchant.jsp" />
+	</definition>
+	<definition name="merchantFeeAssignCnf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignFeeToMerchantCnf.jsp" />
+	</definition>
+	<definition name="merchantFeeAssignAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignFeeToMerchantAck.jsp" />
+	</definition>
+	
+	
+	<!-- Service Management Ends -->
+
+
+	<definition name="RegisterBinScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterBin.jsp" />
+	</definition>
+
+	<definition name="RegisterBinConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterBinConfirm.jsp" />
+	</definition>
+
+	<definition name="RegisterBinAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterBinAck.jsp" />
+	</definition>
+
+	<definition name="RegisterProcessingCodeScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterProcessingCode.jsp" />
+	</definition>
+
+	<definition name="RegisterProcessingCodeConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterProcessingConfirm.jsp" />
+	</definition>
+
+	<definition name="RegisterProcessingCodeAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterProcessingCodeAck.jsp" />
+	</definition>
+
+	<definition name="RegisterHudumaServiceScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterHudumaService.jsp" />
+	</definition>
+
+	<definition name="RegisterHudumaServiceConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterHudumaServiceConfirm.jsp" />
+	</definition>
+
+	<definition name="RegisterHudumaServiceAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterHudumaServiceAck.jsp" />
+	</definition>
+
+	<definition name="ViewBinDetailsScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterBinView.jsp" />
+	</definition>
+
+	<definition name="ViewProcessingCodeDetailsScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterProcessingCodeView.jsp" />
+	</definition>
+
+	<definition name="ViewHudumaServiceDetailsScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RegisterHudumaServiceView.jsp" />
+	</definition>
+
+	<definition name="FeeDashBoard" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FeeDashBoard.jsp" />
+	</definition>
+
+
+
+
+	<!-- Service Management Ends -->
+
+
+	<definition name="viewusergroup" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewUserGroup.jsp" />
+	</definition>
+
+	<definition name="viewNoUserGroup" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewNoUserGroup.jsp" />
+	</definition>
+
+	<definition name="UserGroupModifyConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UserGroupModifyConf.jsp" />
+	</definition>
+	<definition name="UserGroupModifyAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UserGroupModifyAck.jsp" />
+	</definition>
+
+	<!-- <definition name="resetPassword" extends="baseLayout"> <put-attribute 
+		name="body" value="/WEB-INF/jsp/banking/ResetPassword.jsp" /> </definition> -->
+
+	<definition name="ActiveDeactiveUserAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/userActiveDeactiveAck.jsp" />
+	</definition>
+
+	<definition name="healthmonitor" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/HealthMonitor.jsp" />
+	</definition>
+
+	<definition name="userViewInformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewUserInformation.jsp" />
+	</definition>
+
+	<definition name="assignchtouser" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddChanneltoUser.jsp" />
+	</definition>
+
+	<definition name="merchantUserViewInfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewMerchantUsersInfo.jsp" />
+	</definition>
+
+	<definition name="userModifyInformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/modifyUserInformation.jsp" />
+	</definition>
+
+	<definition name="userModifyConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/modifyUserInformationConfirm.jsp" />
+	</definition>
+
+	<definition name="userModifyError" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/modifyUserInformationError.jsp" />
+	</definition>
+
+	<definition name="userModifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/modifyUserInformationAck.jsp" />
+	</definition>
+
+	<definition name="userActivate" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/userActiveDeactive.jsp" />
+	</definition>
+
+	<definition name="userPasswordReset" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/userPasswordReset.jsp" />
+	</definition>
+
+	<definition name="userPasswordResetConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/userPasswordResetConfirm.jsp" />
+	</definition>
+
+	<definition name="userPasswordResetAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/userPasswordResetAck.jsp" />
+	</definition>
+
+
+
+	<definition name="assignUserServiceScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignTerminalToService.jsp" />
+	</definition>
+
+	<definition name="assignServiceTerminalConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignServiceToUserConfirm.jsp" />
+	</definition>
+
+	<definition name="assignServiceTerminalAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignServiceToUserAck.jsp" />
+	</definition>
+
+	<definition name="assignServiceTerminalConfirmScreenACK"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignServiceToTerminatACK.jsp" />
+	</definition>
+
+	<definition name="assignServiceTerminalViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignServiceToUserView.jsp" />
+	</definition>
+
+
+	<!-- resetID -->
+
+	<definition name="resetIDPage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PinGenaratePage.jsp" />
+	</definition>
+
+	<definition name="resetIDPageACK" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/passwordGenarate.jsp" />
+	</definition>
+	<!-- resetID -->
+
+
+	<!-- biller -->
+	<definition name="CashDepositDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CashDepositDetails.jsp" />
+	</definition>
+
+	<definition name="TellerSecurity" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TellerSecurity.jsp" />
+	</definition>
+
+	<definition name="TellerSecuritypageACT" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CashDepositDetailsACK.jsp" />
+	</definition>
+
+
+
+	<definition name="CashDepositack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/cashDepositACK.jsp" />
+	</definition>
+	<!-- biller -->
+
+
+	<!--Bank detials -->
+
+
+	<definition name="Bank" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/Bankdetails.jsp" />
+	</definition>
+
+	<definition name="Service" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/Bankdetails.jsp" />
+	</definition>
+
+
+	<definition name="BankConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankDetailsConfirm.jsp" />
+	</definition>
+
+	<definition name="insertBank" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankDetailsConfirmAck.jsp" />
+	</definition>
+
+	<definition name="InsureAffiliation" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/InsureAff.jsp" />
+	</definition>
+
+	<definition name="Report" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/reports.jsp" />
+	</definition>
+
+
+	<definition name="LoadSerial" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/huduma/loadSerial.jsp" />
+	</definition>
+	<definition name="LoadSerialAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/huduma/loadSerialAck.jsp" />
+	</definition>
+	<!-- Switch UI -->
+
+	<definition name="SwitchUIScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SwitchUIScreen.jsp" />
+	</definition>
+
+	<definition name="CreateBankScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SwitchCreateBank.jsp" />
+	</definition>
+
+	<definition name="SwitchviewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SwitchviewScreen.jsp" />
+	</definition>
+
+
+	<definition name="SwitchmodifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SwitchmodifyScreen.jsp" />
+	</definition>
+
+
+	<definition name="FinalBankScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FinalCreateBankStatus.jsp" />
+	</definition>
+
+
+	<definition name="SwitchStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankSwitchStatus.jsp" />
+	</definition>
+	<definition name="RRNumber" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RRNDetails.jsp" />
+	</definition>
+
+
+	<!-- Switch UI -->
+
+	<definition name="BillPaymentCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillPayment.jsp" />
+	</definition>
+
+	<definition name="BillPaymentPinScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillPaymentPinVerfication.jsp" />
+	</definition>
+
+
+	<definition name="BillPaymentConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillPaymentConfirm.jsp" />
+	</definition>
+
+	<definition name="BillPaymentAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillPaymentAck.jsp" />
+	</definition>
+
+	<definition name="MPesaDashBoard" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MPesaSTatusView.jsp" />
+	</definition>
+	<definition name="assignDashLinksGroup" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignDashBoardGroup.jsp" />
+	</definition>
+
+	<definition name="assignDashLinksGroupCnfScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignDashBoardCnf.jsp" />
+	</definition>
+
+	<definition name="assignDashLinksGroupAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignDashBoardAck.jsp" />
+	</definition>
+
+	<definition name="DashBoardDesign" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DashBoardDesign.jsp" />
+	</definition>
+
+	<definition name="userProfileInformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewUserProfileInformation.jsp" />
+	</definition>
+
+	<!-- login -->
+
+	<definition name="Weblogin" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/weblogin.jsp" />
+	</definition>
+
+	<definition name="WebloginSucess" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/Ulsid.jsp" />
+	</definition>
+
+	<!-- login -->
+
+	<definition name="MerchantModifyConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="MerchantModifyAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantModifyAck.jsp" />
+	</definition>
+
+	<definition name="assignReportsGroup" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignReportGroup.jsp" />
+	</definition>
+
+	<definition name="assignReportCnfScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignReportCnf.jsp" />
+	</definition>
+
+	<definition name="assignReportAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignReportAck.jsp" />
+	</definition>
+
+	<definition name="AllSwitchStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SwitchUIHome.jsp" />
+	</definition>
+
+	<definition name="mpesacashdeposit" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/mpesacashdeposit.jsp" />
+	</definition>
+
+	<definition name="mpesacashdepositconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/mpesacashdepositconfirm.jsp" />
+	</definition>
+
+	<definition name="announcementpage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/Announcementpage.jsp" />
+	</definition>
+
+	<definition name="announcementconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/Announcementpage.jsp" />
+	</definition>
+
+	<!-- Cash Deposit Limit on 20-JUN-2014 -->
+
+	<definition name="GenerateCashDepositLimitScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GenerateCashDepositLimit.jsp" />
+	</definition>
+
+	<definition name="StoreCashDepositLimitCreateScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreCashDepositLimit.jsp" />
+	</definition>
+
+	<definition name="StoreCashDepositLimitCreateConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreCashDepositLimitConfirm.jsp" />
+	</definition>
+
+	<definition name="StoreCashDepositLimitCreateAckScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateStoreCashDepositLimitAck.jsp" />
+	</definition>
+
+	<definition name="StoreCashDepositLimitModifyScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCashDepositLimitModify.jsp" />
+	</definition>
+
+	<definition name="StoreCashDepositLimitModifyConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCashDepositLimitModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="StoreCashDepositLimitModifyAckScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCashDepositLimitModifyAck.jsp" />
+	</definition>
+
+	<definition name="StoreCashDepositLimitViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCashDepositLimitView.jsp" />
+	</definition>
+
+	<definition name="StoreCashDepositLimitAuthScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/GenerateCashDepositLimitAuth.jsp" />
+	</definition>
+
+	<definition name="getStoreCashDepositLimitApproveScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCashDepositLimitApprove.jsp" />
+	</definition>
+
+	<definition name="getStoreCashDepositLimitApproveConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCashDepositLimitApproveConfirm.jsp" />
+	</definition>
+
+	<definition name="getStoreCashDepositLimitApproveAckScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCashDepositLimitApproveAck.jsp" />
+	</definition>
+
+	<definition name="getStoreCashDepositLimitApproveView"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreCashDepositLimitAuthView.jsp" />
+	</definition>
+
+	<definition name="CreateRecoverMgmtScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RecoveryMgmt.jsp" />
+	</definition>
+
+	<definition name="CreateRecoverConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RecoveryMgmtCreateConfirm.jsp" />
+	</definition>
+
+	<definition name="CreateRecoverAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RecoveryMgmtCreateAck.jsp" />
+	</definition>
+
+	<!-- Announcement open -->
+
+	<definition name="announceMgmtScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AnnouncementManagement.jsp" />
+	</definition>
+
+	<definition name="announcementpage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/Announcementpage.jsp" />
+	</definition>
+
+	<definition name="announcementconfirmpage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AnnouncementConfirm.jsp" />
+	</definition>
+
+	<definition name="announcementackpage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/announcementAck.jsp" />
+	</definition>
+
+	<definition name="AnnouncementModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/announcementModify.jsp" />
+	</definition>
+
+	<definition name="announcementmodifyconfirmpage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AnnouncementModifyConfirm.jsp" />
+	</definition>
+
+	<definition name="announcementmodifyAckpage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AnnouncementModifyAck.jsp" />
+	</definition>
+
+	<definition name="announcementViewScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/announcementview.jsp" />
+	</definition>
+
+	<definition name="announcementStatusChangeScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/announcementStatusChange.jsp" />
+	</definition>
+
+	<definition name="announcementStatusChangeConfirmScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/announcementStatusChangeConfirm.jsp" />
+	</definition>
+
+	<definition name="announcementStatusChangeAckScreen"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/announcementStatusChangeAck.jsp" />
+	</definition>
+
+	<!-- Announcement close -->
+
+	<!-- Float Refund -->
+
+
+	<definition name="CreateRefundMgmtScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RefundMgmt.jsp" />
+	</definition>
+
+	<definition name="CreateRefudnConfirmScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RefundMgmtCreateConfirm.jsp" />
+	</definition>
+
+	<definition name="CreateRefundAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RefundMgmtCreateAck.jsp" />
+	</definition>
+
+	<!-- Float Refund Close -->
+
+	<definition name="UnAuthUsersListScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UnAuthUsersListScreen.jsp" />
+	</definition>
+
+	<definition name="UnAuthUsersListScreenConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ConfirmUnAuthUsersListScreen.jsp" />
+	</definition>
+
+	<definition name="UnAuthUsersListScreenAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AckUnAuthUsersListScreen.jsp" />
+	</definition>
+
+	<definition name="FloatDashboard" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FloatDashboard.jsp" />
+	</definition>
+
+	<!-- Merchant Authorization -->
+	<definition name="MerchantAuthScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantAuthScreen.jsp" />
+	</definition>
+
+	<definition name="MerchantAuthScreenConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantAuthScreenConfirm.jsp" />
+	</definition>
+
+	<definition name="MerchantAuthScreenAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantAuthScreenAck.jsp" />
+	</definition>
+	<!-- Merchant Authorization ends -->
+
+	<!-- fee Authorization -->
+	<definition name="AllFeeAuthorization" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/allFeeAuthScreen.jsp" />
+	</definition>
+
+	<definition name="feeAuthScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/feeAuthScreen.jsp" />
+	</definition>
+
+	<definition name="feeAuthScreenConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/feeAuthScreenConfirm.jsp" />
+	</definition>
+
+	<definition name="feeAuthScreenAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/feeAuthScreenAck.jsp" />
+	</definition>
+	<!-- fee Authorization ends -->
+
+	<definition name="UnAuthRejectUsersListScreenConfirm"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ConfirmRejectUnAuthUsersListScreen.jsp" />
+	</definition>
+
+	<!-- All Authorization -->
+	
+	<definition name="uamchecker" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UAMCheckerScreen.jsp" />
+	</definition>
+
+	<definition name="PendingAuthList" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AuthorizationPendingListScreen.jsp" />
+	</definition>
+	
+	<definition name="PendingRejectAuthList" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AuthorizationRejectListScreen.jsp" />
+	</definition>
+
+	<definition name="CommonAuthList" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CommonPendingListScreen.jsp" />
+	</definition>
+
+	<definition name="CommonAuthSearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CommonSearchAuthorization.jsp" />
+	</definition>
+
+	<definition name="CommonAuthListConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/commonPendingListCnf.jsp" />
+	</definition>
+
+	<definition name="createuserauth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateUserAuthDetails.jsp" />
+	</definition>
+
+	<definition name="UserActiveDeactiveAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UserStatusAuthrization.jsp" />
+	</definition>
+
+	<definition name="modifyFeeDetailsAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/modifyFeeDetailsAuthCnf.jsp" />
+	</definition>
+
+	<definition name="viewFeeDetailsAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewFeeDetailsAuthCnf.jsp" />
+	</definition>
+
+
+	<definition name="viewTerminalDetailsAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateTerminalAuthCnf.jsp" />
+	</definition>
+
+
+	<definition name="TerminalModificationAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalModificationAuth.jsp" />
+	</definition>
+	<definition name="TerminalStatusAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalStatusAuth.jsp" />
+	</definition>
+	<definition name="AssignTerminalServiceAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignTerminalService.jsp" />
+	</definition>
+
+	<definition name="viewStoreDetailsAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/storeviewauth.jsp" />
+	</definition>
+
+	<definition name="StoreStatusauth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreStatusAuth.jsp" />
+	</definition>
+
+
+	<definition name="StoreModificationAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StoreModifyViewAuth.jsp" />
+	</definition>
+
+
+	<definition name="commonAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CommonAuthAck.jsp" />
+	</definition>
+
+	<definition name="coommonrejectACK" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AuthorizationRejectACK.jsp" />
+	</definition>
+
+	<definition name="coommonDeleteACK" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AuthorizationDeleteACK.jsp" />
+	</definition>
+
+
+	<!--Bar Chats -->
+
+	<definition name="GraphScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/StatReportScreen.jsp" />
+	</definition>
+
+	<definition name="ServiceRejectAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ServiceRejectAuth.jsp" />
+	</definition>
+
+	<definition name="CreateServiceAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ServiceAuthConf.jsp" />
+	</definition>
+
+	<definition name="CreateBinAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BinAuthCnf.jsp" />
+	</definition>
+
+	<definition name="CreateSubServiceAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SubServiceAuthcnf.jsp" />
+	</definition>
+
+	<definition name="viewMerchantDetailsAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantAuthConfirm.jsp" />
+	</definition>
+
+	<definition name="MerchantStatusauth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantStatusAuth.jsp" />
+	</definition>
+
+	<definition name="MerchantModifyAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantModifyAuthConfm.jsp" />
+	</definition>
+
+
+	<definition name="BankDetailsDashBoard" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BankDetailsDasboard.jsp" />
+	</definition>
+
+	<!-- AssignTerminal -->
+
+	<definition name="assignTerminalScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/assignTerminal.jsp" />
+	</definition>
+
+	<definition name="assignTerminalUsersAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/assignTerminalAck.jsp" />
+	</definition>
+
+	<!-- Merchant Fee Assign Starts -->
+	<definition name="merchantFeeAssign" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignFeeToMerchant.jsp" />
+	</definition>
+	<definition name="merchantFeeAssignCnf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignFeeToMerchantCnf.jsp" />
+	</definition>
+	<definition name="merchantFeeAssignAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AssignFeeToMerchantAck.jsp" />
+	</definition>
+
+	<definition name="getMerchantAssignServices" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/merchantAssignFeeDeshBoard.jsp" />
+	</definition>
+	<!-- terminal Migration -->
+	<definition name="terminalMigrationScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalMigration.jsp" />
+	</definition>
+
+	<definition name="terminalMigrationScreenConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalMigrationConf.jsp" />
+	</definition>
+
+	<definition name="InsertTerminalMigrationDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalMigrationACK.jsp" />
+	</definition>
+
+	<definition name="TerminalMigrationauth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/TerminalMigrationAuthconf.jsp" />
+	</definition>
+	<!-- merchant User -->
+	<definition name="MerchantUsers" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MerchantUsers.jsp" />
+	</definition>
+
+	<!-- merchant User -->
+	<!-- terminal Migration -->
+
+	<!-- agent Registration -->
+
+	<definition name="agentRegistrationScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/agentRegistration.jsp" />
+	</definition>
+
+	<definition name="agentRegistrationSuccess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/agentRegistrationACK.jsp" />
+	</definition>
+
+
+	<definition name="agentinformationView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/agentRegistrationView.jsp" />
+	</definition>
+
+	<definition name="agentinformationmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/agentinformationmodfiy.jsp" />
+	</definition>
+
+	<definition name="updateagentinformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/agentModifyACK.jsp" />
+	</definition>
+
+	<!-- record Reject Authrozation -->
+
+	<definition name="ServiceRejectACK" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/RejectRecordauthACK.jsp" />
+	</definition>
+
+	<definition name="SubServiceRejectRecord" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SubServiceRejectAuth.jsp" />
+	</definition>
+
+
+	<definition name="FeeCodeRejectDetailsAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FeeCodeRejectRecord.jsp" />
+	</definition>
+
+	<definition name="SubServiceRejectACK" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/subserviceRejectRecordauth.jsp" />
+	</definition>
+	<!-- record Reject Authrozation -->
+	<!-- agent Registration -->
+
+
+<!-- 	<definition name="mpesaaccscreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PaybillGridScreen.jsp" />
+	</definition> -->
+
+	<definition name="addbillertype" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addBillerType.jsp" />
+	</definition>
+
+	<definition name="addbillertypeconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addBillerTypeConfirm.jsp" />
+	</definition>
+
+	<definition name="addbillertypeack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addBillerTypeAck.jsp" />
+	</definition>
+
+	<definition name="billerTypeAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addBillerTypeAuth.jsp" />
+	</definition>
+
+	<definition name="modifyBillerType" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/billerTypeModify.jsp" />
+	</definition>
+
+	<definition name="modifyBillerTypeConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerTypeConfirmModify.jsp" />
+	</definition>
+
+	<definition name="modifyBillerTypeAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerTypeAckModify.jsp" />
+	</definition>
+
+	<definition name="viewBillerTypeDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/viewBillerType.jsp" />
+	</definition>
+
+	<definition name="actDeactBillerType" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/billerTypeActDeact.jsp" />
+	</definition>
+
+	<definition name="actDeactBillerDetailsAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/billerTypeActDeactAck.jsp" />
+	</definition>
+
+	<definition name="modifyBillerID" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerIDModify.jsp" />
+	</definition>
+
+	<definition name="modifyBillerIDCNfScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerIDModifyCnf.jsp" />
+	</definition>
+
+
+	<definition name="modifyBillerIDAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerIDModifyAck.jsp" />
+	</definition>
+
+	<definition name="modifyBillerIDStatusScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerIDModifyStatus.jsp" />
+	</definition>
+
+
+	<definition name="modifyBillerIDStatusScreenAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerIDModifyStatusAck.jsp" />
+	</definition>
+
+	<definition name="addBillerId" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addBillerId.jsp" />
+	</definition>
+
+	<definition name="addBillerIdConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addBillerIdConfirm.jsp" />
+	</definition>
+
+	<definition name="addbillerIdAckScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addBillerIdAck.jsp" />
+	</definition>
+
+	<definition name="AddBillerIDAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddBillerIDCnf.jsp" />
+	</definition>
+
+	<definition name="modifyBillerTypeActiveDeactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerTypeModifyActiveDeactive.jsp" />
+	</definition>
+
+	<definition name="modifyBillerIdActiveDeactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerIDModifyActiveDeactive.jsp" />
+	</definition>
+
+	<definition name="BillerTypeStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerTypeStatusAuth.jsp" />
+	</definition>
+
+
+
+	<definition name="BillerIDStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BillerIdStatusAuth.jsp" />
+	</definition>
+
+
+	<!-- Add New Account -->
+	<definition name="AddNewAccount" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccount.jsp" />
+	</definition>
+
+	<definition name="CustomerAccountDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddCustomerAccountDetails.jsp" />
+	</definition>
+
+	<definition name="AddNewAccountConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountConfirm.jsp" />
+	</definition>
+
+	<definition name="AddNewAccountAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountAck.jsp" />
+	</definition>
+
+	<definition name="AccRegStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AccRegStatus.jsp" />
+	</definition>
+	
+	<definition name="WalletAccRegStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AccRegStatus.jsp" />
+	</definition>
+	
+	<!-- End of Add New Account -->
+
+	<!-- Product Config -->
+
+	<definition name="AccountPropertiesHome" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesHome.jsp" />
+	</definition>
+
+	<definition name="AccountPropertiesConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesConfirm.jsp" />
+	</definition>
+
+	<definition name="AccountPropertiesAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesAck.jsp" />
+	</definition>
+
+	<definition name="AccountPropertiesUpdateHome" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesUpdateHome.jsp" />
+	</definition>
+
+	<definition name="AccountPropertiesUpdateConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesUpdateConfirm.jsp" />
+	</definition>
+
+	<definition name="AccountPropertiesUpdateAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesUpdateAck.jsp" />
+	</definition>
+
+	<!-- End of Product Config -->
+
+
+	<!-- Customer Services -->
+	<definition name="AddServices" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddCustomerServices.jsp" />
+	</definition>
+
+	<definition name="CustomerServiceDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddCustomerServiceDetails.jsp" />
+	</definition>
+	
+	<definition name="WalletCustomerServiceDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddWalletCustomerServiceDetails.jsp" />
+	</definition>
+
+	<definition name="AddCustSerActDeact" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddCustomerServiceActiveDeactive.jsp" />
+	</definition>
+	
+	<definition name="WalletAddCustSerActDeact" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/WalletCustomerActiveDeactive.jsp" />
+	</definition>
+
+	<definition name="AddCustSerActDeactAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddCustomerServiceActDeactAck.jsp" />
+	</definition>
+
+	<definition name="AddCustSerIMEIActDeact" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddCustomerServiceIMEIActiveDeactive.jsp" />
+	</definition>
+
+	<definition name="AddCustSerIMEIActDeactAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddCustomerServiceIMEIActDeactAck.jsp" />
+	</definition>
+
+	<definition name="AddCustomerServicePinAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddCustomerServicePinAck.jsp" />
+	</definition>
+
+	<definition name="WalletAddCustomerServicePinAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/WalletAddCustomerServicePinAck.jsp" />
+	</definition>
+
+	<definition name="PinAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PinResetAuthAck.jsp" />
+	</definition>
+	
+	<definition name="WpasswordAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/WpasswordAuthAck.jsp" />
+	</definition>
+	
+	<definition name="UssdEnb" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/UssdEnableAuthAck.jsp" />
+	</definition>
+	
+	<definition name="MobileEnb" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/MobileEnableAuthAck.jsp" />
+	</definition>
+
+	<definition name="AccStatusAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AccStatusAuthAck.jsp" />
+	</definition>
+
+	<definition name="enabledesablestatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EnableCustomerDetails.jsp" />
+	</definition>
+	
+	<definition name="walletenabledesablestatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/WalletEnableCustomerDetails.jsp" />
+	</definition>
+	
+	<definition name="passwordreset" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PasswordResetCustomer.jsp" />
+	</definition>
+	
+	<definition name="walletpasswordreset" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/WalletPasswordResetCustomer.jsp" />
+	</definition>
+	
+	<definition name="pinresetstatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PinresetCustomerDetails.jsp" />
+	</definition>
+	
+	<definition name="walletpinresetstatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/WalletPinresetCustomerDetails.jsp" />
+	</definition>
+	
+	<definition name="AddServiceConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountConfirm.jsp" />
+	</definition>
+
+	<definition name="AddServiceAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountAck.jsp" />
+	</definition>
+	
+	<definition name="chanelenbdis" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ChannelEnableDisableDetails.jsp" />
+	</definition>
+
+	<definition name="walletchanelenbdis" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/WalletChannelEnableDisableDetails.jsp" />
+	</definition>
+
+
+
+	<!-- End of Add New Account -->
+
+
+	<!-- Edit Accounts -->
+	<definition name="EditAccounts" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditAccount.jsp" />
+	</definition>
+
+	<definition name="EditCustomerAccountDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditCustomerAccountDetails.jsp" />
+	</definition>
+
+	<definition name="EditAccountConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditAccountConfirm.jsp" />
+	</definition>
+
+	<definition name="EditAccountAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditAccountAck.jsp" />
+	</definition>
+
+	<!-- End of Add New Account -->
+
+
+	<!-- Edit Accounts -->
+	
+	<definition name="addnewaccount" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountInfo.jsp" />
+	</definition>
+	
+	<definition name="addnewaccountDet" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountInfoDetails.jsp" />
+	</definition>
+	
+	
+	<definition name="addnewaccountDetConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountInfoConfirm.jsp" />
+	</definition>
+	
+	<definition name="addnewaccountDetAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountInfoAck.jsp" />
+	</definition>
+	
+	
+	<definition name="ModifyCustInfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModCustInfo.jsp" />
+	</definition>
+	
+	<definition name="modregcustinfoDetPin" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModTxnPinCustInfoDetails.jsp" />
+	</definition>
+	
+	<definition name="modregcustinfoDetPinConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModCustInfoTxnPinConfirm.jsp" />
+	</definition>
+	
+	<definition name="modregcustinfoDetPinAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModCustInfoPinAck.jsp" />
+	</definition>
+
+	<definition name="ModifyCustInfoDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModCustInfoDetails.jsp" />
+	</definition>
+	
+	<definition name="ModifyWalletCustInfoDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModWalletCustInfoDetails.jsp" />
+	</definition>
+
+	<definition name="ModifyCustInfoConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModCustInfoConfirm.jsp" />
+	</definition>
+	
+	<definition name="ModifyWalletCustInfoConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModWalletCustInfoConfirm.jsp" />
+	</definition>
+
+	<definition name="ModifyCustInfoAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModCustInfoAck.jsp" />
+	</definition>
+
+	<definition name="editAccRegStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModAccRegStatus.jsp" />
+	</definition>
+
+	<definition name="ModcustAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ModcustdetailsAuth.jsp" />
+	</definition>
+	
+	<definition name="LimitcustAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LimitcustdetailsAuth.jsp" />
+	</definition>
+
+
+	<definition name="AllDetailsReport" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AllDetailReport.jsp" />
+	</definition>
+	
+	<definition name="enhancementregcustinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LimitEnhancementCustInfo.jsp" />
+	</definition>
+	
+	<definition name="enhancementregcustinfodet" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LimitEnhancementCustInfoDetails.jsp" />
+	</definition>
+	
+	<definition name="enhancementregcustinfodetconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LimitEnhancementConfirm.jsp" />
+	</definition>
+	
+	<definition name="enhancementregcustinfodetAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LimitEnhancementAck.jsp" />
+	</definition>
+
+	<!-- End of Add New Account -->
+	<definition name="SearchAccData" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SearchAccounts.jsp" />
+	</definition>
+
+
+	<!-- Delete Account START -->
+
+
+	<definition name="Delaccounts" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/deleteaccounts.jsp" />
+	</definition>
+
+	<definition name="DelaccountsDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/deleteaccountsDetails.jsp" />
+	</definition>
+
+	<definition name="DelaccountsConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/deleteaccountsConfirm.jsp" />
+	</definition>
+
+	<definition name="DelaccountsAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/deleteaccountsAck.jsp" />
+	</definition>
+
+	<definition name="DelAccAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DeleteAccountsAuth.jsp" />
+	</definition>
+	
+	<definition name="AddNewAccAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddNewAccountsAuth.jsp" />
+	</definition>
+	
+	<definition name="DeviceReplaceAccAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/DevicePlacementAuth.jsp" />
+	</definition>
+
+	<!-- Delete Account END -->
+	
+	<!-- Fraud Rule Exempt START -->
+	
+	<definition name="fraudruleexempt" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FraudRuleExemptCustInfo.jsp" />
+	</definition>
+	
+	<definition name="fraudruleexemptdet" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FraudRuleExemptCustInfoDetails.jsp" />
+	</definition>
+	
+	<definition name="fraudruleexemptdetconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FraudRuleExemptCustInfoConfirm.jsp" />
+	</definition>
+	
+	<definition name="fraudruleexemptdetack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/FraudRuleExemptCustInfoAck.jsp" />
+	</definition>
+
+	<definition name="SmsTemplatepage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SmsTemplateScreen.jsp" />
+	</definition>
+
+
+	<definition name="SmsTemplateCnfpage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SmsTemplateCnfScreen.jsp" />
+	</definition>
+
+
+	<definition name="SmsTemplateAckpage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SmsTemplateAckScreen.jsp" />
+	</definition>
+
+	<definition name="AccountPropertiesHome" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesHome.jsp" />
+	</definition>
+
+	<definition name="AccountPropertiesConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesConfirm.jsp" />
+	</definition>
+
+	<definition name="AccountPropertiesAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/AccountPropertiesAck.jsp" />
+	</definition>
+
+	<definition name="ProductCreateAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/ProductCreateCnfAuth.jsp" />
+	</definition>
+	
+	<definition name="LimitDetailsScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/LimitDetails.jsp" />
+	</definition>
+
+	<definition name="LimitCreateScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/accountopening/LimitCreation.jsp" />
+	</definition>
+	
+	<definition name="SearchCustomer" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SearchCustomer.jsp" />
+	</definition>
+
+	<definition name="SearchCustomerDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SearchCustomerDetails.jsp" />
+	</definition>
+	
+	<definition name="SearchWalletCustomerDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SearchWalletCustomerDetails.jsp" />
+	</definition>
+	
+	<definition name="AddServicePack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddservicePack.jsp" />
+	</definition>
+	
+	<definition name="AddServicePackCnf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddservicePackcnf.jsp" />
+	</definition>
+	
+	<definition name="AddServicePackAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/AddservicePackack.jsp" />
+	</definition>
+
+	<definition name="CreateProduct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewProduct.jsp" />
+	</definition>
+	
+	<definition name="CreateProductCnf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewProductConfirm.jsp" />
+	</definition>
+	
+	<definition name="CreateProductAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CreateNewProductAck.jsp" />
+	</definition>
+
+	<definition name="DisplayProducts" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ViewProducts.jsp" />
+	</definition>
+
+	<definition name="EditProducts" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditProducts.jsp" />
+	</definition>
+	
+	<definition name="EditProductCnf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditProductConfirm.jsp" />
+	</definition>
+	
+	<!-- Customer Services -->
+	<definition name="AddPrepaidServices" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PrepaidServices.jsp" />
+	</definition>
+
+	<definition name="PrepaidDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PrepaidServiceDetails.jsp" />
+	</definition>
+
+	<definition name="AddPrepaidSerActDeact" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PrepaidServiceActiveDeactive.jsp" />
+	</definition>
+
+	<definition name="AddPrepaidSerActDeactAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PrepaidServiceActDeactAck.jsp" />
+	</definition>
+
+	 <definition name="AddPrepaidcardPinAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/PrepaidCardServicePinAck.jsp" />
+	</definition>
+
+	<definition name="BulkRegistration" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BulkRegistration.jsp" />
+	</definition>
+
+	<definition name="BulkRegistrationAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BulkRegistrationAck.jsp" />
+	</definition>
+	<definition name="BulkRegistrationAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/BulkUploadAuthAck.jsp" />
+	</definition>
+	
+	
+	<definition name="ServicePackEdit" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditServicePack.jsp" />
+	</definition>
+	<definition name="ServicepackView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/ViewServicePack.jsp" />
+	</definition>
+	
+	
+	<definition name="EditServicePackCnf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditServicePackcnf.jsp" />
+	</definition>
+	
+	<definition name="EditServicePackAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EditservicePackack.jsp" />
+	</definition>
+
+  
+  	<definition name="invalidtoken" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/invalidtoken.jsp" />
+	</definition>
+	
+		<definition name="SmsManagement" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SmsManagement.jsp" />
+	</definition>
+
+	<definition name="singlesms" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/SmsSingle.jsp" />
+	</definition>
+
+	<definition name="singlesmsconf" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/SmsSingleConf.jsp" />
+	</definition>
+
+	<definition name="CreateCampaign" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CreateCampaign.jsp" />
+	</definition>
+
+	<definition name="CreateCampaignConfirm" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CreateCampaignConfirm.jsp" />
+	</definition>
+
+	<definition name="FruadScreen" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/FraudMonitor.jsp" />
+	</definition>
+	<definition name="FruadScreenFilter" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/FruadScreenFilter.jsp" />
+	</definition>
+	
+	<definition name="KeyMgmt" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/KeyManagement.jsp" />
+	</definition>
+	
+	<definition name="KeyInsert" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/KeyManagementAck.jsp" />
+	</definition>
+
+	<definition name="AdvertHome" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/AdvertScreens.jsp" />
+	</definition>
+
+	<definition name="AdvertDisp" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/AdvertHome.jsp" />
+	</definition>
+	
+	
+		<definition name="merchantUserCreatePage" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/MerchantUserCreationPage.jsp" />
+	</definition>
+	
+	
+	<definition name="MerchantUserCreateConfirm" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/MerchantUserCreationScreen.jsp" />
+	</definition>
+	
+	
+    <definition name="MerchantUserCreateAck" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/MerchantUserCreationAck.jsp" />
+	</definition>
+	
+	<!-- DSA  Start -->
+	
+
+	<definition name="agentregistration" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistration.jsp" />
+	</definition>
+	<definition name="agentregistrationconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationConf.jsp" />
+	</definition>	
+	<definition name="agentregistrationack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationAck.jsp" />
+	</definition>
+	
+	<definition name="agentregmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegModifySearch.jsp" />
+	</definition>
+	<definition name="agentregmodifysearchdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegModifySearchDetails.jsp" />
+	</definition>
+	
+	<definition name="agentregmodifydetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationModify.jsp" />
+	</definition>
+	
+	<definition name="agentregmodifydetailsview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationView.jsp" />
+	</definition>
+	
+	<definition name="agentregmodifydetailslock" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationLock.jsp" />
+	</definition>
+	
+	<definition name="agentregmodifydetailsactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationActive.jsp" />
+	</definition>
+	
+	<definition name="agentregmodifydetailsconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationModifyConf.jsp" />
+	</definition>
+	
+	<definition name="agentregmodifyback" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationModify.jsp" />
+	</definition>	
+	
+	<definition name="agentregmodifydetailsack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationModifyAck.jsp" />
+	</definition>
+	
+	<definition name="agentreglock" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegLockSearch.jsp" />
+	</definition>
+	
+<!-- 	<definition name="agentreglocksearchdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegLockSearchDetails.jsp" />
+	</definition>	 -->
+	
+	<definition name="agentregistrationlock" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationLockAck.jsp" />
+	</definition>
+	
+	<definition name="agentregistrationactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationActiveAck.jsp" />
+	</definition>
+	
+	
+	<definition name="agentpinresetconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentPinResetConf.jsp" />
+	</definition>
+	
+	<definition name="agentpinreset" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentPinResetSearch.jsp" />
+	</definition>
+	
+	<definition name="agentpinresetsearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentPinResetSearchDetails.jsp" />
+	</definition>	
+	
+		
+			
+	<definition name="agentregappifysearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegApprovalSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="agenthistorysearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentHistorySearchDetails.jsp" />
+	</definition>
+	
+	<definition name="limithistorysearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitHistorySearchDetails.jsp" />
+	</definition>
+	
+	<definition name="agentregapprovaldetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApproval.jsp" />
+	</definition>
+	
+	<definition name="agentregapprovalupdatedetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApprovalLimitUpdate.jsp" />
+	</definition>
+	
+	<definition name="agentregapprovaldetailsconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApprovalConf.jsp" />
+	</definition>
+	
+	<definition name="agentregapprovaldetailsack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApprovalAck.jsp" />
+	</definition>
+	
+	<definition name="agentregapprovallimitdetailsconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApprovalLimitUpdateConf.jsp" />
+	</definition>
+	
+	
+	<definition name="agentregapprovallimitdetailsack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApprovalLimitUpdateAck.jsp" />
+	</definition>
+	
+	<definition name="dsalimitupdate" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentLimitUpdateSearch.jsp" />
+	</definition>
+	
+	<definition name="dsalimitupdatesearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentLimitUpdateSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="agentregmodifydetailslimit" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentLimitUpdate.jsp" />
+	</definition>
+	
+	<definition name="dsalimitupdateconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentLimitUpdateConf.jsp" />
+	</definition>
+	
+	<definition name="dsalimitupdateack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentLimitUpdateAck.jsp" />
+	</definition>
+	
+	<definition name="dsalimitmngsearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/DsaLimitSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="dsanewlimitcodedetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/DsaNewLimitCreate.jsp" />
+	</definition>
+	
+	<definition name="dsalimitnewcreationconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/DsaNewLimitCreateConf.jsp" />
+	</definition>
+	
+	<definition name="dsalimitnewcreationack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/DsaNewLimitCreateAck.jsp" />
+	</definition>
+	
+			
+	<definition name="agentregmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegModify.jsp" />
+	</definition>
+	
+	<definition name="agentregmodifysrc" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegModifySrcDetails.jsp" />
+	</definition>
+	
+	<!-- <definition name="agentregviewdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationViewDetails.jsp" />
+	</definition> -->
+	
+	<definition name="agentregmodifysrcdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationModifyDetails.jsp" />
+	</definition>
+	
+
+	<definition name="accopenapproval" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitApprovalSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="limitapprovaldetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitApproval.jsp" />
+	</definition>
+	
+	<definition name="limitapprovalupdatedetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitApprovalModify.jsp" />
+	</definition>
+	
+	<definition name="accopenapprovalconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitApprovalConf.jsp" />
+	</definition>
+	
+	<definition name="accopenapprovalack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitApprovalAck.jsp" />
+	</definition>
+	
+	<definition name="accopenapprovalmodifyconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitApprovalModifyConf.jsp" />
+	</definition>
+	
+	<definition name="accopenapprovalmodifyack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitApprovalModifyAck.jsp" />
+	</definition>
+	
+	<definition name="dsanewlimitcodedetailsview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitView.jsp" />
+	</definition>
+	
+	<definition name="dsanewlimitcodedetailsmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitModify.jsp" />
+	</definition>
+	
+	<definition name="dsanewlimitcodedetailsmodifyconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitModifyConf.jsp" />
+	</definition>
+	
+	<definition name="dsanewlimitcodedetailsmodifyack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/LimitModifyAck.jsp" />
+	</definition>
+	
+	
+	<definition name="bulkupload" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/BulkUpload.jsp" />
+	</definition>
+	
+	<definition name="bulkuploadresult" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/UplaodResult.jsp" />
+	</definition>
+	
+	<definition name="uploadedinformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileuploadDetails.jsp" />
+	</definition>
+	
+	<definition name="reportuploadedinformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ReportFileuploadDetails.jsp" />
+	</definition>
+	
+	<definition name="nonraasformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/RaasReportFileuploadDetails.jsp" />
+	</definition>
+	
+	<definition name="bulkdsaregprocess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/BulkDsaRegistrationProcess.jsp" />
+	</definition>
+	
+	<definition name="bulkdsaregprocessconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/BulkDsaRegistrationProcessConf.jsp" />
+	</definition>
+	
+	<definition name="bulkdsaregprocessack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/BulkDsaRegistrationProcessAck.jsp" />
+	</definition>
+	
+	<definition name="dsamodifysearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/DsaRegModifySearch.jsp" />
+	</definition>
+	
+	
+	<definition name="agentmodifydetailsconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentModifyConf.jsp" />
+	</definition>
+	
+	<definition name="agentmodifydetailsack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentModifyAck.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="agentregapprovalmodifydetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApprovalModify.jsp" />
+	</definition>
+	
+	<definition name="agentregapprovalmodifyconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApprovalModifyConf.jsp" />
+	</definition>
+	
+	<definition name="agentregapprovalmodifyack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRegistrationApprovalModifyAck.jsp" />
+	</definition>
+	
+	
+	<definition name="agentapprovaldetailsactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentApprovalActive.jsp" />
+	</definition>
+	
+	<definition name="agentapprovalactiveack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentApprovalActiveAck.jsp" />
+	</definition>
+	
+	
+	<definition name="approvalall" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ApprovalAllDetails.jsp" />
+	</definition>
+	
+	<!-- DSA  End -->
+	
+	
+	<!-- Channel -->
+	
+	<definition name="channelmanagement" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ChannelBoardScreen.jsp" />
+	</definition>
+	
+	<definition name="channelmapping" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ChannelMapping.jsp" />
+	</definition>
+	
+	<definition name="channelmappingconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ChannelMappingConf.jsp" />
+	</definition>
+	<definition name="channelmappingack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ChannelMappingAck.jsp" />
+	</definition>	
+	
+				<!--  Limit Configuartion Strted -->
+	
+	
+	
+	 <definition name="FeeCreation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/feesettings.jsp" />
+	 </definition>
+	 
+	 <definition name="FeeCreationAdd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/feesettingsadd.jsp" />
+	 </definition>
+	
+	 <definition name="LmtCreation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/limitsettings.jsp" />
+	 </definition>
+	 
+	<definition name="LmtConfirmAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/limitsettingsconf.jsp" />
+	</definition>
+	
+	<definition name="lmtConfirmActadd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/limitsettingsconfadd.jsp" />
+	</definition>
+	 
+	 <definition name="LmtCreationAdd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/limitsettingsadd.jsp" />
+	 </definition>
+	 
+	  <definition name="Lmtconfack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/limitsettingsack.jsp" />
+	 </definition>
+	 
+	 <definition name="Lmtconfackadd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/limitsettingsackadd.jsp" />
+	 </definition>
+	 
+	   <definition name="Feeconfack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/feesettingsack.jsp" />
+	 </definition>
+	 
+	 <definition name="Feeconfackadd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/feesettingsackadd.jsp" />
+	 </definition>
+	 
+	 
+	  <definition name="Feeconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/feesettingsconf.jsp" />
+	 </definition>
+	 
+	  <definition name="Feeconfirmadd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/feesettingsconfadd.jsp" />
+	 </definition>
+	 
+	  <definition name="productlimitsettings" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/limitdatascreen.jsp" />
+	 </definition>
+	 
+	 <definition name="productfeesettings" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/limit/feedatascreen.jsp" />
+	 </definition>
+	 
+	<definition name="ProductFeeCodeAjax" extends="baseLayout">
+	  <put-attribute name="body"
+			value="/WEB-INF/jsp/fee/ProductFeeCodeAjax.jsp" />
+	</definition>
+	
+	<definition name="ProductlimitCodeAjax" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/ProductlimitCodeAjax.jsp" />
+	</definition>
+	
+		<definition name="LmtFeeDatalimit" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/limitcodedataview.jsp" />
+	</definition>
+	
+		
+	<definition name="LmtFeeDatafee" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/feecodedataview.jsp" />
+	</definition>
+	
+	<definition name="LmtFeeDatafeeactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/feecodedataactive.jsp" />
+	</definition>
+	
+	
+	<definition name="LmtFeeDatalimitmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/limitcodedatamodify.jsp" />
+	</definition>
+
+	<definition name="limitDetailsModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/limitdetailsmodify.jsp" />
+	</definition>
+	
+	<definition name="limitDetailsModifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/limitdetailsmodifyack.jsp" />
+	</definition>
+		
+	<definition name="LmtFeeDatafeemodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/feecodedatamodify.jsp" />
+	</definition>
+	
+	
+	 <definition name="feesettingsmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/feesettingsmodify.jsp" />
+	 </definition>
+	 
+	 <definition name="feesettingsmodifyack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/feesettingsack.jsp" />
+	 </definition>
+	 
+	 <definition name="feeDetailsActiveAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/feeactiveack.jsp" />
+	 </definition>
+	
+	
+	
+	<!--  Limit Configuartion Ended -->
+	
+				<!-- Product Config -->
+			
+	<definition name="ProductSettingDashBoard" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/product/ProductSettingDashBoardScreen.jsp" />
+	</definition>
+	
+		
+	<definition name="ProductDashBoard" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/product/ProductDashBoardScreen.jsp" />
+	</definition>
+
+	<definition name="CreateProductScreen" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/product/CreateProduct.jsp" />
+	</definition>
+
+
+	<definition name="CreateProductCnfScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/CreateProductCnfPage.jsp" />
+	</definition>
+
+
+	<definition name="CreateProductAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/CreateProductAckScreen.jsp" />
+	</definition>
+	
+	<definition name="authnewproductsearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AuthNewProductSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="authnewlimitsearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AuthNewLimitSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="authnewfeesearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AuthNewFeeSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="authistorysearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AuthHistorySearchDetails.jsp" />
+	</definition>
+	
+	<definition name="authnewloyaltysearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AuthNewLoyaltySearchDetails.jsp" />
+	</definition>
+	
+	<definition name="authnewloyaltyassignsearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AuthNewLoyaltyAssignSearchDetails.jsp" />
+	</definition>
+
+	<definition name="accountopensearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AccountOpenDetails.jsp" />
+	</definition>
+
+	<definition name="ProductGrid" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/product/ProductGrid.jsp" />
+	</definition>
+
+
+	<definition name="ProductGridView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ViewProductDetails.jsp" />
+	</definition>
+	
+	<definition name="ProductActive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ProductActive.jsp" />
+	</definition>
+	
+	<definition name="ProductPermission" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ProductPermission.jsp" />
+	</definition>
+	
+	<definition name="ProductServices" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ProductServices.jsp" />
+	</definition>
+
+	<definition name="AuthProductGridView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AuthViewProductDetails.jsp" />
+	</definition>
+	
+	<definition name="AuthProductSuccess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AuthViewProductAck.jsp" />
+	</definition>
+
+
+	<definition name="ProductModifyScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ProductModifyScreen.jsp" />
+	</definition>
+
+
+	<definition name="ProductModifyCnf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ProductModifyCnfScreen.jsp" />
+	</definition>
+
+
+
+	<definition name="ProductModifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ProductModifySuccess.jsp" />
+	</definition>
+	
+	
+	<definition name="insertProductActive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ProductPermissionSuccess.jsp" />
+	</definition>
+	
+	<definition name="ProductActiveDeactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/ProductActiveDeactive.jsp" />
+	</definition>
+	
+	<definition name="AuthLmtFeeDatalimit" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/authlimitcodedataview.jsp" />
+	</definition>
+	
+	<definition name="AuthLmtFeeDatalimitAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/authlimitcodedataack.jsp" />
+	</definition>
+
+	
+		
+	<definition name="AuthLmtFeeDatafee" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/authfeecodedataview.jsp" />
+	</definition>
+		
+	<definition name="AuthLmtFeeDatafeeAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/authfeecodedataack.jsp" />
+	</definition>
+	
+	
+		<!-- product Config End -->	
+			
+			<definition name="SmsManagement" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SmsManagement.jsp" />
+	</definition>
+
+	<definition name="singlesms" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/SmsSingle.jsp" />
+	</definition>
+
+	<definition name="singlesmsconf" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/SmsSingleConf.jsp" />
+	</definition>
+
+	<definition name="CreateCampaign" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CreateCampaign.jsp" />
+	</definition>
+
+	<definition name="CreateCampaignConfirm" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CreateCampaignConfirm.jsp" />
+	</definition>
+
+	<definition name="FruadScreen" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/FraudMonitor.jsp" />
+	</definition>
+	
+	<definition name="searchCaseFruadScreen" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/searchCaseFruadScreen.jsp" />
+	</definition>
+	<definition name="FruadScreenFilter" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/FruadScreenFilter.jsp" />
+	</definition> 
+	
+	
+		
+	 <definition name="campaignmgntactaction" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CampaignManagementAction.jsp" />
+	</definition>
+	 <definition name="campassigned" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CampaignAssigned.jsp" />
+	</definition>
+	
+	
+	 <definition name="campaignmgntactview" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CampaignManagementView.jsp" />
+	</definition>
+	
+	
+	<definition name="campaignmgntinsertactack" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CampaignManagementActiveAck.jsp" />
+	</definition>
+	
+	<definition name="campaignmgntmodifyactack" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CampaignManagementModifyAck.jsp" />
+	</definition>
+	
+	<definition name="campaignactiveack" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/CampaignManagementActiveAck.jsp" />
+	</definition>
+	
+	<definition name="viewcampaignmgntinsertactack" extends="baseLayout">
+  <put-attribute name="body" value="/WEB-INF/jsp/banking/viewCamp.jsp" />
+ </definition>
+ 
+ <definition name="assgncampaignmgntinsertact" extends="baseLayout">
+  <put-attribute name="body" value="/WEB-INF/jsp/banking/assignCamp.jsp" />
+ </definition>
+ 
+  <definition name="assigncampaignmgntactfile" extends="baseLayout">
+  <put-attribute name="body" value="/WEB-INF/jsp/banking/assignCampFile.jsp" />
+ </definition>
+ 
+  <definition name="assigncampaignmgntactfileconf" extends="baseLayout">
+  <put-attribute name="body" value="/WEB-INF/jsp/banking/assignCampFileConf.jsp" />
+ </definition>
+	
+	<definition name="assgncampaignmgntinsertactack" extends="baseLayout">
+  <put-attribute name="body" value="/WEB-INF/jsp/banking/CampaignManagementInsertAck.jsp" />
+ </definition>
+	
+	
+	<definition name="modifyCampActPage" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/modifyCampAct.jsp" />
+	</definition>
+	
+	<definition name="activecampaignassind" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/banking/activeCampAct.jsp" />
+	</definition>
+	
+		<!-- product Config End -->
+		
+		<!-- Biller Management -->
+		
+		
+	<definition name="mpesaaccscreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/paybill/PaybillGridScreen.jsp" />
+	</definition>
+	
+	<definition name="addbillertype" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/paybill/addBillerType.jsp" />
+	</definition>
+
+	<definition name="addbillertypeconfirm" extends="baseLayout">
+	<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/paybill/addBillerTypeConfirm.jsp" />
+	</definition>
+	
+	<definition name="viewChannelService" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/paybill/viewChannelService.jsp" />
+	</definition>
+	
+	<definition name="createBiller" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/biller/createBiller.jsp" />
+	</definition>
+	<definition name="billerAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/biller/billerAck.jsp" />
+	</definition>
+	
+	<definition name="billersList" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/biller/billersList.jsp" />
+	</definition>
+	
+	
+	<!-- Biller Management End -->
+	
+	
+	<definition name="searchscreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/SearchScreen.jsp" />
+	</definition>
+	
+		<!-- Wallet -->
+	<definition name="WalletAdd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddCustomerServices.jsp" />
+	</definition>
+	
+	<definition name="waletfetchServiceAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddCustomerServiceDetails.jsp" />
+	</definition>
+	
+	<definition name="waletcustfetchServiceAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddWalletCustomerServiceDetails.jsp" />
+	</definition>
+	
+	<definition name="waletcustfetchServiceconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddWalletCustInfoConfirm.jsp" />
+	</definition>
+	
+	<definition name="waletfetchServiceActa" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddCustomerServiceEdit.jsp" />
+	</definition>
+	
+	<definition name="waletfetchServiceconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddCustInfoConfirm.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="walletregcustinfoCnfAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddCustInfoAck.jsp" />
+	</definition>
+	
+	<definition name="walletregcustinfoCnfActFail" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddCustInfoAckFail.jsp" />
+	</definition>
+
+
+	<definition name="walletregmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/ModifyCustomerServices.jsp" />
+	</definition>
+	
+	<definition name="walletregmodifydetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/ModifyCustomerServiceDetails.jsp" />
+	</definition>
+	
+	<definition name="walletregmodifydconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/ModifyCustomerServiceConfirm.jsp" />
+	</definition>
+	
+	<definition name="walletregmodifyCnfAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/ModifyCustomerServiceAck.jsp" />
+	</definition>
+	
+	<definition name="walletsearchcustomeract" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/SearchCustomer.jsp" />
+	</definition>
+
+	<definition name="walletsearchcustomerdet" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/SearchCustomerDetails.jsp" />
+	</definition>
+	
+	<definition name="walletdelAccount" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/deleteaccounts.jsp" />
+	</definition>
+	
+	<definition name="WalletDelaccountsDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/deleteaccountsDetails.jsp" />
+	</definition>
+	
+	<definition name="WalletDelaccountsConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/deleteaccountsConfirm.jsp" />
+	</definition>
+	
+	<definition name="WalletDelaccountsAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/deleteaccountsAck.jsp" />
+	</definition>
+	
+	<definition name="WalletAddServices" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/WalletCustomerServices.jsp" />
+	</definition>
+	
+	<definition name="walletfetchServiceAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/WalletCustomerServiceDetails.jsp" />
+	</definition>
+	
+	<definition name="walletfetchServiceActDeact" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/WalletCustomerServiceActiveDeactive.jsp" />
+	</definition>
+	
+	<definition name="walletinsertServiceActDeact" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/WalletCustomerServiceActDeactAck.jsp" />
+	</definition>
+	
+	<!-- topup  -->
+	
+	<definition name="TopUpPage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/CustTopUpScreen.jsp" />
+	</definition>
+	
+	<definition name="wallettopupactdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TopUpCustomerServiceDetails.jsp" />
+	</definition>
+	
+	<definition name="wallettopupactconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TopUpCustomerServiceConfirm.jsp" />
+	</definition>
+	
+	<definition name="wallettopupactCnfAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TopUpCustomerServiceAck.jsp" />
+	</definition>
+	
+	<!-- topup end -->
+	
+	<!-- Refund  -->
+	
+	<definition name="ReFundPage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/CustReFundScreen.jsp" />
+	</definition>
+	
+	<definition name="walletrefundactdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/ReFundCustomerServiceDetails.jsp" />
+	</definition>
+	
+	<definition name="walletrefundactconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/ReFundCustomerServiceConfirm.jsp" />
+	</definition>
+	
+	<definition name="walletrefundactCnfAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/ReFundCustomerServiceAck.jsp" />
+	</definition>
+	
+	<!-- Refund end -->
+		
+	
+	<!-- Wallet  end -->
+	<!-- Biller Management -->
+	
+	<definition name="BillerManagementScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerManagementScreen.jsp" />
+	</definition>
+	
+	<definition name="newPayBillActDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerManagementAccountScreen.jsp" />
+	</definition>
+	
+	<definition name="BillerRegistartionSubmit" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerRegistartionSubmit.jsp" />
+	</definition>
+	
+	<definition name="BillerRegistartionConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerRegistrationConfirmSrc.jsp" />
+	</definition>
+	
+	
+	<definition name="BillerRegistartionAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerRegistartionAckScreen.jsp" />
+	</definition>
+	
+	<definition name="BillerAccountCreateSubmit" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerAccountCreateSubmit.jsp" />
+	</definition>
+	
+	<definition name="BillerAccountCreateConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerAccountCreateConfirm.jsp" />
+	</definition>
+	
+	
+	<definition name="BillerAccountCreateAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerAccountCreateAck.jsp" />
+	</definition>
+	
+	<definition name="ViewBiller" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/ViewBiller.jsp" />
+	</definition>
+	
+	<definition name="BillerModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerModify.jsp" />
+	</definition>
+	
+	<definition name="BillerModifyConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerModifyConfirm.jsp" />
+	</definition>
+	
+	<definition name="BillerModifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerModifyAck.jsp" />
+	</definition>
+	
+	
+	<definition name="BillerAccountModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerAccountModify.jsp" />
+	</definition>
+	
+	<definition name="BillerAccountModifyConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerAccountModifyConf.jsp" />
+	</definition>
+	
+	<definition name="BillerAccountModifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerAccountModifyAck.jsp" />
+	</definition>
+	
+	<definition name="BillerAccountView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Biller/BillerAccountView.jsp" />
+	</definition>
+	
+	<!-- Biller Management End -->
+	
+	<!-- Merchant for life style -->
+	
+	<definition name="OraganizationScreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantManagementScreen.jsp" />
+	</definition>
+	
+	<definition name="lifestylemenagenet" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/LifestyleManagementScreen.jsp" />
+	</definition>
+	
+	<definition name="merchantpayment" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/PaymentMerchantScreen.jsp" />
+	</definition>
+	
+	<definition name="lifestyleproduct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/LifestyleProductScreen.jsp" />
+	</definition>
+	
+	<definition name="addNewMerchantGroup" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantGroup.jsp" />
+	</definition>
+	
+	
+	<definition name="viewpaymentcode" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/PaymentMerchantCode.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="addNewMerchantGroupConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantGroupConfirmSrc.jsp" />
+	</definition>
+	
+	<definition name="addNewMerchantGroupAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantGroupAck.jsp" />
+	</definition>
+	
+	<definition name="merchantcreation" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Merchant/merchantcreation.jsp" />
+	</definition>
+	
+	<definition name="merchantcreationconf" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Merchant/merchantcreationconfirm.jsp" />
+	</definition>
+	
+	<definition name="merchantcreationack" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Merchant/merchantcreationack.jsp" />
+	</definition>
+	
+	<definition name="merchantcreationview" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Merchant/merchantcreationview.jsp" />
+	</definition>
+	
+	<definition name="merchantcreationstatus" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Merchant/merchantcreationstatus.jsp" />
+	</definition>
+	
+	<definition name="merchantcreationstatusack" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Merchant/merchantcreationstatusack.jsp" />
+	</definition>
+	
+	<definition name="agentack" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/Merchant/agentack.jsp" />
+	</definition>
+	
+	<definition name="productoffer" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantOffer.jsp" />
+	</definition>
+	
+	<definition name="productofferConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantOfferConfirm.jsp" />
+	</definition>
+	
+	<definition name="productofferAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantOfferAck.jsp" />
+	</definition>
+	
+	<definition name="productview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/ProductView.jsp" />
+	</definition>
+	
+	<definition name="productmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/ProductModify.jsp" />
+	</definition>
+	
+	<definition name="productmodifyconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/ProductModifyConfirm.jsp" />
+	</definition>
+	
+	<definition name="productofferdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/LifestyleProductOfferScreen.jsp" />
+	</definition>
+	
+	<definition name="Merchantproductactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantProductActive.jsp" />
+	</definition>
+	
+	<definition name="Merchantproductactiveconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantProductActiveConfirm.jsp" />
+	</definition>
+	
+	<definition name="Merchantproductactiveack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantProductActiveAck.jsp" />
+	</definition>
+	
+	<definition name="lifestyletracking" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/LifeStyleTrackingSearch.jsp" />
+	</definition>
+	
+	<definition name="lifestyletrackingdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/lifestyletrackingdetails.jsp" />
+	</definition>
+	
+	<definition name="MerchantCreateAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantCreateAuth.jsp" />
+	</definition>
+	
+	<definition name="MerchantStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MerchantStatusAuth.jsp" />
+	</definition>
+	
+	<definition name="Transproductview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/TransProductView.jsp" />
+	</definition>
+	
+	<definition name="TransproductDrafting" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/TransproductDrafting.jsp" />
+	</definition>
+	
+	<definition name="TransproductDispatched" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/TransproductDispatched.jsp" />
+	</definition>
+	
+	<definition name="TransproductDelivered" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/TransproductDelivered.jsp" />
+	</definition>
+	
+	
+	<definition name="lifestyletrackingcofirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/lifestyletrackingcofirm.jsp" />
+	</definition>
+	
+	<definition name="discountpartners" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/discountpartners.jsp" />
+	</definition>
+	
+	<definition name="discountpartnersconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/discountpartnersconfirm.jsp" />
+	</definition>
+	
+		<definition name="discountpartnersack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/discountpartnersack.jsp" />
+	</definition>
+	
+	<!-- Merchant for life style End -->
+	
+	<!-- Loyality  start -->
+	<definition name="loyalitypointsettings" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyalityPointSettings.jsp" />
+	</definition>
+	
+	<definition name="loyality" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/NewLoyalitysettings.jsp" />
+	 </definition>
+	 
+	 <definition name="loyalityconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/NewLoyalitysettingsConfig.jsp" />
+	 </definition>
+	 
+	 <definition name="loyalityack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/NewLoyalitysettingsAck.jsp" />
+	 </definition>
+	 
+	  <definition name="LoyaltyCreation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyaltysettingsServices.jsp" />
+	 </definition>
+	 
+	 <definition name="LoyaltyCreationConfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyaltysettingsServicesConfirm.jsp" />
+	 </definition>
+	 
+	 <definition name="LoyaltyCreationAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyaltysettingsServicesConfirm.jsp" />
+	 </definition>
+	 
+	 <definition name="loyalityView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyalitysettingsView.jsp" />
+	 </definition>
+	 
+	 <definition name="loyalityModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyalitysettingsModify.jsp" />
+	 </definition>
+	 
+	 <definition name="loyalityModifyconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyalitysettingsModifyConf.jsp" />
+	 </definition>
+	 
+	 <definition name="loyalityModifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/NewLoyalitysettingsAck.jsp" />
+	 </definition>
+	 
+	 <definition name="AssignLoyaltyDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/AssignLoyaltyDetails.jsp" />
+	 </definition>
+	 
+	 <definition name="ViewAssignLoyaltyDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/ViewAssignLoyaltyDetails.jsp" />
+	 </definition>
+	 
+	 <definition name="ModifyAssignLoyaltyDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/ModifyAssignLoyaltyDetails.jsp" />
+	 </definition>
+	 
+	  <definition name="ModifyAssignLoyaltyDetailsConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/ModifyAssignLoyaltyDetailsConf.jsp" />
+	 </definition>
+	 
+	 <definition name="ModifyAssignLoyaltyDetailsack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/ModifyAssignLoyaltyDetailsAck.jsp" />
+	 </definition>
+	 
+	 
+	 <definition name="LoyalitysettingsAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyalitysettingsAuth.jsp" />
+	 </definition>
+	 
+	 <definition name="LoyalitysettingsAuthModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyalitysettingsAuthModify.jsp" />
+	 </definition>
+	 
+	 <definition name="AccountDetailsAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/product/AccountOpenAuthview.jsp" />
+	 </definition>
+	 
+	 <definition name="LoyalitydataAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyalitydataAuthview.jsp" />
+	 </definition>
+	 
+	 <definition name="LoyalitydataAuthModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/LoyalitydataAuthModify.jsp" />
+	 </definition>
+	 
+	 <definition name="AuthloyalityModifyconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/AuthLoyalitysettingsConf.jsp" />
+	 </definition>
+	 
+	 <definition name="AuthloyalityModifyack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Loyality/AuthLoyalitysettingsAck.jsp" />
+	 </definition>
+	
+	<!-- Loyality  end -->
+	
+	
+		<!--  Markest Checker -->
+	
+	
+	<definition name="MarketsCheckerCount" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/MarketsCheckerCount.jsp" />
+	</definition>
+	
+	<definition name="ProductsAuthUnAuthRec" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/ProductsAuthUnAuthRec.jsp" />
+	</definition>
+	
+	<definition name="OnlineProductView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/OnlineProductView.jsp" />
+	</definition>
+	
+	<definition name="OnlineProductApprove" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/OnlineProductApprove.jsp" />
+	</definition>
+	
+	<definition name="productsApproveActiveAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/OnlineProductApproveActive.jsp" />
+	</definition>
+	
+	<definition name="OnlineProductApproveAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/OnlineProductApproveAck.jsp" />
+	</definition>
+	
+	<definition name="OfferInfoView" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/OfferInfoView.jsp" />
+	</definition>
+	
+	<definition name="OfferApprove" extends="baseLayout">
+		<put-attribute name="body"	value="/WEB-INF/jsp/Merchant/OfferApprove.jsp" />
+	</definition>
+	
+	<definition name="OnlineOfferApproveAck" extends="baseLayout">
+		<put-attribute name="body"	value="/WEB-INF/jsp/Merchant/OnlineOfferApproveAck.jsp" />
+	</definition>
+	
+	<!--  Markest Checker End -->
+	
+	<!-- reports -->
+	
+		<definition name="reports" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/reports/Reports.jsp" />
+	</definition>
+	
+	<definition name="reportconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/reports/ReportsConf.jsp" />
+	</definition>
+	
+	<definition name="offlinereportconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/reports/OfflineReportsConf.jsp" />
+	</definition>
+	
+	<definition name="reportOfflineconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/reports/ReportsOfflineConf.jsp" />
+	</definition>
+	
+	<!-- reports end -->
+	
+	<definition name="complaince" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ComplainceSearch.jsp" />
+	</definition>	
+	
+	<definition name="complaincedetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/complaincedetails.jsp" />
+	</definition>
+	
+	<definition name="walletcomplaincedetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/walletcomplaincedetails.jsp" />
+	</definition>		
+	
+	 <definition name="Parameterdatascreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/Parameterdatascreen.jsp" />
+	 </definition>	
+	
+	<definition name="ParameterCreation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ParameterCreation.jsp" />
+	</definition>
+	
+	<definition name="Parametercreationconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ParameterCreationConf.jsp" />
+	</definition>
+	
+	<definition name="Parametercreationack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ParametercreationAck.jsp" />
+	</definition>
+	
+	 <definition name="ParameterCreationauth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ParameterCreationAuth.jsp" />
+	 </definition>
+	 
+	 <definition name="Parametercreationauthconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ParameterCreationAuthConf.jsp" />
+	</definition>
+	
+	<definition name="Parametercreationauthack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ParametercreationAuthAck.jsp" />
+	</definition>
+	
+	<definition name="ParameterCreationauthviewscreen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/ParameterdatascreenView.jsp" />
+	 </definition>
+	
+	<definition name="clusterCreationinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/clusterCreationscreen.jsp" />
+	 </definition>		
+	
+	<definition name="clusterCreation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/clusterCreation.jsp" />
+	</definition>
+	
+	<definition name="clusterCreationconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/clusterCreationconfirm.jsp" />
+	</definition>
+	
+	<definition name="clusterCreationack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/clusterCreationack.jsp" />
+	</definition>
+	
+	<definition name="branchpopupDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/branchpopupDetails.jsp" />
+	</definition>
+	
+	<definition name="notification" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/NotificationData.jsp" />
+	</definition>
+	
+	<definition name="notificationview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/NotificationDataView.jsp" />
+	</definition>	
+	
+	<definition name="branchactivities" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/reports/BranchUserActivities.jsp" />
+	</definition>
+	
+	<definition name="customerqueries" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/chat/ChatBoardScreen.jsp" />
+	</definition>
+	
+	<definition name="customerqueriesview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/chat/ChatReplayView.jsp" />
+	</definition>
+	
+	<definition name="customerqueriesreplay" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/chat/ChatReplayViewAck.jsp" />
+	</definition>
+	
+	<definition name="customerqueriesreplied" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/chat/ChatBoardScreenReplied.jsp" />
+	</definition>
+	
+	<definition name="branchdatacapture" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/BranchDataCapture.jsp" />
+	</definition>
+	
+	<definition name="branchdatacapturedetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/BranchDataCaptureDetails.jsp" />
+	</definition>
+	
+	<definition name="branchdatacapturedetailsconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/BranchDataCaptureConfirm.jsp" />
+	</definition>
+	
+	<definition name="branchdatacapturedetailsAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/BranchDataCaptureAck.jsp" />
+	</definition>
+	
+	<definition name="branchdatacapturedetailsActfail" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/BranchDataCaptureAckFail.jsp" />
+	</definition>
+	
+	<definition name="fraudactconfiguration" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/froudConfigdatascreen.jsp" />
+	 </definition>
+	 
+	<definition name="FraudCreationconfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/ParameterCreation.jsp" />
+	</definition>	
+	<definition name="FraudCreationconfigConfig" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/ParameterCreationConfirm.jsp" />
+	</definition>
+	<definition name="FraudCreationconfigAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/ParameterCreationAck.jsp" />
+	</definition>	
+	<definition name="ParameterCreationauthvw" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/ParameterCreationVW.jsp" />
+	</definition>
+	
+	<definition name="ParameterCreationauthactive" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/ParameterCreationActive.jsp" />
+	</definition>
+	
+	<definition name="ParameterCreationauthactiveack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/ParameterCreationActiveAck.jsp" />
+	</definition>
+	
+	<definition name="ParameterCreationauthModify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/ParameterCreationModify.jsp" />
+	</definition>
+	
+	<definition name="ParameterCreationauthmodifyack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/ParameterCreationModifyAck.jsp" />
+	</definition>
+	
+	<definition name="locatordetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/LocatorTrackingSearch.jsp" />
+	</definition>
+	
+	<definition name="locatoragentlogin" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/DSALocationDetails.jsp" />
+	</definition>
+	
+	<definition name="locatorinformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Merchant/LocatorDetails.jsp" />
+	</definition>
+	
+	<definition name="fraudactassign" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/FraudBoardScreen.jsp" />
+	</definition>
+	
+	<definition name="fraudactassignproduct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/fruadassignprd.jsp" />
+	</definition>	
+	
+	<definition name="fraudactassignproductconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/fruadassignConf.jsp" />
+	</definition>
+	
+	<definition name="fraudmappingack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/FraudMappingAck.jsp" />
+	</definition>
+	
+	<definition name="frauddefaultconfiguration" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/froudConfigdatadefaultscreen.jsp" />
+	 </definition>
+	 
+	 <definition name="frauddefaultparameterconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/froud/froudConfigParamscreen.jsp" />
+	 </definition>
+	 
+	 <definition name="walletcustomerstatement" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/reports/walletstatementscreen.jsp" />
+	 </definition>	
+	 
+	 
+	 
+	 	<!-- Super Agent Management -->
+	
+	<definition name="superAgentHome" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/WAgent/superAgentHome.jsp" />
+	</definition>
+	<definition name="superagentconfirm" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/WAgent/superagentconfirm.jsp" />
+	</definition>
+	<definition name="superagentconfirmack" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/WAgent/superagentconfirmAck.jsp" />
+	</definition>
+	<definition name="superagentview" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/WAgent/SuperAgentView.jsp" />
+	</definition>
+	
+	<definition name="superagentactivedeactive" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/WAgent/SuperAgentActiveDeactive.jsp" />
+	</definition>
+	
+	<definition name="agentack" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/WAgent/agentack.jsp" />
+	</definition>
+	<definition name="agentack1" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/WAgent/agentack1.jsp" />
+	</definition>
+	
+
+	<definition name="SuperAgentCreateAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/WAgent/SuperAgentCreateAuth.jsp" />
+	</definition>
+	
+	<definition name="SuperAgentStatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/WAgent/SuperAgentStatusAuth.jsp" />
+	</definition>
+
+	<definition name="superAgentStatusAuth" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/WAgent/SuperAgentStatusAuth.jsp" />
+	</definition>
+	
+
+	
+	
+	
+	<!-- Super Agent Management End -->
+	
+	<!-- agent Services  -->
+	
+	<definition name="agentservice" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentService.jsp" />
+	</definition>
+	 
+	 <definition name="agentreglocksearchdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentRegLockSearchDetails.jsp" />
+	</definition>
+	
+	 <definition name="agentregviewdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentRegViewDetails.jsp" />
+	</definition>
+	
+	 <definition name="agentblockdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentLockedDetails.jsp" />
+	</definition>
+	
+	 <definition name="agentactivedetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentActiveDetails.jsp" />
+	</definition>
+	
+	<definition name="agentmodifydetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentModifyDetails.jsp" />
+	</definition>
+	
+	 <definition name="agentpindetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentPinDetails.jsp" />
+	</definition>
+	
+	<definition name="agentstatusack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentStatusAck.jsp" />
+	</definition>
+	
+	<definition name="agentmodifyack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentModifyAck.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="agentblockack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentBlockAck.jsp" />
+	</definition>
+	
+	<definition name="agentpinresetack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentPinResetAck.jsp" />
+	</definition>
+	
+	<definition name="WalletRegAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/WalletRegAuthAck.jsp" />
+	</definition>	
+	
+	<definition name="addnewcustomer" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addnewcustomer.jsp" />
+	</definition>
+	
+	<definition name="addnewcustomerdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addnewcustomerdetails.jsp" />
+	</definition>
+	
+	<definition name="addnewcustomerconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addnewcustomerconfirm.jsp" />
+	</definition>
+		
+	<definition name="addnewcustomerack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/addnewcustomerack.jsp" />
+	</definition>
+	
+	<definition name="registrationfailed" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/CustomerFailedPage.jsp" />
+	</definition>		
+		
+	<definition name="registrationfaileddetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FailedRegdetails.jsp" />
+	</definition>
+	
+	<definition name="xpxdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/DuplicateRegdetails.jsp" />
+	</definition>
+	
+	<definition name="rassdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/Rassdetails.jsp" />
+	</definition>
+	
+	
+	<definition name="segments" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/segments/Segments.jsp" />
+	</definition>
+	
+		<definition name="segmentsconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/segments/SegmentsConfirm.jsp" />
+	</definition>
+	
+		<definition name="segmentsack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/segments/SegmentsAck.jsp" />
+	</definition>
+	
+	<definition name="agentrequest" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestSearch.jsp" />
+	</definition>	
+	
+	<definition name="agentrequestdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestdetails.jsp" />
+	</definition>
+	
+	<definition name="agentrequestinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestinfo.jsp" />
+	</definition>
+	
+	<definition name="agentrequestinfoconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestinfoConfirm.jsp" />
+	</definition>
+	
+	<definition name="agentrequestinfoack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestinfoAck.jsp" />
+	</definition>
+	
+	<definition name="agentrequestApproval" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestApproval.jsp" />
+	</definition>
+	
+	<definition name="agentrequestapprovaldetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestApprovaldetails.jsp" />
+	</definition>
+	
+	<definition name="agentrequestapprovalinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestApprovalinfo.jsp" />
+	</definition>
+	
+	<definition name="agentrequestapprovalcomplatedinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestApprovalCompletedinfo.jsp" />
+	</definition>
+	
+	<definition name="agentrequestinfoapprovalack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestinfoApprovalAck.jsp" />
+	</definition>
+	<definition name="agentrequestinfoapprovalackfail" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/AgentRequestinfoApprovalAckFailed.jsp" />
+	</definition>
+	
+	<definition name="accountopening" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AccountOpening.jsp" />
+	</definition>
+	
+	<definition name="accountopenServicecall" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AccountOpeningServiceDetails.jsp" />
+	</definition>
+	
+	<definition name="accountopenServicecallconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AccountOpenConfirm.jsp" />
+	</definition>
+	
+		<definition name="accountopenServicecallAct" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AccountOpenAck.jsp" />
+	</definition>
+	
+	<definition name="AuthAccountOpenAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/fee/AccountopenAuthack.jsp" />
+	</definition>
+	
+	<!-- agent Services  -->
+	
+	<definition name="posregistration" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/POSRegistrationSearch.jsp" />
+	</definition>
+	
+	<definition name="posregistrationsearchdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/POSRegistrationSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="posregistrationadd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/PosRegistrationAdd.jsp" />
+	</definition>
+	
+	<definition name="PosRegistrationConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/PosRegistrationConfirm.jsp" />
+	</definition>
+	
+	<definition name="PosRegistrationAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AddPOSREgistrationAck.jsp" />
+	</definition>
+	
+	<definition name="posregistrationview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/PosRegistrationView.jsp" />
+	</definition>
+	
+	<definition name="posregistrationmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/PosRegistrationModify.jsp" />
+	</definition>
+	
+	<definition name="posregistrationmodifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/ModifyPOSAck.jsp" />
+	</definition>
+	
+	
+	<definition name="PosRegistrationModifyConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/PosRegistrationModifyConfirm.jsp" />
+	</definition>
+	
+	<definition name="posregistrationstatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/PosRegistrationStatus.jsp" />
+	</definition>
+	
+	<definition name="PosRegistrationStatusConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/PosRegistrationStatusConfirm.jsp" />
+	</definition>
+	
+	<definition name="PosRegistrationStatusAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StatusPOSAck.jsp" />
+	</definition>
+	
+	<definition name="POSAgentRegAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/POSAgentRegAuthAck.jsp" />
+	</definition>
+	
+		<definition name="TerminalManagementAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagementAuthAck.jsp" />
+	</definition>
+	
+	<definition name="walletsystemdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/WalletSystemDetailsSearch.jsp" />
+	</definition>	
+	
+	<definition name="walletaccinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/walletaccbalance.jsp" />
+	</definition>	
+	
+	<definition name="walletbalancesheet" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/walletbalancesheet.jsp" />
+	</definition>
+	
+	<!-- Store Registration  -->
+	
+	<definition name="storeregistration" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationSearch.jsp" />
+	</definition>
+	
+	<definition name="storeregistrationsearchdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="storeregistrationadd" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationAdd.jsp" />
+	</definition>
+	
+	<definition name="storeregistrationconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationConfirm.jsp" />
+	</definition>
+	
+	<definition name="StoreRegistrationAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationAck.jsp" />
+	</definition>
+	
+	<definition name="storeregistrationmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationModify.jsp" />
+	</definition>
+	
+	<definition name="storeregistrationmodifyconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationModifyConfirm.jsp" />
+	</definition>
+	
+	<definition name="StoreRegistrationmodifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationModifyAck.jsp" />
+	</definition>
+	
+	<definition name="storeregistrationstatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationStatus.jsp" />
+	</definition>
+	
+	<definition name="STOREAgentRegAuthAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreAgentRegAuthAck.jsp" />
+	</definition>
+	
+	<definition name="storeRegistrationstatusConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationStatusConfirm.jsp" />
+	</definition>
+	
+	<definition name="StoreRegistrationstatusAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/StoreRegistrationAck.jsp" />
+	</definition>
+	
+	<!-- Terminal creation -->
+	
+	<definition name="terminalmanagement" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagement.jsp" />
+	 </definition>
+	 
+	 	<definition name="terminalCreation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalCreation.jsp" />
+	</definition>
+	
+	<definition name="terminalCreationConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalCreationConfirm.jsp" />
+	</definition>
+	
+	<definition name="terminalCreationAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalCreationAck.jsp" />
+	</definition>
+	
+	<definition name="terminalmanagementview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagementView.jsp" />
+	</definition>
+	
+	<definition name="terminalmanagementmodify" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagementModify.jsp" />
+	</definition>
+	
+	<definition name="terminalmanagementmodifyConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagementModifyConfirm.jsp" />
+	</definition>
+	
+	<definition name="terminalmanagementmodifyAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagementAck.jsp" />
+	</definition>
+	
+	<definition name="terminalmanagementstatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagementStatus.jsp" />
+	</definition>
+	
+	<definition name="terminalmanagementstatusConf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagementStatusConfirm.jsp" />
+	</definition>
+	
+	<definition name="terminalmanagementstatusAck" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/TerminalManagementStatusAck.jsp" />
+	</definition>
+	
+<!-- 	Inventory Management -->
+	
+	<definition name="inventorymng" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/Inventorymng.jsp" />
+	</definition>
+	
+	<definition name="inventorymngdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/Inventorymngdetails.jsp" />
+	</definition>
+	
+	<definition name="inventorymngdetailsview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/Inventorymngdetailsview.jsp" />
+	</definition>
+	
+<!-- 	IMEI Block -->	
+
+	<definition name="imeiblock" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/IMEI/imeidetails.jsp" />
+	</definition>
+	
+	<definition name="imeidetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/IMEI/imeiviewdetails.jsp" />
+	</definition>
+	
+	<definition name="imeidetailsconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/IMEI/imeiblockconfirm.jsp" />
+	</definition>
+	
+		<definition name="imeidetailsack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/IMEI/imeiblockack.jsp" />
+	</definition>
+	
+<!-- Settlement Details -->
+
+<definition name="Settlementlink" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/Settlementlink.jsp" />
+   </definition>	
+   
+  <definition name="settlemetreportinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/Settlemetreportinfo.jsp" />
+	</definition>
+	
+	
+	 <definition name="unsettlemetreportinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/Unsettlemetreportinfo.jsp" />
+	</definition>
+	
+	<definition name="settlementrequestinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/SettlementRequestinfo.jsp" />
+	</definition>
+	
+	<definition name="settlementrequestinfoconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/SettlementRequestinfoConfirm.jsp" />
+	</definition>
+	
+	<definition name="settlementrequestinfoack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/SettlementRequestinfoAck.jsp" />
+	</definition>
+	
+	<definition name="settlementrequestApproval" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/SettlementRequestApproval.jsp" />
+	</definition>
+	
+	<definition name="settlementrequestapprovaldetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/SettlementRequestApprovaldetails.jsp" />
+	</definition>
+	
+	<definition name="settlementrequestapprovalinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/SettlementRequestApprovalinfo.jsp" />
+	</definition>
+	
+	<definition name="Settlemetrequestinfoapprovalack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/SettlementRequestinfoApprovalAck.jsp" />
+	</definition>
+	<definition name="Settlemetrequestinfoapprovalackfail" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/SettlementRequestinfoApprovalAckFailed.jsp" />
+	</definition>
+	
+	<!-- agent product update  -->
+	
+	<definition name="agentprdupdate" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentProductUpdate.jsp" />
+	</definition>
+	
+	<definition name="agentregproductmodifydetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentRegProductUpdate.jsp" />
+	</definition>
+	
+	<definition name="agentregproductmodifyconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentRegProductUpdateConfirm.jsp" />
+	</definition>
+	
+	<definition name="agentproductmodifyack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/AgentModifyProductAck.jsp" />
+	</definition>
+	
+	<definition name="unsettlefileupload" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/UnsettlementBulkUpload.jsp" />
+	</definition>
+	
+	<definition name="fileuploadprocess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadProcess.jsp" />
+	</definition>
+	
+	<definition name="fileuploadprocessconf" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadProcessConf.jsp" />
+	</definition>
+	
+	<definition name="fileuploadprocessack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadProcessAck.jsp" />
+	</definition>
+	
+	<definition name="fileuploadapproval" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadApprovalDetails.jsp" />
+	</definition>
+	
+	<definition name="fileuploadapprovaldetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadApprovaldetailsView.jsp" />
+	</definition>
+	
+	<definition name="fileuploadrequestapprovalinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadRequestApprovalinfo.jsp" />
+	</definition>
+	
+		<definition name="fileuploadrequestapprovalinfoconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadRequestApprovalinfoConfirm.jsp" />
+	</definition>
+	
+	<definition name="fileuploadinfoapprovalack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileuploadApprovalAck.jsp" />
+	</definition>
+	<definition name="fileuploadinfoapprovalackfail" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileuploadApprovalAckFailed.jsp" />
+	</definition>
+	
+	<definition name="fileUploadResult" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadResultDetails.jsp" />
+	</definition>
+	
+	<definition name="fileuploadapprovaldetailsresult" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadApprovaldetailsResult.jsp" />
+	</definition>
+	
+	<definition name="fileuploadapprovaldetailsresultview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadApprovaldetailsResultView.jsp" />
+	</definition>
+	
+	<definition name="fileuploadapprovaldetailssuccessview" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Agent/FileUploadApprovaldetailsSuccessView.jsp" />
+	</definition>
+	
+	<definition name="dashboards" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Dashboard/DashboardsDetails.jsp" />
+	</definition>
+	
+	<definition name="topagentssearch" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Dashboard/TopAgentssearch.jsp" />
+	</definition>
+	
+	<definition name="graphicalreportchannel" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Dashboard/GraphicReportSearch.jsp" />
+	</definition>
+	
+	<definition name="topagentsdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Dashboard/TopAgentssearchDetails.jsp" />
+	</definition>
+	
+	<definition name="graphicalreportchanneldetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Dashboard/GraphicReportSearchDetails.jsp" />
+	</definition>
+	
+	<definition name="LimitInformationinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/LimitInformationinfo.jsp" />
+	</definition>
+	
+	<definition name="MobcustinfoDetinfo" extends="baseLayout">
+	<put-attribute name="body"
+	value="/WEB-INF/jsp/banking/MobcustinfoDetinfo.jsp" />
+	</definition>
+	
+	<!-- Commission Sweep Request -->
+	
+	<definition name="commissionsweepreq" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/CommissionSweepRequest.jsp" />
+	</definition>
+	
+	<definition name="commissionsweepreqdetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/CommissionSweepRequestDetails.jsp" />
+	</definition>
+	
+	<definition name="commissionsweepreqconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/CommissionSweepReqConfirm.jsp" />
+	</definition>
+	
+	<definition name="commissionsweepreqack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/wallet/CommissionSweepReqAck.jsp" />
+	</definition>
+	
+	<definition name="chargebackrequest" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/chargeback/ChargeBackRequestSearch.jsp" />
+	</definition>
+	
+		<definition name="branchStatusinfo" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Branch/branchStatusinfoscreen.jsp" />
+	 </definition>	
+	 
+	 	<definition name="branchviewDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Branch/branchviewDetailsscreen.jsp" />
+	 </definition>	
+	 
+	 <definition name="branchstatusUpdate" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Branch/branchstatusUpdatescreen.jsp" />
+	 </definition>	
+	 
+	 
+		 <definition name="ActiveDeactiveBranchDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/Branch/ActiveBranchupdateDetailsack.jsp" />
+	 </definition>
+	 
+	 <definition name="debitcardrequest" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/DebitCard/DebitCardDashboard.jsp" />
+	</definition>
+	
+	<definition name="debitcardinformation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/DebitCard/DebitcardDetails.jsp" />
+	</definition>
+	
+		
+	<definition name="debitviewDetailsclosed" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/DebitCard/DebitCardDataViewClosed.jsp" />
+	</definition>
+	
+	<definition name="debitviewDetailsopen" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/DebitCard/DebitCardDataViewOpen.jsp" />
+	</definition>
+	
+	<definition name="debitviewDetailsopenconfirm" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/DebitCard/DebitCardDataViewOpenConfirm.jsp" />
+	</definition>
+	
+	<definition name="debitcardrequestack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/DebitCard/DebitCardDataViewOpenAck.jsp" />
+	</definition>	
+	
+	<definition name="customeStatusUpdate" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CustomerStatusUpdate.jsp" />
+	</definition>	
+	
+	<definition name="customeStatusUpdateDetails" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CustomerStatusUpdateDetails.jsp" />
+	</definition>
+	
+	<definition name="enabledesablecustomerstatus" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/EnableDisableCustomerDetails.jsp" />
+	</definition>
+	
+	<definition name="customerstatusack" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CustomerStatusUpdateAck.jsp" />
+	</definition>
+	
+	<definition name="customerchanelenbdis" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/banking/CustomerChannelEnableDisableDetails.jsp" />
+	</definition>
+	
+	<definition name="complaintmng" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/ComplaintMng/ComplaintMng.jsp" />
+	</definition>	
+
+</tiles-definitions>

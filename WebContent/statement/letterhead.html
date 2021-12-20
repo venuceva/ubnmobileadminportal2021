@@ -1,0 +1,53 @@
+<div th:fragment="letterhead">
+
+ 
+  	    <div class="invoice-mid">   
+      
+       <div class="clearfix" style="background-color:#c6c6c6!important;">
+            <div class="col-left">
+ <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><span>ACCOUNT NO:</span><label id="invoice_total">[[${data.getAccountno()}]]</label></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><span>Branch Name :</span><label id="payment_term" style="margin-left:12px!important;">[[${data.getBranchname()}]]</label></td>
+                           
+                        </tr>
+						  <tr>
+                            <td><span>ACCOUNT Type:</span><label id="invoice_total"style="margin-left:6px!important;">[[${data.getAccountype()}]]</label></td>
+                            
+                        </tr>
+						 <tr>
+                            <td><span>Currency :</span><label id="invoice_total" style="margin-left:30px!important;">[[${data.getCurrency()}]]</label></td>
+                            
+                        </tr>
+                      
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-right">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><span>Print Date :</span><label id="invoice_total">[[${data.getPrintdate()}]]</label></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><span>Start Date :</span><label id="payment_term" style="margin-left:2px!important;">[[${data.getStartdate()}]]</label></td>
+                           
+                        </tr>
+						  <tr>
+                            <td><span>End Date :</span><label id="invoice_total"style="margin-left:6px!important;">[[${data.getEnddate()}]]</label></td>
+                            
+                        </tr>
+					
+                      
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    
+    </div>
+    </div>

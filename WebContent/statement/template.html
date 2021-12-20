@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+</head>
+
+<body>
+
+	<div class='invoice'>
+
+		<div class='header' th:include="header::header"></div>
+
+		<div th:include="letterhead::letterhead"></div>
+
+		<div class="invoice-mid" style="margin-left: 15px;">
+			<h3>
+				<b>[[${data.getCusname()}]]</b>
+			</h3>
+			<h2>[[${data.getAddress()}]]</h2>
+
+
+			<table class="smalltable">
+
+				<tr>
+					<td><b>OPENING</b></td>
+
+					<td>[[${data.getOpening()}]]</td>
+				</tr>
+				<tr>
+					<td><b>TOTAL DEBIT</b></td>
+
+					<td>[[${data.getTotaldebit()}]]</td>
+				</tr>
+				<tr>
+					<td><b>TOTAL CREDIT</b></td>
+
+					<td>[[${data.getTotalcredit()}]]</td>
+				</tr>
+				<tr>
+					<td><b>CLOSING</b></td>
+
+					<td>[[${data.getClosingbalance()}]]</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div class="invoice-bot" id="acountinfodetails"
+			style="margin-top: 20px;">
+
+			<div class="table" th:if="${not #lists.isEmpty(postings)}">
+				<table class="table-main">
+					<thead>
+						<tr class="tabletitle">
+							<th>Post Date</th>
+							<th>Transaction Type</th>
+							<th>Transaction Details</th>
+							<th>Reference Number</th>
+							<th>Value Date</th>
+							<th>DR</th>
+							<th>CR</th>
+							<th>Balance</th>
+						</tr>
+
+					</thead>
+					<tr class="list-item"
+						th:each="acountinfodetail : ${postings}">
+						<td class="tableitem" th:text="${acountinfodetail.getPosdate()}"><span
+							style="display: inline;"></span></td>
+
+						<td class="tableitem"
+							th:text="${acountinfodetail.getTransactiontype()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem"
+							th:text="${acountinfodetail.getTransactiondetails()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem"
+							th:text="${acountinfodetail.getReferencenumber()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem" th:text="${acountinfodetail.getValuedate()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem" th:text="${acountinfodetail.getCredit()}"><span
+							style="display: inline;"></span></td>
+
+						<td class="tableitem" th:text="${acountinfodetail.getDebit()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem" th:text="${acountinfodetail.getBalance()}"><span
+							style="display: inline;"></span></td>
+					</tr>
+
+
+
+				</table>
+			</div>
+
+		</div>
+
+
+		<div class='footer' th:include="footer::footer"></div>
+		
+	</div>
+
+</body>
+
+</html>

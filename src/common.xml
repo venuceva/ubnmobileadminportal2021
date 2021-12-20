@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="ceva-common" extends="struts-default,json-default"
+		namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="sessioncheck" class="com.ceva.interceptors.SessionCheck">
+			</interceptor>
+			<interceptor name="loggingInterceptor"
+				class="com.ceva.interceptors.LoggingInterceptor">
+			</interceptor>
+		</interceptors>
+
+		<action name="cevaappl" class="cevaappl">
+			<interceptor-ref name="loggingInterceptor" />
+			<result name="valid" type="dispatcher">${redirectPage}</result>
+			<result name="invalid" type="redirect">WEB-INF/jsp/InvalidURL.jsp
+			</result>
+		</action>
+
+		<action name="weblogin" class="weblogin" method="webLogin">
+			<result name="success" type="dispatcher">${redirectPage}</result>
+			<result name="firstlogin" type="dispatcher">${redirectPage}</result>
+			<result name="loginfail" type="redirect">${redirectPage}</result>
+		</action>
+
+		<action name="redirectlogin" class="redirectLogin" method="redirectLogin">
+			<interceptor-ref name="loggingInterceptor" />
+			<result name="success" type="tiles">Home</result>
+		</action>
+
+		<action name="changePassword" class="changePassword" method="changePassword">
+			<result name="success" type="dispatcher">${redirectPage}</result>
+			<result name="input" type="redirect">${redirectPage}</result>
+			<result name="loginfail" type="dispatcher">${redirectPage}</result>
+		</action>
+
+		<action name="logout" class="logout" method="webLogOut">
+			<interceptor-ref name="loggingInterceptor" />
+			<result name="success" type="dispatcher">WEB-INF/jsp/login.jsp</result>
+		</action>
+		
+ <action name="changePwd" class="changePwd" method="changePwd">
+   <result name="success" type="dispatcher">${redirectPage}</result>
+  </action>
+
+	</package>
+
+</struts>

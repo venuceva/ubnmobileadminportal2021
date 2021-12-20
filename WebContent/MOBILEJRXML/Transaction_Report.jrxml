@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Transaction_Report" language="groovy" pageWidth="3240" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="3200" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fddd75b6-1fca-479b-92e4-ac693d157984">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="3716"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IMAGE_PATH" class="java.lang.String"/>
+	<parameter name="SELECT_DATE" class="java.lang.String"/>
+	<parameter name="QUERY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["select ACCOUNTNO,TRNS_AMT,TRANS_TYPE,decode(CRDR_FLAG,'C','CREDIT','D','DEBIT') as CREDITCREDITINDICATOR,CREDITPAYMENTREFERENCE,BATCHID,CHANNEL,USERID,to_char(TRANS_DATE,'dd-mm-yyyy hh:mi:ss') as TRANS_DATE,RESPONSEMESSAGE,DEBITNARRATION,DEBITACCCOUNTNUMBER,CREDITACCCOUNTNUMBER,DECODE(RESPONSECODE,'00','Success','Failed') as status,NVL(BEN_PAYBILL_CODE,' ') as Ben_bank,NVL(BEN_CUST_NAME,' ') as Ben_name,NVL(BEN_PAYBILL_ACTNO,' ') as ben_acc,NVL(SUBSTR(SERVICE_ID,0,INSTR(SERVICE_ID,'|')-1),' ') as cltxnref,NVL(SUBSTR(SERVICE_ID,INSTR(SERVICE_ID,'|')+1),' ') as raastxnref from FUND_TRANSFER_TBL where RESPONSECODE='00'"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SEARCH" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{QUERY}]]>
+	</queryString>
+	<field name="ACCOUNTNO" class="java.lang.String"/>
+	<field name="TRNS_AMT" class="java.lang.String"/>
+	<field name="TRANS_TYPE" class="java.lang.String"/>
+	<field name="CREDITCREDITINDICATOR" class="java.lang.String"/>
+	<field name="CREDITPAYMENTREFERENCE" class="java.lang.String"/>
+	<field name="BATCHID" class="java.lang.String"/>
+	<field name="CHANNEL" class="java.lang.String"/>
+	<field name="USERID" class="java.lang.String"/>
+	<field name="TRANS_DATE" class="java.lang.String"/>
+	<field name="RESPONSEMESSAGE" class="java.lang.String"/>
+	<field name="DEBITNARRATION" class="java.lang.String"/>
+	<field name="DEBITACCCOUNTNUMBER" class="java.lang.String"/>
+	<field name="CREDITACCCOUNTNUMBER" class="java.lang.String"/>
+	<field name="STATUS" class="java.lang.String"/>
+	<field name="BEN_BANK" class="java.lang.String"/>
+	<field name="BEN_NAME" class="java.lang.String"/>
+	<field name="BEN_ACC" class="java.lang.String"/>
+	<field name="CLTXNREF" class="java.lang.String"/>
+	<field name="RAASTXNREF" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="175" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="64829750-494f-4995-b563-521a0e88f3ef" x="1067" y="55" width="197" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaction  Report]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6f1341c8-2fd4-4455-8087-ef29eaaab202" x="2225" y="22" width="104" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SELECT_DATE}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RealSize" hAlign="Right" vAlign="Middle" isUsingCache="true">
+				<reportElement uuid="f0458aa2-f8f0-4379-bcc8-9ccb241073f8" x="19" y="22" width="125" height="53"/>
+				<imageExpression><![CDATA[$P{IMAGE_PATH}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="011cf45c-7e28-49dd-95ef-72f45d507d17" x="2065" y="22" width="160" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<text><![CDATA[Report Generated Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="239d2523-a710-4cb4-83ef-965c2af91748" key="staticText-49" mode="Opaque" x="451" y="153" width="217" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Payment Reference Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a95f1bbc-121b-45f8-b5dc-93c02f350ea7" key="staticText-35" mode="Opaque" x="177" y="153" width="137" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="53128eb0-004f-46cb-8352-2d98f75a83ae" key="staticText-57" mode="Opaque" x="1705" y="153" width="161" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Channel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d6736332-24b6-47f2-9cbd-be89da4d3497" key="staticText-40" mode="Opaque" x="2047" y="153" width="149" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Transaction Date and Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f175e6b9-d1f7-446a-b804-dcad4c3ee28a" key="staticText-34" mode="Opaque" x="0" y="153" width="177" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Debit Account Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f06f2c2d-408f-491d-8685-ad11a25ba9a8" key="staticText-59" mode="Opaque" x="1866" y="153" width="181" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[User Id/Mobile Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b28fe08-8a80-4801-a50c-02c23a4ae764" key="staticText-40" mode="Opaque" x="2196" y="153" width="144" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Response Message]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b721f32a-7f17-4b9b-8543-9669b8d96126" key="staticText-37" mode="Opaque" x="1447" y="153" width="258" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Batch Reference Numer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e3d96f29-45e2-4234-ae96-2819c7298eba" key="staticText-36" mode="Opaque" x="314" y="153" width="137" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Customer Account Cr/Dr]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="84762c1d-f04d-4524-8d77-3e56146294c3" key="staticText-40" mode="Opaque" x="668" y="153" width="248" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Transaction Description]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2ecac939-d1db-43c5-909e-68cda0b604a1" x="8" y="118" width="1290" height="20" forecolor="#FF0000"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEARCH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9fb17242-fbb2-40f8-85ed-fcbd8bc92de9" key="staticText-40" mode="Opaque" x="2844" y="153" width="356" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Narration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d0ef4cad-15ff-4e4b-92ad-2f7a153130ae" key="staticText-34" mode="Opaque" x="916" y="153" width="177" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Beneficiary ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d56a930-56af-4ff5-811f-fd5a4defce6f" key="staticText-40" mode="Opaque" x="2340" y="153" width="144" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="309557e3-101b-4001-ae5f-aec702a1b16a" key="staticText-34" mode="Opaque" x="1093" y="153" width="177" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Credit Account/Biller Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b434ce0a-aba1-4851-b3c2-2d0e90171a5d" key="staticText-34" mode="Opaque" x="1270" y="153" width="177" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Beneficiary Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="24abf94f-cf39-41d1-a7cb-762a0245d96e" key="staticText-40" mode="Opaque" x="2484" y="153" width="189" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Client Txn Ref]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e3c6bf11-c141-4fd1-adf7-129494029a82" key="staticText-40" mode="Opaque" x="2673" y="153" width="171" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[RAAS Txn Ref]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="360efc5d-8dd6-4d24-b3d8-325f1512131f" x="314" y="0" width="137" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CREDITCREDITINDICATOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d69cfec0-e486-4b3b-9969-5166ac46a897" x="451" y="0" width="217" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CREDITPAYMENTREFERENCE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c13b0612-c5ec-4d54-a23b-76f2883abf0e" x="1447" y="0" width="258" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BATCHID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d3750c04-1c0b-47b2-9516-b863e6025377" x="668" y="0" width="248" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TRANS_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79f215e5-8a65-4d48-9fd3-aa38275253a2" x="1705" y="0" width="161" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CHANNEL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="401a9ad2-036c-4b26-ab48-3290f039491a" x="1866" y="0" width="181" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{USERID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="01122ff2-2885-4d35-883e-23562e858e91" x="2047" y="0" width="149" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TRANS_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c1ff5591-4966-4e49-84c5-807370844c16" x="2196" y="0" width="144" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RESPONSEMESSAGE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="1851a435-d6cc-4634-8a8a-04fcf8cf9902" x="2844" y="0" width="356" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="8" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEBITNARRATION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5bae4e39-0efb-4c86-9ee0-de9cfb13197b" x="177" y="0" width="137" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TRNS_AMT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ee1b0c6b-f612-477b-a472-5f33b8dba898" x="0" y="0" width="177" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEBITACCCOUNTNUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="24614a82-318e-4864-b1e7-b17e7f3b789f" x="2340" y="0" width="144" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STATUS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="856af9e2-cae9-46d2-96f8-f529436345dc" x="916" y="0" width="177" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BEN_BANK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40b2af0a-ca82-4e99-bcad-82fc00e4eb6b" x="1093" y="0" width="177" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BEN_ACC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49a15f4d-840a-44ff-a52b-26a3106b77e8" x="1270" y="0" width="177" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BEN_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3197022a-944c-4842-9d53-76abe1d82b1d" x="2484" y="0" width="189" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CLTXNREF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b8d80447-31ca-4d0c-af76-9abbcfb57a8a" x="2673" y="0" width="171" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RAASTXNREF}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a2589a89-e2c8-4754-a8ba-ac2f866583b5" x="1067" y="22" width="176" height="20">
+					<printWhenExpression><![CDATA[new java.lang.Boolean(($V{REPORT_COUNT}.intValue())==0)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Records Found]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

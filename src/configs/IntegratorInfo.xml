@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UBN_CREDENTIAL>
+
+	<ServiceUserName>yu1/OwTC/Yt4cZ1zWDb+mA==</ServiceUserName>
+	<ServicePassword>yu1/OwTC/YsKblEGZoHZaQ==</ServicePassword>
+	<ModuleCredential>XxB12N+8GtdnksXOOJJseprLBSc5QKSSVRHKnCVcdH4/KRV8euM+LQvoV72Vzedx7SvMhdnfpYklcYpuE2AJOMWixU+E6iZylrHk4TBc57NJU1PZtdi1GD/zznBE1oTegJxSrxwnXmxQsGLnn0LItg==</ModuleCredential>
+	<DatabaseType>WEBLOGICDS</DatabaseType>
+	<DS-URL>t3://10.8.1.210:8004</DS-URL>
+	<DS-JNDI>mobadminds</DS-JNDI>
+</UBN_CREDENTIAL>

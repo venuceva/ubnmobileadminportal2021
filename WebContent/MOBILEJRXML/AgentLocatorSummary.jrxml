@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AgentLocatorSummary" language="groovy" pageWidth="1057" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="1017" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="22c52e61-a6f0-4bd8-9829-718e2c2dcd99">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IMAGE_PATH" class="java.lang.String"/>
+	<parameter name="SELECT_DATE" class="java.lang.String"/>
+	<parameter name="QUERY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["SELECT TO_CHAR(DSA_DATE_TIME,'DD-MM-YYYY') as tdate,nvl(sum(case when FINAL_STATUS in ('AU','CU','AA','COMPLETE') then 1 end),0) as TOT_REQUEST,nvl(sum(case when FINAL_STATUS in('AA','COMPLETE') then 1 end),0) as AGNT_ACCPT,nvl(sum(case when FINAL_STATUS = 'CU' then 1 end),0) as CANCEL_USER,nvl(sum(case when FINAL_STATUS = 'AU' then 1 end),0) as AGNT_NOT_ACCPT,count(*) FROM CUST_ACCEPTS group by TO_CHAR(DSA_DATE_TIME,'DD-MM-YYYY') order by tdate desc"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SEARCH" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{QUERY}]]>
+	</queryString>
+	<field name="TDATE" class="java.lang.String"/>
+	<field name="TOT_REQUEST" class="java.math.BigDecimal"/>
+	<field name="AGNT_ACCPT" class="java.math.BigDecimal"/>
+	<field name="CANCEL_USER" class="java.math.BigDecimal"/>
+	<field name="AGNT_NOT_ACCPT" class="java.math.BigDecimal"/>
+	<field name="COUNT(*)" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="134" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="aec0f891-ec74-4a69-b3a0-ade79f13ab8f" x="413" y="43" width="197" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Locator Agent Summary Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="01e83ec9-4727-438e-b594-31298400b443" key="staticText-35" mode="Opaque" x="301" y="112" width="178" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25" lineStyle="Solid"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Agent Accepted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="beef3e7e-829a-4b86-b550-b549a1c75521" x="779" y="10" width="127" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<text><![CDATA[Report Generated Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b284007-10af-4af9-96cd-399890a62e93" key="staticText-35" mode="Opaque" x="149" y="112" width="152" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25" lineStyle="Solid"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Total Request]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="78ec3e5e-c982-4506-89e5-019b2e0b1988" key="staticText-44" mode="Opaque" x="675" y="112" width="177" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25" lineStyle="Solid"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Agent Not Accepted]]></text>
+			</staticText>
+			<image scaleImage="RealSize" hAlign="Right" vAlign="Middle" isUsingCache="true">
+				<reportElement uuid="96f61fd4-9af7-49b3-99ff-59e6afc56a2f" x="11" y="10" width="125" height="53"/>
+				<imageExpression><![CDATA[$P{IMAGE_PATH}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="7c74a4c9-889f-4e0b-a817-21018ba2408a" key="staticText-56" mode="Opaque" x="479" y="112" width="196" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25" lineStyle="Solid"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Canceled User]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="4f5284fc-a312-452d-86cf-160315f76c2e" x="906" y="10" width="104" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SELECT_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a773732b-10a7-4e86-ba4d-25cb3d20ebd9" key="staticText-44" mode="Opaque" x="852" y="112" width="161" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25" lineStyle="Solid"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="65ed4add-9a14-46ca-8403-f495fc631d01" x="11" y="74" width="944" height="20" forecolor="#FF0000"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEARCH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="efe9584f-16d6-4d7c-b150-28f3598a641c" key="staticText-35" mode="Opaque" x="6" y="112" width="143" height="22" backcolor="#5EADEE"/>
+				<box>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25" lineStyle="Solid"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="7a3fc7bd-d6d1-461e-873b-7315b4240f4f" x="6" y="0" width="143" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TDATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="81acddda-e27f-4959-bc55-ef7400fae278" x="149" y="0" width="152" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TOT_REQUEST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e73ea252-c0e7-4028-bdea-27117129c0d9" x="301" y="0" width="178" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{AGNT_ACCPT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="069de7f1-aedc-4d6e-a83b-08919d21c850" x="479" y="0" width="196" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CANCEL_USER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="673dee4d-0e1f-49a1-bb1c-83a1dab48035" x="675" y="0" width="177" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{AGNT_NOT_ACCPT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f7895194-706e-4714-b9ae-4331f9c0b9f2" x="852" y="0" width="161" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{COUNT(*)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="eb312fe2-5393-45b2-a6bd-e19f063f4496" x="434" y="22" width="176" height="20">
+					<printWhenExpression><![CDATA[new java.lang.Boolean(($V{REPORT_COUNT}.intValue())==0)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Records Found]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

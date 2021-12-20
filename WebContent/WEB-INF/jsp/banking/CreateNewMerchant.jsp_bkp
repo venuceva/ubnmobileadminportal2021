@@ -1,0 +1,1226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ceva</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Another one from the CodeVinci">
+<meta name="author" content="Brian Kiptoo">
+<%@page import="com.ceva.base.common.utils.CevaCommonConstants"%>
+<%String ctxstr = request.getContextPath(); %>
+<% String appName= session.getAttribute(CevaCommonConstants.ACCESS_APPL_NAME).toString(); %>
+ 	
+	 
+ <script type="text/javascript" >
+$(document).ready(function() {
+   
+    	var mydata ='${responseJSON.LOCATION_LIST}';
+    	//alert(mydata);
+    	var json = jQuery.parseJSON(mydata);
+    	//alert(json);
+    	$.each(json, function(i, v) {
+    	    // create option with value as index - makes it easier to access on change
+    	    var options = $('<option/>', {value: v.val, text: v.key+"-"+v.val}).attr('data-id',i);    
+    	    // append the options to job selectbox
+    	    $('#location').append(options);
+    	    $('#bankBranch').append(options);
+    	});
+		
+		
+		 /*mydata ='${responseJSON.TRANSFER_CODES}';
+    	//alert(mydata);
+    	  json = jQuery.parseJSON(mydata);
+    	//alert(json);
+    	$.each(json, function(i, v) {
+    	    // create option with value as index - makes it easier to access on change
+    	    var options = $('<option/>', {value: v.val, text: v.key}).attr('data-id',i);    
+    	    // append the options to job selectbox
+    	    $('#transferCode').append(options);
+    	});*/
+		
+		mydata = '${responseJSON.MERCHANT_TYPE}';
+    	  json = jQuery.parseJSON(mydata);
+    	$.each(json, function(i, v) {
+    	    // create option with value as index - makes it easier to access on change
+    	    var val_m = v.key.replace(/##/g, '\'');
+    	    var options = $('<option/>', {value: v.val, text: val_m+"-"+v.val}).attr('data-id',i);    
+    	    // append the options to job selectbox
+    	    $('#merchantType').append(options);
+    	});
+    	
+    	
+	mydata = '${responseJSON.MERCHANT_ADMIN}';
+	json = jQuery.parseJSON(mydata);
+  	$.each(json, function(i, v) {
+  	    // create option with value as index - makes it easier to access on change
+  	    var val_m = v.key.replace(/##/g, '\'');
+  	    var options = $('<option/>', {value: v.val, text: val_m}).attr('data-id',i);    
+  	    // append the options to job selectbox
+  	    $('#merchantAdminId').append(options);
+  	});
+  	
+  	$("#userData1").hide();
+	$("#userData2").hide();
+		
+    
+	//var location="${location}";
+	//$("#location").val(location);
+	
+	var memberType="${memberType}";
+	//if(memberType=="Agency"){
+	//	memberType="AGENCY";
+	//}
+	//if(memberType=="Biller"){
+	//	memberType="BILLER";
+	//}
+	$("#memberType").val(memberType);
+	
+	var merchantType=${merchantType}
+	$("#merchantType").val(merchantType);
+	
+	var val = 1;
+	var rowindex = 1;
+	var colindex = 0;
+	var bankacctfinalData="";
+	bankacctfinalData="${bankAcctMultiData}";
+	bankAcctFinalData=bankacctfinalData;
+	if(bankacctfinalData.length==0) {
+	}else{
+		var bankacctfinalDatarows=bankacctfinalData.split("#");
+		if(val % 2 == 0 ) {
+			addclass = "even";
+			val++;
+		} else {
+			addclass = "odd";
+			val++;
+		}  
+		var rowCount = $('#tbody_data > tr').length;
+
+			for(var i=0;i<bankacctfinalDatarows.length;i++){
+				var eachrow=bankacctfinalDatarows[i];
+				var eachfieldArr=eachrow.split(",");
+				var accountNumber=eachfieldArr[0];
+				var acctDescription=eachfieldArr[1];
+				var bankName = eachfieldArr[2];
+				var bankBranch = eachfieldArr[3];
+				var transferCode = eachfieldArr[4];
+				
+					var appendTxt = "<tr class="+addclass+" index='"+rowindex+"'> "+
+					"<td>"+rowindex+"</td>"+
+					"<td>"+accountNumber+"</td>"+	
+					"<td>"+acctDescription+" </td>"+ 
+					"<td>"+bankName+"</td>"+
+					"<td>"+bankBranch+"</td>"+
+					"<td>"+transferCode+"</td>"+
+					"<td> <a class='btn btn-min btn-info' href='#' id='editDat'> <i class='icon-edit icon-white'></i></a>  <a class='btn btn-min btn-danger' href='#' id='deleteBank'> <i class='icon-trash icon-white'></i> </a></td></tr>";
+					
+					$("#tbody_data1").append(appendTxt);	  
+					rowindex = ++rowindex;
+					colindex = ++ colindex; 
+			}
+		
+	}
+	
+		
+	var val = 1;
+	var rowindex = 1;
+	var colindex = 0;
+	var documentfinalData="";
+	documentfinalData="${documentMultiData}";
+	documentFinalData=documentfinalData;
+	if(documentfinalData.length==0){
+	}else{
+		var documentfinalDatarows=documentfinalData.split("#");
+	if(val % 2 == 0 ) {
+	addclass = "even";
+	val++;
+	}
+	else {
+		addclass = "odd";
+		val++;
+		}  
+		var rowCount = $('#tbody_data > tr').length;
+
+		
+			for(var i=0;i<documentfinalDatarows.length;i++){
+				var eachrow=documentfinalDatarows[i];
+				var eachfieldArr=eachrow.split(",");
+				var documentId=eachfieldArr[0];
+				var documentDescription=eachfieldArr[1];
+				var gracePeriod = eachfieldArr[2];
+				var mandatory = eachfieldArr[3];
+				
+				var appendTxt = "<tr class="+addclass+" index='"+rowindex+"'> "+
+								"<td>"+rowindex+"</td>"+
+								"<td>"+documentId+"</td>"+	
+								"<td>"+documentDescription+" </td>"+ 
+								"<td>"+gracePeriod+"</td>"+
+								"<td>"+mandatory+"</td>"+
+								"<td> <a class='btn btn-min btn-info' href='#' id='editDat'> <i class='icon-edit icon-white'></i></a>  <a class='btn btn-min btn-danger' href='#' id='deleteBank'> <i class='icon-trash icon-white'></i> </a></td></tr>";
+				
+				$("#tbody_data2").append(appendTxt);	  
+				rowindex = ++rowindex;
+				colindex = ++ colindex; 
+			}
+	}
+			
+			
+	var val = 1;
+	var rowindex = 1;
+	var colindex = 0;
+	var agentMultiData="";
+	agentMultiData="${agentMultiData}";
+	agentFinalData=agentMultiData;
+	var agentMultiDatarows=agentMultiData.split("#");
+	
+	if(agentMultiData.length==0){
+	} else {
+		if(val % 2 == 0 ) {
+			addclass = "even";
+			val++;
+		} else {
+			addclass = "odd";
+			val++;
+		}  
+		var rowCount = $('#tbody_data > tr').length; 
+		
+		for(var i=0;i<agentMultiDatarows.length;i++){
+			var eachrow=agentMultiDatarows[i];
+			var eachfieldArr=eachrow.split(",");
+			var bankAgenctNo=eachfieldArr[0];
+			var MPeasAgenctNo=eachfieldArr[1];
+			var airtelMoneyAgenetNo = eachfieldArr[2];
+			var orangeMoneyAgentNo = eachfieldArr[3];
+			var mpesaTillNumber = eachfieldArr[4];
+			
+			var appendTxt = "<tr class="+addclass+" index='"+rowindex+"'> "+
+			"<td>"+rowindex+"</td>"+
+			"<td>"+bankAgenctNo+"</td>"+	
+			"<td>"+MPeasAgenctNo+" </td>"+ 
+			"<td>"+airtelMoneyAgenetNo+"</td>"+
+			"<td>"+orangeMoneyAgentNo+"</td>"+
+			"<td>"+mpesaTillNumber+"</td>"+
+			"<td> <a class='btn btn-min btn-info' href='#' id='editDat'> <i class='icon-edit icon-white'></i></a>  <a class='btn btn-min btn-danger' href='#' id='deleteBank'> <i class='icon-trash icon-white'></i> </a></td></tr>";
+			
+			$("#tbody_data3").append(appendTxt);	  
+			rowindex = ++rowindex;
+			colindex = ++ colindex; 
+		}
+	}
+	
+	
+ $('#deleteAgent').live('click',function() {  
+   $(this).parent().parent().remove();
+   if($('#agentTable > tbody  > tr').length == 0) { rowindex = 0; colindex=0; }
+  });
+  
+ $('#deleteBank').live('click',function() {  
+   $(this).parent().parent().remove();
+   if($('#bankAcctTable > tbody  > tr').length == 0) { rowindex = 0; colindex=0; }
+  });  
+  
+  $('#deleteDoc').live('click',function() {  
+   $(this).parent().parent().remove();
+   if($('#documentTable > tbody  > tr').length == 0) { rowindex = 0; colindex=0; }
+  });  
+  
+  $.validator.addMethod("regex", function(value, element, regexpr) {          
+		 return regexpr.test(value);
+   }, ""); 
+	
+});
+
+
+ 
+
+function getGenerateMerchantScreen(){
+	$("#form1")[0].action='<%=request.getContextPath()%>/<%=appName %>/generateMerchantAct.action';
+	$("#form1").submit();
+	return true;
+}
+
+		
+</script>
+<script type="text/javascript">
+
+
+var enterMerchantName= "Pease enter Merchant Name.";
+var MerchantNameMinLength = "Please enter Minimum 4 Characters";
+var enterMerchanID= "Please enter Merchant ID.";
+var MerchantIDMinLength="Merchant ID length should be 15";
+var MerchantIDMaxLength="Merchant ID length should be 15";
+var enterStoreId="Please enter Store ID";
+var enterStoreName="Please enter Store Name";
+var selectLocation="Please select NBK Branch Location";
+var enterKRAPIN = "Please enter KRA PIN";
+var enterManagerName = "Please enter Manage Name";
+var enterAddressLine1 = "Please enter Address Line1";
+var enterAddressLine2 ="Please enter Address Line2";
+var enterCity = "Please enter City/Town";
+var enterPostBoxNo = "Please enter PO Box No";
+var enterTelephoneNumber1 = "Please enter Telephone number 1";
+var enterMobileNumber = "Please enter Mobile Number";
+var enterFaxNumber = "Please enter Fax Number";
+var enterPrmContactPerson = "Please enter Primary Contact Person";
+var enterPrmContactNumber = "Please enter Primary Contact Number";
+var enterEmail = "Please enter Email";
+var selectmerchantType = "Please select Merchant Type";
+var selectMemeberType = "Please select Member Type";
+
+var merchantNamerules = {
+	required : true,
+	minlength :4,
+};
+var merchantIDrules = {
+	required : true,
+	minlength :15,
+	maxlength :15
+};
+
+var storeIdRules = {
+	required : true
+};
+
+var storeNameRules = {
+	required : true
+};
+
+var locationRules = {
+	required : true
+};
+
+var kraPinRules = {
+	required : true,
+	minlength :11,
+	maxlength :11,
+	regex: /^[A-Z]{1}[0-9]{9}[A-Z]{1}$/g
+	//regex: /^[A-Z]{1}+([0-9]{9})+([A-Z]{1}+)$/
+};
+
+var managerNameRules = {
+	required : true
+};
+
+var addressLine1Rules = {
+	required : true
+};
+
+var addressLine2Rules = {
+	required : true
+};
+
+var cityRules = {
+	required : true
+};
+
+var poBoxNumberRules = {
+	required : true
+};
+
+var telephoneNumber1Rules = {
+	required : true
+};
+
+var mobileNumberRules = {
+	required : true
+};
+
+var faxNumberRules = {
+	required : true
+};
+
+var prmContactPersonRules = {
+	required : true
+};
+
+var prmContactNumberRules = {
+	required : true
+};
+
+var emailRules = {
+	required : true
+};
+
+var merchantTypeRules = {
+	required : true
+};
+
+var memberTypeRules = {
+	required : true
+};
+
+var merchantNamemessages = {
+	required : enterMerchantName,
+	minlength: MerchantNameMinLength
+};
+
+var merchantIDmessgaes = {
+	required : enterMerchanID,
+	minlength: MerchantIDMinLength,
+	maxlength : MerchantIDMaxLength
+};
+
+var storeIdMessages = {
+	required : enterStoreId	
+};
+
+var storeNameMessages = {
+	required : enterStoreName	
+};
+var locationMessages = {
+	required : selectLocation
+};
+
+var kraPinMessages = {
+	required : enterKRAPIN,
+	regex : "Please input valid KRA Pin eg(C122121111X)"
+};
+
+var managerNameMessages = {
+	required : enterManagerName
+};
+
+var addressLine1Messages = {
+	required : enterAddressLine1
+};
+var addressLine2Messages = {
+	required : enterAddressLine2
+};
+
+var cityMessages = {
+	required : enterCity
+};
+var poBoxNumberMessages = {
+	required : enterPostBoxNo
+};
+var telephoneNumber1Messages = {
+	required : enterTelephoneNumber1
+};
+var mobileNumberMessages = {
+	required : enterMobileNumber
+};
+var faxNumberMessages = {
+	required : enterFaxNumber
+};
+var prmContactPersonMessages = {
+	required : enterPrmContactPerson
+};
+var prmContactNumberMessages = {
+	required : enterPrmContactNumber
+};
+
+var emailMessages = {
+	required : enterEmail
+};
+
+var merchantTypeMessages = {
+	required : selectmerchantType
+};
+
+var memberTypeMessages = {
+	required : selectMemeberType
+};
+
+var merchantCreateRules= {
+	rules : {
+		merchantName : merchantNamerules,
+		merchantID : merchantIDrules,
+		storeId : storeIdRules,
+		storeName : storeNameRules,
+		location : locationRules,
+		kraPin : kraPinRules,
+		managerName : managerNameRules,
+		addressLine1 : addressLine1Rules,
+		addressLine2 : addressLine2Rules,
+		city		: cityRules,
+		poBoxNumber : poBoxNumberRules,
+		//telephoneNumber1 : telephoneNumber1Rules,
+		mobileNumber : mobileNumberRules,
+		//faxNumber : faxNumberRules,
+		prmContactPerson : prmContactPersonRules,
+		prmContactNumber : prmContactNumberRules,
+		email : emailRules,
+		merchantType : merchantTypeRules,
+		memberType : memberTypeRules,
+		postalCode : {required : true, number : true},
+		area : {required : true},
+		lrNumber : {required : true}
+	},
+	messages : {
+		merchantName : merchantNamemessages,
+		merchantID : merchantIDmessgaes,
+		storeId : storeIdMessages,
+		storeName : storeNameMessages,
+		location : locationMessages,
+		kraPin : kraPinMessages,
+		managerName : managerNameMessages,
+		addressLine1 : addressLine1Messages,
+		addressLine2 : addressLine2Messages,
+		city		: cityMessages,
+		poBoxNumber : poBoxNumberMessages,
+		//telephoneNumber1 : telephoneNumber1Messages,
+		mobileNumber : mobileNumberMessages,
+		//faxNumber : faxNumberMessages,
+		prmContactPerson : prmContactPersonMessages,
+		prmContactNumber : prmContactNumberMessages,
+		email : emailMessages,
+		merchantType : merchantTypeMessages,
+		memberType : memberTypeMessages,
+		postalCode : {
+				required : "Please Input Postal Code.",
+				number : "Please Input Numbers Only."
+		},
+		area : {
+				required : "Please Input Area."
+ 		},
+		lrNumber : {
+				required : "Please Input L/R Number."
+		}
+	}
+};
+function createMerchant(){
+	
+	$("#form1").validate(merchantCreateRules);
+	var data=$('#bankAcctMultiData').val();
+	if(data==""){
+ 		$("#bankAcctMsg").html("<font color='red'>Bank account information required</font>");
+	}else{
+		$("#bankAcctMsg").text('');
+	}
+	if($("#form1").valid()){
+		var data=bankAcctFinalData;
+		if(data.substr(0,1)=="#")
+			bankAcctFinalData=bankAcctFinalData.slice(1);
+		$('#bankAcctMultiData').val(bankAcctFinalData);
+		
+		var data=documentFinalData;
+		if(data.substr(0,1)=="#")
+			documentFinalData=documentFinalData.slice(1);
+		$('#documentMultiData').val(documentFinalData);
+		
+		var data=agentFinalData;
+		if(data.substr(0,1)=="#")
+			agentFinalData=agentFinalData.slice(1);
+		$('#agentMultiData').val(agentFinalData);
+		
+		 if($('#bankAcctMultiData').val()==""){
+			$("#bankAcctMsg").html("<font color='red'>Bank account information required</font>");
+			return false;
+		} else {
+			$("#bankAcctMsg").text('');
+			var data=$( "#location option:selected" ).text();
+			$("#locationVal").val(data);
+			var data=$( "#merchantType option:selected" ).text();
+			$("#merchantTypeVal").val(data);
+			$("#form1")[0].action='<%=request.getContextPath()%>/<%=appName %>/getMerchantCreateConfirmScreenAct.action';
+			$("#form1").submit();
+			return true;
+		}
+	} else {
+		return false;
+	}
+}
+
+
+function getLocation(){
+	var data=$( "#location option:selected" ).text();
+	$("#locationVal").val(data);
+}
+function getMerhchantType(){
+	var data=$( "#merchantType option:selected" ).text();
+	$("#merchantTypeVal").val(data);
+}
+	
+	
+function getMerchantID(){
+ 	var formInput=$("#form1").serialize()+'&merchantName='+$('#merchantName').val();
+    $.getJSON('generateMerchantIdAct.action', formInput,function(data) {
+		var merchantId = data.responseJSON.merchantID;
+		var storeId=data.responseJSON.storeId;
+		$('#merchantID').val(merchantId);
+		$('#storeId').val(storeId);
+    }); 
+   return false;
+}
+	 
+</script>
+<script >
+var val = 1;
+var bankAcctFinalData="";
+var rowindex = 1;
+var colindex = 0;
+$(function(){
+	 $('#addCap2').on('click', function () {
+ 		var accountNumber = $('#accountNumber').val() == undefined ? ' ' : $('#accountNumber').val();
+		var acctDescription = $('#acctDescription').val() == undefined ? ' ' : $('#acctDescription').val();
+		var bankBranch = $('#bankBranch').val();
+		var bankName = $('#bankName').val() == undefined ? ' ' : $('#bankName').val();
+		var transferCode = $('#transferCode').val() == undefined ? ' ' : $('#transferCode').val();
+		
+		var eachrow=accountNumber+","+acctDescription+","+bankName+","+bankBranch+","+transferCode;
+									
+		var addclass = "";
+		if(bankName == '') 
+		{
+			alert('Please Enter Bank Code');			
+		}
+		else if(bankBranch == '') 
+		{
+			alert('Please Enter Branch Code');			
+		}
+		else if(accountNumber == '') 
+		{
+			alert('Please Enter Account Number');			
+		}
+		else if(acctDescription == '') 
+		{
+			alert('Please Enter Account Description');			
+		} else { 
+		 
+			$("#bankAcctMsg").text('');
+			if(val % 2 == 0 ) {
+				addclass = "even";
+				val++;
+			} else {
+				addclass = "odd";
+				val++;
+			}  
+			var rowCount = $('#tbody_data1 > tr').length;
+			
+			  
+			var appendTxt = "<tr class="+addclass+" index='"+rowindex+"'> "+
+						"<td>"+rowindex+"</td>"+ 
+						"<td>"+accountNumber+" </td>"+ 
+						"<td>"+acctDescription+"</td>"+
+						"<td>"+bankName+"</td>"+	
+						"<td>"+bankBranch+"</td>"+	
+						"<td>"+transferCode+"</td>"+
+						"<td> <a class='btn btn-min btn-info' href='#' id='editDat'> <i class='icon-edit icon-white'></i></a>  <a class='btn btn-min btn-danger' href='#' id='deleteBank'> <i class='icon-trash icon-white'></i> </a></td></tr>";
+							
+					$("#tbody_data1").append(appendTxt);	 
+					$('#bankName').val('');
+					$('#bankBranch').val('');
+					$('#accountNumber').val('');
+					$('#acctDescription').val('');
+					$('#transferCode').val('');
+						bankAcctFinalData=bankAcctFinalData+"#"+eachrow;
+								
+									
+			rowindex = ++rowindex;
+			colindex = ++ colindex; 
+		}
+	});   
+});  
+</script>
+<script type="text/javascript">
+var val = 1;
+var rowindex1 = 1;
+var colindex1= 0;
+var agentFinalData="";
+$(function(){
+$('#addCap4').on('click', function () {
+	var bankAgenctNo = $('#bankAgenctNo').val() == undefined ? ' ' : $('#bankAgenctNo').val();
+	var MPeasAgenctNo = $('#MPeasAgenctNo').val() == undefined ? ' ' : $('#MPeasAgenctNo').val();
+	var airtelMoneyAgenetNo = $('#airtelMoneyAgenetNo').val() == undefined ? ' ' : $('#airtelMoneyAgenetNo').val();
+	var orangeMoneyAgentNo = $('#orangeMoneyAgentNo').val() == undefined ? ' ' : $('#orangeMoneyAgentNo').val();
+	var mpesaTillNumber = $('#mpesaTillNumber').val() == undefined ? ' ' : $('#mpesaTillNumber').val();
+
+	var eachrow=bankAgenctNo+","+MPeasAgenctNo+","+airtelMoneyAgenetNo+","+orangeMoneyAgentNo+","+mpesaTillNumber;
+							
+	var addclass = "";
+	if(bankAgenctNo == '') 
+	{
+		alert('Please Enter Bank Agent Number.');			
+	}
+	else if(MPeasAgenctNo == '') 
+	{
+		alert('Please Enter MPesa Agent Number.');			
+	}
+	else if(airtelMoneyAgenetNo == '') 
+	{
+		alert('Please Enter Airtel Money Agent Number.');			
+	}
+	else if(orangeMoneyAgentNo == '') 
+	{
+		alert('Please Enter Orange Money Agent Number.');			
+	}
+	else if(mpesaTillNumber == '') 
+	{
+		alert('Please Enter VISA MID.');			
+	}
+	else
+	{ 
+	
+		if(val % 2 == 0 ) {
+			addclass = "even";
+			val++;
+		}
+		else {
+			addclass = "odd";
+			val++;
+		}  
+		var rowCount = $('#tbody_data > tr').length;
+		
+		  
+		var appendTxt = "<tr class="+addclass+" index='"+rowindex1+"'> "+
+						"<td>"+rowindex1+"</td>"+
+						"<td>"+bankAgenctNo+"</td>"+	
+						"<td>"+MPeasAgenctNo+" </td>"+ 
+						"<td>"+airtelMoneyAgenetNo+"</td>"+
+						"<td>"+orangeMoneyAgentNo+"</td>"+
+						"<td>"+mpesaTillNumber+"</td>"+
+						"<td> <a class='btn btn-min btn-info' href='#' id='editDat'> <i class='icon-edit icon-white'></i></a>  <a class='btn btn-min btn-danger' href='#' id='deleteAgent'> <i class='icon-trash icon-white'></i> </a></td></tr>";
+								
+		$("#tbody_data3").append(appendTxt);	 
+		$('#bankAgenctNo').val('');
+		$('#MPeasAgenctNo').val('');
+		$('#airtelMoneyAgenetNo').val('');
+		$('#orangeMoneyAgentNo').val('');
+		$('#mpesaTillNumber').val('');
+		agentFinalData=agentFinalData+"#"+eachrow; 
+								
+		rowindex1 = ++rowindex1;
+		colindex1 = ++ colindex1; 
+	}
+});   
+});   
+
+</script>
+<script type="text/javascript">
+var val = 1;
+var rowindex2 = 1;
+var colindex2 = 0;
+var documentFinalData="";
+$(function(){
+	$('#addCap3').on('click', function () {
+		var documentId = $('#documentId').val() == undefined ? ' ' : $('#documentId').val();
+		var documentDescription = $('#documentDescription').val() == undefined ? ' ' : $('#documentDescription').val();
+		var gracePeriod = $('#gracePeriod').val() == undefined ? ' ' : $('#gracePeriod').val();
+		var mandatory = $('#mandatory').val() == undefined ? ' ' : $('#mandatory').val();
+
+		var eachrow=documentId+","+documentDescription+","+gracePeriod+","+mandatory;
+								
+		var addclass = "";
+		if(documentId == '') 
+		{
+			alert('Please Enter Document Id');			
+		}
+		else if(documentDescription == '') 
+		{
+			alert('Please Enter Document Description');			
+		}
+		else if(gracePeriod == '') 
+		{
+			alert('Please Enter Grace Period');			
+		}
+		else if(mandatory == '') 
+		{
+			alert('Please Enter Mandatory');			
+		}
+		else
+		{ 
+			
+			if(val % 2 == 0 ) {
+				addclass = "even";
+				val++;
+			} else {
+				addclass = "odd";
+				val++;
+			}  
+			var rowCount = $('#tbody_data > tr').length;
+			
+			  
+			var appendTxt = "<tr class="+addclass+" index='"+rowindex2+"'> "+
+							"<td class='col_"+colindex2+"'>"+rowindex2+"</td>"+
+							"<td>"+documentId+"</td>"+	
+							"<td>"+documentDescription+" </td>"+ 
+							"<td>"+gracePeriod+"</td>"+
+							"<td>"+mandatory+"</td>"+
+							"<td> <a class='btn btn-min btn-info' href='#' id='editDat'> <i class='icon-edit icon-white'></i></a>  <a class='btn btn-min btn-danger' href='#' id='deleteDoc'> <i class='icon-trash icon-white'></i> </a></td></tr>";
+									
+			$("#tbody_data2").append(appendTxt);	 
+			$('#documentId').val('');
+			$('#documentDescription').val('');
+			$('#gracePeriod').val('');
+			$('#mandatory').val('');
+			documentFinalData=documentFinalData+"#"+eachrow;
+											
+			rowindex2 = ++rowindex2;
+			colindex2 = ++ colindex2; 
+		}
+	});    
+ 
+	var config = {
+      '.chosen-select'           : {},
+      '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+	
+	
+	$("#telephoneNumber1,#telephoneNumber2,#mobileNumber,#faxNumber,#prmContactNumber,#postalCode").keypress(function (e) {
+	 //if the letter is not digit then display error and don't type anything
+	 if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+		//display error message
+		$("#"+$(this).attr('id')+"_err").html("Digits Only").show().fadeOut("slow");
+			   return false;
+		}
+   }); 
+   
+	$('#kraPin').live('keyup',function(){
+		 var id = $(this).attr('id');
+		 var v_val = $(this).val(); 
+		 $("#"+id).val(v_val.toUpperCase());
+	});
+	
+	$('.checkclass').click(function(){ 
+		//console.log("IS checked.... " + $(this).is(':checked'));
+		if( $(this).is(':checked') ) {
+			// Non-NBK Account
+			$('.bankinfospn').show();
+			$('.bankinfospn1').show();
+		} else {
+			//NBK Account
+			$('.bankinfospn').hide();
+			$('.bankinfospn1').hide();
+		}
+	});
+});	
+
+function getInfo(){
+ 	var merchantAdminId=$("#merchantAdminId option:selected" ).val();
+  	var formInput='merchantAdminId='+merchantAdminId+'&method=getMerchantAdminDetails';
+ 	   $.getJSON('getMerchantAdminInfo.action', formInput,function(data) {
+			$("#userData1").show();
+			$("#userData2").show();
+			$("#userName").text(data.responseJSON.username);
+			$("#userStatus").text(data.responseJSON.userStatus);
+			$("#empNo").text(data.responseJSON.EMPLOYEE_NO);
+			$("#userEmailId").text(data.responseJSON.emailAddress);
+ 		});
+ }	
+</script>
+<style type="text/css">
+label.error {
+	  font-weight: bold;
+	  color: red;
+	  padding: 2px 8px;
+	  margin-top: 2px;
+}
+.errmsg {
+color: red;
+}
+.errors {
+color: red;
+}
+</style>
+		
+</head>
+
+<body>
+	<form name="form1" id="form1" method="post" action=""> 
+	 
+		<div id="content" class="span10">
+			
+			    <div>
+					<ul class="breadcrumb">
+					  <li> <a href="home.action">Home</a> <span class="divider"> &gt;&gt; </span> </li>
+					  <li> <a href="#">Merchant Management</a> <span class="divider"> &gt;&gt; </span></li>
+					  <li><a href="#">Add New Merchant</a></li>
+					</ul>
+				</div>
+				<div class="row-fluid sortable"><!--/span-->
+        
+					<div class="box span12">
+					
+					<div class="box-header well" data-original-title>
+							<i class="icon-edit"></i>Merchant Primary Details
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a> 
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a> 
+						</div>
+					</div>  
+						
+					<div class="box-content" id="primaryDetails"> 
+						<fieldset> 
+							<table width="950" border="0" cellpadding="5" cellspacing="1" 
+									class="table table-striped table-bordered bootstrap-datatable ">
+								<tr class="even">
+									<td width="20%"><label for="Merchant Name"><strong>Merchant Name<font color="red">*</font></strong></label></td>
+									<td width="30%"><input name="merchantName" type="text"  id="merchantName" class="field"  value="${merchantName}" maxlength="50" required='true' onChange="getMerchantID()" ></td>
+									<td width="20%"><label for="Merchant ID"><strong>Merchant ID<font color="red">*</font></strong></label></td>
+									<td width="30%"><input name="merchantID" type="text" id="merchantID" class="field" value="${merchantID}" maxlength="15" readonly ></td>
+								</tr>
+								<tr class="odd">
+									<td><label for="Store Name"><strong>Store Name<font color="red">*</font></strong></label></td>
+									<td><input name="storeName" type="text" class="field" id="storeName" value="${storeName}" required='true' /></td>
+									<td ><label for="Store ID"><strong>Store ID<font color="red">*</font></strong></label></td>
+									<td ><input name="storeId"  type="text" id="storeId" class="field"  value="${storeId}" readonly> </td>
+											
+								</tr>
+								<tr class="even">
+									<td ><label for="NBK Branch Location"><strong>NBK Branch Location<font color="red">*</font></strong></label></td>
+									<td >
+										<select id="location" name="location"   required='true' data-placeholder="Choose Location..." 
+											class="chosen-select" style="width: 220px;" onChange="getLocation()">
+											<option value="">Select</option>
+										</select>
+										<input type="hidden" name="locationVal" id="locationVal" />
+									</td>
+									<td ><label for="KRA PIN"><strong>KRA PIN<font color="red">*</font></strong></label></td>
+									<td ><input name="kraPin" type="text" class="field" id="kraPin" value="${kraPin}" required='true' maxlength="11"/></td>	
+								</tr>  
+								<tr class="odd">
+									<td ><label for="Merchant Type"><strong>Merchant Type<font color="red">*</font></strong></label></td>
+									<td >
+										<select id="merchantType" name="merchantType" data-placeholder="Choose Merchant Type..." 
+											class="chosen-select" style="width: 220px;" required='true' onChange="getMerhchantType()">
+											<option value="">Select</option>
+										</select>
+										<input type="hidden" name="merchantTypeVal" id="merchantTypeVal" />
+									</td>
+									<td ><label for="Merchant Type"><strong>Member Type</label></td>
+									<td >
+										 <select id="memberType" name="memberType"  required='true' 
+											data-placeholder="Choose member type..." 
+											class="chosen-select" style="width: 220px;" >
+											<option value="">Select</option>
+											<option value="Merchant">Merchant</option>
+											<option value="Agency">Agency</option>
+										</select> 
+										
+									</td>	
+								</tr>
+							</table>
+						</fieldset> 
+						</div>  
+					</div> 
+				</div> 
+				<div class="row-fluid sortable">					
+					<div class="box span12"> 
+					<div class="box-header well" data-original-title>
+							<i class="icon-edit"></i>Merchant Admin Details
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a> 
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a> 
+						</div>
+					</div>  
+						
+					<div class="box-content" id="merchantAdminDetails"> 
+						 <fieldset>   
+								<table width="950" border="0" cellpadding="5" cellspacing="1" class="table table-striped table-bordered bootstrap-datatable ">
+									<tr class="even">
+										<td width="20%"><label for="Merchant Admin Id"><strong>Merchant Admin Id<font color="red">*</font></strong></label></td>
+										<td width="30%">
+											<select id="merchantAdminId" name="merchantAdminId"   required='true' data-placeholder="Choose location..." 
+												class="chosen-select" style="width: 220px;" onChange="getInfo()" >
+												<option value="">Select</option>
+											</select>
+										</td>
+										<td width="20%"></td>
+										<td width="30%"></td>
+									</tr>
+									<tr class="even" id="userData1">
+										<td><label for="User Name"><strong>User Name</strong></label></td>
+										<td>
+											<span id="userName"></span>
+										</td>
+										<td><label for="User Status"><strong>User Status</strong></label></td>
+										<td>
+											<span id="userStatus"></span>
+										</td>
+									</tr>
+									<tr class="odd" id="userData2">
+										<td><label for="Employee No"><strong>Employee No</strong></label></td>
+										<td>
+											<span id="empNo"></span>
+										</td>
+										<td><label for="Email Id"><strong>Email Id</strong></label></td>
+										<td>
+											<span id="userEmailId"></span>
+										</td>
+									</tr>
+								</table> 
+							 </fieldset> 
+						</div> 
+					</div> 
+				</div>
+				<div class="row-fluid sortable"><!--/span--> 
+						<div class="box span12">
+								<div class="box-header well" data-original-title>
+										<i class="icon-edit"></i>Communication Details
+									<div class="box-icon">
+										<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a> 
+										<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a> 
+									</div>
+								</div>  
+								 
+								<div id="communicationDetails" class="box-content">
+									<fieldset> 
+										<table width="950" border="0" cellpadding="5" cellspacing="1" 
+												class="table table-striped table-bordered bootstrap-datatable ">
+											<tr class="even">
+												<td width="20%"><label for="Manager Name"><strong>Manager Name<font color="red">*</font></strong></label></td>
+												<td width="30%"><input name="managerName" type="text" id="managerName" class="field" value="${managerName}" maxlength="50" required='true' ></td>
+												<td width="20%"><label for="Email"><strong>Email<font color="red">*</font></strong></label></td>
+												<td width="30%"><input name="email" type="text"  id="email" class="field"  value="${email}" required='true' > </td>
+											</tr>
+											<tr class="odd">
+												<td ><label for="Address Line 1"><strong>Address Line 1<font color="red">*</font></strong></label></td>
+												<td ><input name="addressLine1" id="addressLine1" class="field" type="text"  maxlength="50" value="${addressLine1}" required='true' ></td>
+												<td ><label for="Address Line 2 "><strong>Address Line 2<font color="red">*</font> </strong></label></td>
+												<td ><input name="addressLine2" type="text" class="field" id="addressLine2"   value="${addressLine2}" required='true' /></td>
+											</tr>
+											<tr class="even">
+												<td ><label for="Address Line 3 "><strong>Address Line 3</strong></label></td>
+												<td ><input name="addressLine3" type="text" class="field" id="addressLine3" value="${addressLine3}" /></td>
+												<td><label for="City"><strong>City/Town<font color="red">*</font></strong></label></td>
+												<td ><input name="city" type="text" class="field" id="city"  value="${city}" required='true' /></td>
+											</tr>
+											<tr class="odd">
+												<td ><label for="Address Line 3 "><strong>Area<font color="red">*</font></strong></label></td>
+												<td ><input name="area" type="text" class="field" id="area" value="${area}" required='true' /></td> 
+												<td ><label for="Postal Code"><strong>Postal Code<font color="red">*</font></strong></label></td>
+												<td ><input name="postalCode" type="text" id="postalCode" class="field" value="${postalCode}"  required='true'/> <span id="postalCode_err" class="errmsg"></span></td>
+												
+										   </tr>
+											<tr class="even">
+												<td ><label for="P.O. Box Number "><strong>P.O. Box Number<font color="red">*</font></strong></label></td>
+												<td ><input name="poBoxNumber" type="text" id="poBoxNumber" class="field" value="${poBoxNumber}" required='true' /></td>
+												<td ><label for="Telephone Number 1"><strong>Telephone Number 1</strong></label></td>
+												<td><input name="telephoneNumber1" type="text" id="telephoneNumber1" class="field" value="${telephoneNumber1}" /><span id="telephoneNumber1_err" class="errmsg"></span></td>											 
+												
+										   </tr>
+										   <tr class="odd">
+												<td ><label for="Telephone Number 2 "><strong>Telephone Number 2</strong></label>	</td>
+												<td ><input name="telephoneNumber2" type="text" class="field" id="telephoneNumber2"  value="${telephoneNumber2}" /><span id="telephoneNumber2_err" class="errmsg"></span></td>												
+												<td ><label for="Mobile Number"><strong>Mobile Number<font color="red">*</font></strong></label></td>
+												<td ><input name="mobileNumber" id="mobileNumber" class="field" type="text"  value="${mobileNumber}" required='true' /><span id="mobileNumber_err" class="errmsg"></span></td>
+												
+										   </tr>
+										<tr class="even">
+											<td ><label for="Fax Number"><strong>Fax Number </strong></label></td>
+											<td ><input name="faxNumber"  type="text" class="field" id="faxNumber" value="${faxNumber}" /><span id="faxNumber_err" class="errmsg"></span></td>											 
+											<td><label for="L/R Number"><strong>L/R Number<font color="red">*</font></strong></label></td>
+											<td ><input name="lrNumber" type="text" class="field" id="lrNumber" value="${lrNumber}" required='true' /></td>
+										</tr>
+										<tr class="odd"> 
+											<td><label for="Primary Contact Number"><strong>Primary Contact Number<font color="red">*</font></strong></label></td>
+											<td ><input name="prmContactNumber" type="text" class="field" id="prmContactNumber" value="${prmContactNumber}" required='true' /><span id="prmContactNumber_err" class="errmsg"></span></td>
+											<td ><label for="Primary Contact Person"><strong>Primary Contact Person<font color="red">*</font></strong></label></td>
+											<td ><input name="prmContactPerson" id="prmContactPerson" class="field" type="text" value="${prmContactPerson}" required='true' ></td>
+										</tr>
+									</table>
+								</fieldset> 
+							</div> 
+						</div> 
+				</div>
+				<div class="row-fluid sortable"><!--/span--> 
+					<div class="box span12">
+						<div class="box-header well" data-original-title>
+								<i class="icon-edit"></i>Bank Account Information &nbsp;&nbsp; <span id="bankAcctMsg"></span>
+							<div class="box-icon">
+								<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a> 
+								<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a> 
+							</div>
+						</div>  
+						<div id="bankAccountInformation" class="box-content" >
+							<fieldset> 
+								<table width="950" border="0" cellpadding="5" cellspacing="1" 
+										class="table table-striped table-bordered bootstrap-datatable ">
+									<tr class="even">
+										<td colspan="4" align="center">
+											<input type="checkbox" class="checkclass" name="acc-check" id="acc-check" /> 
+											&nbsp; <strong><i>Tick This Check-Box For Entering "Non-NBK Account".</i></strong>
+											<input type="hidden" value=" " name="transferCode" id="transferCode" /> 
+											</input>
+										</td>
+									</tr>
+									 <tr class="odd">
+										<td width="20%"><label for="Account Number"><strong>Account Number<font color="red">*</font></strong></label></td>
+										<td width="30%"><input name="accountNumber" id="accountNumber" class="field" type="text" maxlength="50" ></td>
+										<td width="20%"><label for="Description"><strong>Account Description<font color="red">*</font></strong></label></td>
+										<td width="30%"> <!-- <input name="acctDescription" id="acctDescription" class="field"  type="text" > -->
+											<select id="acctDescription" name="acctDescription" required='true' 
+												data-placeholder="Choose Account..." class="chosen-select" style="width: 220px;">
+												<option value="">Select</option>
+												<option value="savings">Savings</option>
+												<option value="current">Current</option>
+											</select>
+										</td>	
+									 </tr>
+									 <tr class="even">
+										<td><label for="Description"><strong>Branch Code<font color="red">*</font></strong></label></td>
+										<td><!-- <input name="bankBranch" id="bankBranch" class="field"  type="text" > -->
+											<select id="bankBranch" name="bankBranch" required='true' data-placeholder="Choose Location..." 
+												class="chosen-select" style="width: 220px;">
+												<option value="">Select</option>
+											</select>
+										</td>	
+										<td class="bankinfospn" style="display:none"><label for="Bank Name"><strong>Bank Code<font color="red">*</font></strong></label></td>
+										<td class="bankinfospn1" style="display:none"><input name="bankName" id="bankName" class="field" type="text" maxlength="50" value=" " /></td>  
+									 </tr> 
+									<tr class="odd"> 
+										<td colspan="4" align="center"><input type="button" class="btn btn-success" name="addCap2" id="addCap2" value="Add" ></input></td>
+									</tr>
+								</table> 
+							</fieldset> 
+								 
+							<input type="hidden" name="bankAcctMultiData" id="bankAcctMultiData" value="${bankAcctMultiData}"></input>							
+							
+							<table width="100%" class="table table-striped table-bordered bootstrap-datatable " 
+								id="bankAcctTable" style="width: 100%;">
+									  <thead>
+											<tr>
+												<th>Sno</th>
+												<th>Account Number</th>
+												<th>Account Description</th>
+												<th>Bank Code</th>
+												<th>Branch Code</th> 
+												<th>Action</th>
+											</tr>
+									  </thead>    
+									 <tbody id="tbody_data1">
+									 </tbody>
+							</table>
+						</div> 
+					</div> 
+				</div>
+				<div class="row-fluid sortable"><!--/span--> 
+					<div class="box span12">
+						<div class="box-header well" data-original-title>
+								<i class="icon-edit"></i>Agent Based Information
+							<div class="box-icon">
+								<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a> 
+								<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a> 
+							</div>
+						</div>  
+						<div id="agentBasedInfo" class="box-content">
+							<fieldset> 
+								 <table width="950" border="0" cellpadding="5" cellspacing="1" class="table table-striped table-bordered bootstrap-datatable " >
+										<tr class="even">
+											<td width="20%"><label for="Document ID"><strong>Bank Agent Number</strong></label></td> 					
+											<td width="30%"><input name="bankAgenctNo" id="bankAgenctNo" class="field" type="text" ></td>
+											<td width="20%"><label for="Document Description"><strong>MPesa Agent Number</strong></label></td>
+											<td width="30%"><input name="MPeasAgenctNo" id="MPeasAgenctNo" class="field" type="text"> </td>
+										</tr>
+										<tr  class="odd">
+											<td><label for="Grace Period"><strong>Airtel Money Agent Number </strong></label></td>
+											<td><input name="airtelMoneyAgenetNo" id="airtelMoneyAgenetNo" class="field"  type="text" ></td>
+											<td><label for="mandatory"><strong>Orange Money Agent Number</strong></label></td>
+											<td >
+												<input name="orangeMoneyAgentNo" id="orangeMoneyAgentNo" class="field"  type="text" >
+											</td>
+										</tr>
+										<tr class="even">
+											<td><label for="Document ID"><strong>Visa Mid</strong></label></td> 					
+											<td ><input name="mpesaTillNumber" id="mpesaTillNumber" class="field" type="text" ></td>
+											<td ></td>
+											<td ></td>
+										</tr>
+										<tr class="odd">
+											<td colspan="4" align="center"><input type="button" class="btn btn-success" name="addCap4" id="addCap4" value="Add" ></input></td>											
+										</tr>
+								</table> 
+							</fieldset>  
+							<input type="hidden" name="agentMultiData" id="agentMultiData" value="${agentMultiData}" />
+								
+							<table width="100%" class="table table-striped table-bordered bootstrap-datatable " 
+									id="agentTable" style="width: 100%;">
+								  <thead>
+										<tr>
+											<th>Sno</th>
+											<th>Bank Agent Number</th>
+											<th>MPesa Agent Number</th>
+											<th>Airtel Money Agent Number</th>
+											<th>Orange Money Agent Number</th>
+											<th>MPesa Till Number</th>
+											<th>Action</th>
+										</tr>
+								  </thead>    
+								 <tbody id="tbody_data3">
+								</tbody>
+							</table> 
+						</div> 
+					</div> 
+				</div>
+				<div class="row-fluid sortable"><!--/span--> 
+					<div class="box span12">
+						<div class="box-header well" data-original-title>
+								<i class="icon-edit"></i>Document Information
+							<div class="box-icon">
+								<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a> 
+								<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a> 
+							</div>
+						</div>  
+						<div id="documentInformation" class="box-content">
+							<fieldset> 
+								<table width="950" border="0" cellpadding="5" cellspacing="1" class="table table-striped table-bordered bootstrap-datatable " >
+									<tr class="even">
+										<td width="20%"><label for="Document ID"><strong>Document ID</strong></label></td> 					
+										<td width="30%">
+											<!-- <input name="documentId" id="documentId" class="field" type="text" > -->
+											<select name="documentId" id="documentId" required='true' 
+												data-placeholder="Choose DocumentId..." 
+												class="chosen-select" style="width: 220px;" >
+												<option value="">Select</option>
+												<option value="BUSS">Business Permit</option>
+												<option value="DID_PASS">Director Id/Passport</option>
+												<option value="CER_INC">Certificate Of Incorporation</option>
+												<option value="BUSS">Business Permit</option>
+											</select>
+											</td>
+										<td width="20%"><label for="Document Description"><strong>Document Description</strong></label></td>
+										<td width="30%"><input name="documentDescription" id="documentDescription" class="field" type="text"> </td>
+									</tr>
+									<tr  class="odd">
+										<td><label for="Grace Period"><strong>Grace Period(in Days) </strong></label></td>
+										<td><input name="gracePeriod" id="gracePeriod" class="field"  maxlength="50" type="text" ></td>
+										<td><label for="mandatory"><strong>Mandatory</strong></label></td>
+										<td>
+											<select id="mandatory" name="mandatory"  required='true' data-placeholder="Choose member type..." class="chosen-select" style="width: 220px;" >
+												<option value="">Select</option>
+												<option value="Yes">Yes</option>
+												<option value="No">No</option>
+											</select>
+										</td>
+									</tr>
+									<tr class="odd">
+										<td colspan="4" align="center"><input type="button" class="btn btn-success" name="addCap3" id="addCap3" value="Add" ></input></td>											
+									</tr>
+							</table>
+						</fieldset>  
+						<input type="hidden" name="documentMultiData" id="documentMultiData" value="${documentMultiData}"></input>
+							
+						<table width="100%" class="table table-striped table-bordered bootstrap-datatable " 
+							id="documentTable" style="width: 100%;">
+								  <thead>
+										<tr>
+											<th>Sno</th>
+											<th>Document ID</th>
+											<th>Document Description</th>
+											<th>Grace Period</th>
+											<th>Mandatory</th>
+											<th>Action</th>
+										</tr>
+								  </thead>    
+								 <tbody id="tbody_data2">
+								 </tbody>
+							</table>
+									
+						</div>
+					</div>
+				</div> 
+				<div class="form-actions">
+					<a  class="btn btn-danger" href="#" onClick="getGenerateMerchantScreen()">Back</a> &nbsp;&nbsp;
+					<a  class="btn btn-success" href="#" onClick="createMerchant()">Submit</a>
+				</div>  
+		</div> 
+	</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.ceva.base.common" />
+
+	<!-- Below are the beans binds to struts2 action class -->
+	<bean id="cevaappl" class="com.ceva.base.common.action.CommonWebAction"	scope="prototype" />
+	<bean id="weblogin" class="com.ceva.base.common.action.CommonWebLoginAction" scope="prototype"></bean>
+	<bean id="redirectLogin" class="com.ceva.base.common.action.CommonWebLoginAction" scope="prototype" />
+	<bean id="changePassword" class="com.ceva.base.common.action.CommonWebLoginAction" scope="prototype" />
+	<bean id="logout" class="com.ceva.base.common.action.CommonWebLoginAction" scope="prototype" />
+	<bean id="changePwd" class="com.ceva.base.common.action.CommonWebLoginAction" scope="prototype" />
+	<bean id="home" class="com.ceva.base.agencybanking.action.DashBoardLinkAction" scope="prototype"></bean>
+	<bean id="livedata" class="com.ceva.base.agencybanking.action.DashBoardLinkAction" scope="prototype"></bean>
+	<bean id="generateMerchantIdAct" class="com.ceva.base.common.action.AjaxAction" scope="prototype"></bean>
+	<bean id="paybillAction" class="com.ceva.base.agencybanking.action.PaybillActions" scope="prototype" />
+	<bean id="paybillAjaxAction" class="com.ceva.base.ceva.action.PaybillJsonAjaxAction" scope="prototype" />
+	<bean id="accountAction" class="com.ceva.base.agencybanking.action.AddNewAccountAction" scope="prototype" />
+	<bean id="walletaccountAction" class="com.ceva.base.agencybanking.action.WalletAddNewAccountAction" scope="prototype" />
+	<bean id="accountPropAction" class="com.ceva.base.agencybanking.action.AccountPropertiesAction" scope="prototype" />
+	<bean id="prepaidAction" class="com.ceva.base.agencybanking.action.PrepaidCardAction" scope="prototype" />
+	<bean id="billerAction" class="com.ceva.base.agencybanking.action.BillerAction" scope="prototype" />
+	<bean id="loyalityAction" class="com.ceva.base.agencybanking.action.LoyalityAction" scope="prototype" />
+	<bean id="superAgent" class="com.ceva.base.agencybanking.action.SuperAgentAction" scope="prototype" />
+	<!-- Below are the bean configurations -->
+	
+	 <bean id="biller" class="com.ceva.base.common.bean.Biller" scope="prototype" />
+	 <bean id="payBillBean" class="com.ceva.base.common.bean.PayBillBean" scope="prototype" />
+	 <bean id="billerPackages" class="com.ceva.base.common.bean.BillerPackages" scope="prototype" />
+	 <bean id="transaction" class="com.ceva.base.common.bean.BillerTransaction" scope="prototype" />
+	 <bean id="payBillDAO" class="com.ceva.base.common.dao.impl.PayBillDaoImpl" scope="prototype" />
+	 <bean id="billerDAO" class="com.ceva.base.common.dao.impl.BillerDaoImpl" scope="prototype" />
+	 <bean id="billerTransactionDAO" class="com.ceva.base.common.dao.impl.BillerTransactionDaoImpl" scope="prototype" />
+	 <bean id="billerPackageDAO" class="com.ceva.base.common.dao.impl.BillerPackageDaoImpl" scope="prototype" />
+ 
+	<bean id="user-Login-Bean" class="com.ceva.base.common.bean.UserBean" />
+	<bean id="merchant-Bean" class="com.ceva.base.common.bean.MerchantBean" />
+	<bean id="dash-board-Bean" class="com.ceva.base.common.bean.DashboardBean" />
+	<bean id="ajax-action-bean" class="com.ceva.base.common.bean.AjaxActionBean" />
+	<bean id="mpesa-bean" class="com.ceva.base.common.bean.PayBillBean" scope="prototype"/>
+	<bean id="acc-bean" class="com.ceva.base.common.bean.AccountBean" scope="prototype"/>
+	<bean id="acc-prop-bean" class="com.ceva.base.common.bean.AccountPropertiesBean" scope="prototype" />
+	<bean id="prepaid-bean" class="com.ceva.base.common.bean.PrepaidCardBean" scope="prototype" />
+</beans>

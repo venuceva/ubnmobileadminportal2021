@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MTNFeeReports" language="groovy" pageWidth="739" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="699" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a2be789-ad77-4c86-a175-415d6fe04789">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IMAGE_PATH" class="java.lang.String"/>
+	<parameter name="SELECT_DATE" class="java.lang.String"/>
+	<parameter name="QUERY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["(select to_char(TRANS_DTTM,'dd-mm-yyyy') as tdate,'Success' as succ,SERVICECODE,nvl(sum(case when respcode = '00' then 1 end),0) as CNT,sum(FEE) fe from CONDITIONAL_DEBIT_TBL_HIST   WHERE trunc(TRANS_DTTM) BETWEEN '31AUG2017' AND '05SEP2017' AND otype='OPID4' group by to_char(TRANS_DTTM,'dd-mm-yyyy'),'Success',SERVICECODE ) union all (select to_char(TRANS_DTTM,'dd-mm-yyyy') as tdate,'Failed' as succ,SERVICECODE, nvl(sum(case when respcode != '00' then 1 end),0) as CNT,sum(FEE) fe from CONDITIONAL_DEBIT_TBL_BLK   WHERE trunc(TRANS_DTTM) BETWEEN '31AUG2017' AND '05SEP2017' AND otype='OPID4' group by to_char(TRANS_DTTM,'dd-mm-yyyy'),'Failed',SERVICECODE ) order by 1,2,3"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SEARCH" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{QUERY}]]>
+	</queryString>
+	<field name="TDATE" class="java.lang.String"/>
+	<field name="SUCC" class="java.lang.String"/>
+	<field name="SERVICECODE" class="java.lang.String"/>
+	<field name="CNT" class="java.math.BigDecimal"/>
+	<field name="FE" class="java.math.BigDecimal"/>
+	<variable name="tot_cnt" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{CNT}]]></variableExpression>
+	</variable>
+	<variable name="tot_fee" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{FE}]]></variableExpression>
+	</variable>
+	<group name="tdate">
+		<groupExpression><![CDATA[$F{TDATE}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement uuid="c833763b-b168-46a7-94bc-4bb1cf1de121" x="264" y="10" width="139" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TDATE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="358787bb-f5e3-490a-92c5-ee81a5d76924" key="staticText-35" mode="Opaque" x="134" y="8" width="119" height="22" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Transaction Date]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="24"/>
+		</groupFooter>
+	</group>
+	<group name="response">
+		<groupExpression><![CDATA[$F{SUCC}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<staticText>
+					<reportElement uuid="da730295-ae2c-456d-b80b-3ce6213471d5" key="staticText-35" mode="Opaque" x="134" y="28" width="119" height="22" backcolor="#5EADEE"/>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+						<topPen lineWidth="0.25" lineStyle="Solid"/>
+						<leftPen lineWidth="0.25" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+						<rightPen lineWidth="0.25" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Transaction Type]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="bb396abd-47f7-4496-9a2f-7c62eb9ff7ec" key="staticText-44" mode="Opaque" x="370" y="28" width="153" height="22" backcolor="#5EADEE"/>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+						<topPen lineWidth="0.25" lineStyle="Solid"/>
+						<leftPen lineWidth="0.25" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+						<rightPen lineWidth="0.25" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Total Fee ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2656bd8e-de72-47f7-8357-08d6f8f16e9c" key="staticText-56" mode="Opaque" x="253" y="28" width="117" height="22" backcolor="#5EADEE"/>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+						<topPen lineWidth="0.25" lineStyle="Solid"/>
+						<leftPen lineWidth="0.25" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+						<rightPen lineWidth="0.25" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Count]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="f9c763e4-2f53-413c-a70e-bba3b3e85cc8" x="135" y="8" width="189" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{SUCC}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="29">
+				<staticText>
+					<reportElement uuid="98b6589e-bbf3-49a9-b5f3-3596a65a53f3" key="staticText-35" mode="Opaque" x="135" y="1" width="119" height="22" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Total ]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="43e3ea2b-f3b8-4bed-8e7a-8abe5fe20bb2" x="253" y="0" width="117" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tot_cnt}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="e90a3153-6c06-48ac-91ee-19a074e4ed82" x="370" y="0" width="153" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tot_fee}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="135" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="42071e9b-c469-40b5-bf91-d24ab173be8f" x="461" y="10" width="127" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<text><![CDATA[Report Generated Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9679c5e3-d329-4f0e-a27a-81a2de94227a" x="264" y="43" width="197" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MTN Fee Summary Report]]></text>
+			</staticText>
+			<image scaleImage="RealSize" hAlign="Right" vAlign="Middle" isUsingCache="true">
+				<reportElement uuid="e88dd593-013f-4ea2-92d8-0f902b7148d6" x="10" y="10" width="125" height="53"/>
+				<imageExpression><![CDATA[$P{IMAGE_PATH}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="a9eb3e61-3b48-485c-a4f7-c2ca506ac605" x="588" y="10" width="104" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SELECT_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b926013d-9d5b-45b3-a796-a6a6b120e2c5" x="10" y="81" width="682" height="20" forecolor="#FF0000"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEARCH}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="bb596097-8dde-4547-bb00-f1159f2f4202" x="134" y="0" width="119" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SERVICECODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="53d0de93-7791-4915-a881-eb67dd336304" x="253" y="0" width="117" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9230b2b2-1c16-40cb-b5fd-8d0b8bcea184" x="370" y="0" width="153" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8d3e5d7e-04fc-47eb-81d9-6f04522a4a68" x="274" y="22" width="176" height="20">
+					<printWhenExpression><![CDATA[new java.lang.Boolean(($V{REPORT_COUNT}.intValue())==0)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Records Found]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

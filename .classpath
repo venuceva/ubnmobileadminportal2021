@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_171">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/attoparser-2.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/fontbox-2.0.22.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/graphics2d-0.30.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/jsoup-1.13.1.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/jtidy-r938.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/ognl-3.1.26.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/openhtmltopdf-core-1.0.6.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/openhtmltopdf-pdfbox-1.0.6.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/pdfbox-2.0.22.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/unbescape-1.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/xmpbox-2.0.22.jar"/>
+	<classpathentry kind="lib" path="E:/UB_ADMIN_WORKSPACE/mobileadminportal/WebContent/WEB-INF/lib/extlib/thymeleaf-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

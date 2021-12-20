@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UBN_INFORMATIOR_INFO>
+	<ServiceUserName>yu1/OwTC/Yt4cZ1zWDb+mA==</ServiceUserName>
+	<ServicePassword>yu1/OwTC/YsKblEGZoHZaQ==</ServicePassword>
+	<DatabaseType>WEBLOGICDS</DatabaseType>
+	<DS-URL>t3://10.8.1.210:8004</DS-URL>
+	<DS-JNDI>mobadminds</DS-JNDI>
+</UBN_INFORMATIOR_INFO>

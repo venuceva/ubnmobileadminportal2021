@@ -1,0 +1,119 @@
+.errores {
+color: #D8000C;
+font-family: 'Sansita One';
+font-style: normal;
+font-size: 18px;
+font-weight: 400;
+position: absolute;
+}
+
+.screenexit {
+padding: 10px;
+position: relative;
+}
+
+.msg {
+color: #D8000C;
+font-family: 'Sansita One';
+font-style: normal;
+font-size: 15px;
+font-weight: 400;
+}
+
+.msg1 {
+color: green;
+font-family: 'Sansita One';
+font-weight: bold;
+font-style: normal;
+font-size: 17px;
+font-weight: 400;
+}
+
+label.error {
+	font-family: 'Sansita One';
+	font-weight: bold;
+	color: #D8000C;
+	padding: 2px 8px;
+	margin-top: 2px;
+}
+
+.errmsg {
+	color: #D8000C;
+	
+}
+
+.messages {
+	font-weight: bold;
+	color: green;
+	padding: 2px 8px;
+	margin-top: 2px;
+}
+
+.errors {
+	font-weight: bold;
+	color: red;
+	padding: 2px 8px;
+	margin-top: 2px;
+}
+
+
+
+   .bubblet {
+    position: relative;
+    width: 393px;
+    height: 101px;
+    padding: 0px;
+	font-style: normal;
+	font-size: 19px;
+    color:white;
+    background: #0084B4;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 2px -5px 3px 0px #5A7982;
+    -moz-box-shadow: 2px -5px 3px 0px #5A7982;
+    box-shadow: 2px -5px 3px 0px #5A7982;
+}
+
+  .bubblet:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: -54px;
+    border-style: solid;
+    border-width: 10px 54px 10px 0;
+    border-color: transparent #0084B4;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+  .bubbled {
+    position: relative;
+    width: 393px;
+    height: 101px;
+    padding: 0px;
+	font-style: normal;
+	font-size: 19px;
+     color:white;
+    background: #0084B4;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 2px -5px 3px 0px #5A7982;
+    -moz-box-shadow: 2px -5px 3px 0px #5A7982;
+    box-shadow: 2px -5px 3px 0px #5A7982;
+}
+
+  .bubbled:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: -54px;
+    border-style: solid;
+    border-width: 10px 0 10px 54px;
+    border-color: transparent #0084B4;
+    display: block;
+    width: 0;
+    z-index: 1;
+}

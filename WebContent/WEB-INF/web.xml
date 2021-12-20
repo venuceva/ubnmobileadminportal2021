@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>MobileBanking</display-name>
+ <welcome-file-list>
+    <welcome-file>/jsp/index.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>pageTitle</param-name>
+    <param-value>Union Bank of Nigeria</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:resource/beans.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <filter>
+    <filter-name>struts-cleanup</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+  </filter>
+  <filter>
+    <filter-name>struts-execute</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>struts-execute</filter-name>
+    <url-pattern>*.action</url-pattern>
+    <url-pattern>/struts/*</url-pattern>
+  </filter-mapping>
+  <context-param>
+    <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+    <param-value>/WEB-INF/classes/resource/tiles.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.ceva.interceptors.DBContextListner</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>JspSupportServlet</servlet-name>
+    <servlet-class>org.apache.struts2.views.JspSupportServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>This Servlet Used to Export Report file</description>
+    <display-name>ReportExporterServlet</display-name>
+    <servlet-name>ReportExporterServlet</servlet-name>
+    <servlet-class>com.ceva.reports.ReportExporterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportExporterServlet</servlet-name>
+    <url-pattern>/ReportExporterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>This Servlet Used to Export HTML Report</description>
+    <display-name>HtmlReportExporterServlet</display-name>
+    <servlet-name>HtmlReportExporterServlet</servlet-name>
+    <servlet-class>com.ceva.reports.HtmlReportExporterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HtmlReportExporterServlet</servlet-name>
+    <url-pattern>/HtmlReportExporterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>net.sf.jasperreports.j2ee.servlets.ImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/image</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <servlet-name>ProductsUnAuthRecordsServlet</servlet-name>
+    <servlet-class>com.ceva.pagination.ProductsUnAuthRecordsServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>ProductsUnAuthRecordsServlet</servlet-name>
+    <url-pattern>/com/ceva/pagination/ProductsUnAuthRecordsServlet.java</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <servlet-name>ProductsAuthRecordsServlet</servlet-name>
+    <servlet-class>com.ceva.pagination.ProductsAuthRecordsServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>ProductsAuthRecordsServlet</servlet-name>
+    <url-pattern>/com/ceva/pagination/ProductsAuthRecordsServlet.java</url-pattern>
+  </servlet-mapping>  
+  
+   <servlet>
+    <servlet-name>ProductsRejectedRecordsServlet</servlet-name>
+    <servlet-class>com.ceva.pagination.ProductsRejectedRecordsServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>ProductsRejectedRecordsServlet</servlet-name>
+    <url-pattern>/com/ceva/pagination/ProductsRejectedRecordsServlet.java</url-pattern>
+  </servlet-mapping>  
+  
+  
+  <servlet>
+    <servlet-name>OfferDealUnAuthRecordsServlet</servlet-name>
+    <servlet-class>com.ceva.pagination.OfferDealUnAuthRecordsServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>OfferDealUnAuthRecordsServlet</servlet-name>
+    <url-pattern>/com/ceva/pagination/OfferDealUnAuthRecordsServlet.java</url-pattern>
+  </servlet-mapping>  
+  
+  
+   <servlet>
+    <servlet-name>OfferDealAuthRecordsServlet</servlet-name>
+    <servlet-class>com.ceva.pagination.OfferDealAuthRecordsServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>OfferDealAuthRecordsServlet</servlet-name>
+    <url-pattern>/com/ceva/pagination/OfferDealAuthRecordsServlet.java</url-pattern>
+  </servlet-mapping>  
+  
+  
+  <servlet>
+    <servlet-name>OfferDealRejectRecordsServlet</servlet-name>
+    <servlet-class>com.ceva.pagination.OfferDealRejectRecordsServlet</servlet-class>
+  </servlet>
+  
+	
+</web-app>

@@ -1,0 +1,18 @@
+
+http://localhost:8080/mobileadminportal/cevaappl.action
+
+
+http://10.65.0.19:9999/mobileadminportal/cevaappl.action
+http://172.27.5.18:8089/mobileadminportal/cevaappl.action
+
+CEVA
+Bank12!@
+123456  -- token
+
+CEVA1
+Bank12!@
+
+======================
+Agent portal Url:
+=====================
+http://10.65.0.19:5979/AgentWalletPortal/index.html 

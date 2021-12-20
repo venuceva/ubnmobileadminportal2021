@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+</head>
+
+
+<body>
+ 
+
+  <div id="invoice" class="effect2">
+    
+    <div class="logo"> <img class="logo" src="UnionBank-logo.png" alt="logo"></div>
+     <!-- <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-EFgrUyHBRYOxL-yWG4k8klXFWik0VBo84rzrXwPxJ-PuvAihniLvKor2wUuQk9NTBg&usqp=CAU" alt="Logo" /></div>-->
+
+
+ 
+	
+	
+	
+	
+	    <div id="invoice-mid">   
+      <div id="message">
+       <h1>
+				<b>[[${data.getCusname()}]]</b>
+			</h1>
+
+      </div>
+ 
+        <div class="clearfix" style="background-color:#c6c6c6!important;">
+ 
+            <div class="col-left">
+ <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><span>ACCOUNT NO:</span><label id="invoice_total">[[${data.getAccountno()}]]</label></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><span>Branch Name :</span><label id="payment_term" style="margin-left:12px!important;">[[${data.getBranchname()}]]</label></td>
+                           
+                        </tr>
+						  <tr>
+                            <td><span>Account Type:</span><label id="invoice_total"style="margin-left:6px!important;">[[${data.getAccountype()}]]</label></td>
+                            
+                        </tr>
+						 <tr>
+                            <td><span>Currency :</span><label id="invoice_total" style="margin-left:30px!important;">[[${data.getCurrency()}]]</label></td>
+                            
+                        </tr>
+                      
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-right">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><span>Print Date :</span><label id="invoice_total">[[${data.getPrintdate()}]]</label></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><span>Start Date :</span><label id="payment_term" style="margin-left:2px!important;">[[${data.getStartdate()}]]</label></td>
+                           
+                        </tr>
+						  <tr>
+                            <td><span>End Date :</span><label id="invoice_total"style="margin-left:6px!important;">[[${data.getEnddate()}]]</label></td>
+                            
+                        </tr>
+					
+                      
+                    </tbody>
+                </table>
+            </div>
+        </div>         
+    </div><!--End Invoice Mid-->
+	
+
+
+		<div class="invoice-mid" style="margin-left: 15px;">
+			<h1>
+				<b>[[${data.getCusname()}]]</b>
+			</h1><br>
+			<h2 style="  font-weight: 600;
+    font-size:22px!important;">[[${data.getAddress()}]]</h2>
+			<h2 style="  font-weight: 500!important;
+    font-size:18px!important;">[[${data.getAddress1()}]]</h2>
+			<h2 style="  font-weight: 500!important;
+    font-size:20px!important;">[[${data.getAddress2()}]]</h2>
+
+
+			<table class="smalltable">
+
+				<tr>
+					<td><b>OPENING</b></td>
+
+					<td>[[${data.getOpeningbalnce()}]]</td>
+				</tr>
+				<tr>
+					<td><b>TOTAL DEBIT</b></td>
+
+					<td>[[${data.getTotaldebit()}]]</td>
+				</tr>
+				<tr>
+					<td><b>TOTAL CREDIT</b></td>
+
+					<td>[[${data.getTotalcredit()}]]</td>
+				</tr>
+				<tr>
+					<td><b>CLOSING</b></td>
+
+					<td>[[${data.getClosingbalance()}]]</td>
+				</tr>
+			</table>
+		</div>
+
+    <div id="invoice-bot">
+      
+      <div id="table">
+			<table class="table-main">
+					<thead>
+						<tr class="tabletitle">
+							<th>Post Date</th>
+							<th>Transaction Type</th>
+							<th>Transaction Details</th>
+							<th>Reference Number</th>
+							<th>Value Date</th>
+							<th>DR</th>
+							<th>CR</th>
+							<th>Balance</th>
+						</tr>
+
+					</thead>
+					<tr class="list-item"
+						th:each="acountinfodetail : ${postings}">
+						<td class="tableitem" th:text="${acountinfodetail.getValuedate()}"><span
+							style="display: inline;"></span></td>
+
+						<td class="tableitem"
+							th:text="${acountinfodetail.getTransactiontype()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem"
+							th:text="${acountinfodetail.getTransactiondetails()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem"
+							th:text="${acountinfodetail.getReferencenumber()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem" th:text="${acountinfodetail.getValuedate()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem" th:text="${acountinfodetail.getCredit()}"><span
+							style="display: inline;"></span></td>
+
+						<td class="tableitem" th:text="${acountinfodetail.getDebit()}"><span
+							style="display: inline;"></span></td>
+						<td class="tableitem" th:text="${acountinfodetail.getBalance()}"><span
+							style="display: inline;"></span></td>
+					</tr>
+
+
+
+				</table>
+      </div>
+  
+    </div>
+    
+    
+    
+    <div style="margin-top:20px;">
+
+
+
+<table style="border: 1px solid black;">
+	<h3>
+				<b>SUMMERY</b>
+			</h3>
+
+  <tr>
+    <th style="  border: 1px solid black;">Total:</th>
+    <td style="  border: 1px solid black;text-align:center;">[[${data.getTotaldebit()}]]</td>
+        <td style="  border: 1px solid black;text-align:center;">[[${data.getTotalcredit()}]]</td>
+            <td style="  border: 1px solid black;text-align:center;">[[${data.getTotbalamt()}]]</td>
+  </tr>
+  <tr style="width:100%;">
+    <th style="  border: 1px solid black;">Total:</th>  
+      <td style="  border: 1px solid black;padding-left:30px;text-align:right;">[[${data.getDrcount()}]]&nbsp;&nbsp;&nbsp;&nbsp;<span>Debit</span></td>
+         <td style="  border: 1px solid black;padding-left:30px;text-align:right;">[[${data.getCrcount()}]]&nbsp;&nbsp;&nbsp;&nbsp;<span>Credit</span></td>   
+  </tr>  
+
+</table>
+
+	</div>
+	
+	<br/><br/>
+    
+    <footer>
+   <div th:fragment="footer">
+
+      <img   style="float:left!important;width:100%;height:100%;"
+     src="btm.jpg" alt="Logo" />
+   
+<br>
+</div>
+    </footer>
+    
+ 
+  </div>
+  
+  
+
+</body>
+
+</html >
