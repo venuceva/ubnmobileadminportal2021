@@ -791,8 +791,7 @@ function queryUser()
 						}
 						
 						 if($('#searchid').val()!=""){
-							//QUERY=QUERY+" AND WFTP.SERVICECODE='"+($('#searchid').val()).split("-")[1]+"'";	
-							QUERY=QUERY+" AND WFTP.SERVICECODE='"+($('#searchid').val()).split("-")[0]+"'";	
+							QUERY=QUERY+" AND WFTP.SERVICECODE='"+($('#searchid').val()).split("-")[1]+"'";	
 						} 
 						
 						if($('#agentuserid').val()!="" && $('#agentuserid').val()!="ALL"){						
@@ -1794,45 +1793,6 @@ function queryUser()
 					$("#query").val(QUERY);
 					$("#searchby").val(SEARCHBYDT);
 				}
-				
-				if($("#Report").val()=="failed_transaction_reports"){
-					//QUERY="select APPROVEDBY,AMOUNT/100,POSRRN,INTERNALID,BANKRRN,STAN,BANKRESPONSECODE,NVL(BANKRESPONSEMSG,' '),TXNDATE,TERMINALNUMBER,NVL(TXNCODE,' ') from tbl_tranlog_all where BANKRESPONSECODE not in ('00','09')";
-					QUERY="select 	USERID,PAY_REF_NO,WALLET_REF_NO,TRANS_DATE,TRNS_AMT,CHANNEL,TRANS_TYPE,RESP_CODE,RESP_MSG from WALLET_AGNCORE_TXNTBL where resp_code!='00' "; 
-					SEARCHBYDT="Search By  Unsettlement Report";
-					
-					
-					if($("#dateradio").val()==""){
-						
-						$("#errormsg").text("Please Select Time Period .");
-						return false;
-					}else if($("#dateradio").val()=="betdate"){
-						if($("#fromdate").val()==""){
-							$("#errormsg").text("Please enter From Date.");
-							return false;
-						}
-						if($("#todate").val()==""){
-							$("#errormsg").text("Please enter To Date.");
-							return false;
-						}
-					}
-					
-					if($("#dateradio").val()=="betdate"){
-						QUERY=QUERY+" AND TRUNC(TRANS_DATE) between to_date('"+$("#fromdate").val()+"','dd/mm/yyyy') and to_date('"+$("#todate").val()+"','dd/mm/yyyy')";
-					}else if($("#dateradio").val()=="curmnt"){
-						QUERY=QUERY+" AND to_char(TRANS_DATE,'mm/yyyy')=to_char(sysdate,'mm/yyyy')";
-					}else if($("#dateradio").val()=="quartly"){
-						QUERY=QUERY+" AND to_char(TRANS_DATE,'Q')=to_char(sysdate,'Q')";	
-						
-					}
-					
-					QUERY=QUERY+" order by TRANS_DATE";	
-					
-					//$("#fieldsval").val("USER ID,AMOUNT,POS RRN,INTERNAL ID,BANK RRN,STAN,BANK RESPONSE CODE,BANK RESPONSE MESSAGE,TRANACTION DATE,TERMINAL NUMBER,TXN CODE");
-					$("#fieldsval").val("USER ID,PAYMENT REFERENCE NO,WALLET REFERENCE NO,TRANSACTION DATE AND TIME,AMOUNT,CHANNEL,TRANSACTION TYPE,RESP_CODE,RESP_MSG");
-					$("#query").val(QUERY);
-					$("#searchby").val(SEARCHBYDT);
-				}
-				
 				
 				if($("#Report").val()=="card_transaction_09_reports"){
 					QUERY="select APPROVEDBY,AMOUNT/100,POSRRN,INTERNALID,BANKRRN,STAN,BANKRESPONSECODE,NVL(BANKRESPONSEMSG,' '),TXNDATE,TERMINALNUMBER,NVL(TXNCODE,' ') from tbl_tranlog_all where BANKRESPONSECODE in ('09')";
@@ -3214,98 +3174,6 @@ if($("#Report").val()=="balanceenquiry_Report"){
 					
 					//console.log(QUERY);
 					$("#fieldsval").val("TRANSACTION TYPE,SMS RESPCODE,TOTAL SMS"); 
-					$("#query").val(QUERY);
-					$("#searchby").val(SEARCHBYDT);
-				}
-			
-			if($("#Report").val()=="complaint_management_reports"){
-				SEARCHBYDT="Search By  ";
-					
-						QUERY="select  NVL(USERID,' '), NVL(CHANNEL,' '), NVL(COMPLAIN_TYPE,' '),  NVL(COMPLAIN_STATUS,' '), NVL(PAYMENT_NO,' '), NVL(ACCOUNT_NO,' '), NVL(TRANSAMOUNT,' '), NVL(PHONENO,' '), NVL(EMAIL,' '), NVL(COMMENTS,' '), NVL(CARDTYPE,' '), NVL(FIRSTFOURDIGITS,' '), NVL(LASTFOURDIGITS,' '), NVL(to_char(to_date(DATEOFTRANS,'ddmmyyyy'),'dd-mm-yyyy'),' '), NVL(to_char(COMPLAIN_DATE,'dd-mm-yyyy'),' '), NVL(ASSIGNEDDATE,' '), NVL(ASSIGNED_AGENT,' '), NVL(to_char(COMPLAIN_CLOSED_DATE,'dd-mm-yyyy'),' '), NVL(COMPLAIN_CLOSED_BY,' '), NVL(TRANSACTION_NO,' '), NVL(RESOLVED_DESC,' ') from CUSTOMER_COMPLAIN_TBL WHERE 1=1 ";
-						SEARCHBYDT=SEARCHBYDT+"Status : ALL ";
-					
-					
-					if($("#dateradio").val()==""){
-						
-						$("#errormsg").text("Please Select Time Period .");
-						return false;
-					}else if($("#dateradio").val()=="betdate"){
-						if($("#fromdate").val()==""){
-							$("#errormsg").text("Please enter From Date.");
-							return false;
-						}
-						if($("#todate").val()==""){
-							$("#errormsg").text("Please enter To Date.");
-							return false;
-						}
-					}
-					
-					if($("#dateradio").val()=="betdate"){
-						QUERY=QUERY+" AND TRUNC(COMPLAIN_DATE) between to_date('"+$("#fromdate").val()+"','dd/mm/yyyy') and to_date('"+$("#todate").val()+"','dd/mm/yyyy') ";
-						SEARCHBYDT=SEARCHBYDT+"And Dates between : From Date "+$("#fromdate").val()+" To Date "+$("#todate").val()+" ";
-					}else if($("#dateradio").val()=="curmnt"){
-						QUERY=QUERY+" AND to_char(COMPLAIN_DATE,'mm/yyyy')=to_char(sysdate,'mm/yyyy')";
-						SEARCHBYDT=SEARCHBYDT+"And Current Month ";
-					}else if($("#dateradio").val()=="quartly"){
-						QUERY=QUERY+" AND to_char(COMPLAIN_DATE,'Q')=to_char(sysdate,'Q')";	
-						SEARCHBYDT=SEARCHBYDT+"And Quarterly ";
-					}
-					
-					
-					if($('#agentuserid').val()!=""){
-						QUERY=QUERY+" AND UPPER(COMPLAIN_STATUS)=UPPER('"+$("#agentuserid").val()+"')";
-						SEARCHBYDT=SEARCHBYDT+"And complaint status : "+$("#agentuserid").val()+" ";
-					}
-					
-					
-					//console.log(QUERY);
-					$("#fieldsval").val("USER ID, CHANNEL, COMPLAIN TYPE,  COMPLAIN STATUS, PAYMENT NO, ACCOUNT NO, TRANSACTION AMOUNT, PHONE NO, EMAIL ID, CUSTOMER COMMENTS, CARD TYPE, FIRST FOUR DIGITS, LAST FOUR DIGITS, DATE OF TRANSACTION, COMPLAINT DATE, PICKUP DATE, AGENT, COMPLAINT CLOSED DATE, COMPLAINT CLOSED BY, AGENT TRANSACTION NO, AGENT COMMENTS"); 
-					$("#query").val(QUERY);
-					$("#searchby").val(SEARCHBYDT);
-				}
-			
-			if($("#Report").val()=="fx_purchaset_reports"){
-				SEARCHBYDT="Search By  ";
-					
-						QUERY="select NVL(USERID,' '), to_char(TRANS_DATE,'dd-mm-yyyy hh24:mi:ss'),  ACCOUNTTODEBIT, MODE_OF_COLLECTION, BEN_ACCOUNT_NO, TRAVEL_DESTINATION, AMOUNT, TRAVEL_DATE, TICKET_NUMBER, PICKUPBRANCHES, EMAIL, RATE, ALERT_TYPE, FX_PURCHAGE_TYPE, decode(STATUS,'P','Request','A','Approved','R','Rejected'),NVL(NOTIFICATION_FEE,'0'), NVL(CHECKER_ID,' '), NVL(to_char(CHECKER_DATE,'dd-mm-yyyy'),' '), NVL(REASON,' ') from FX_PURCHASE_TBL WHERE 1=1 ";
-						SEARCHBYDT=SEARCHBYDT+"Status : ALL ";
-					
-					
-					if($("#dateradio").val()==""){
-						
-						$("#errormsg").text("Please Select Time Period .");
-						return false;
-					}else if($("#dateradio").val()=="betdate"){
-						if($("#fromdate").val()==""){
-							$("#errormsg").text("Please enter From Date.");
-							return false;
-						}
-						if($("#todate").val()==""){
-							$("#errormsg").text("Please enter To Date.");
-							return false;
-						}
-					}
-					
-					if($("#dateradio").val()=="betdate"){
-						QUERY=QUERY+" AND TRUNC(TRANS_DATE) between to_date('"+$("#fromdate").val()+"','dd/mm/yyyy') and to_date('"+$("#todate").val()+"','dd/mm/yyyy') ";
-						SEARCHBYDT=SEARCHBYDT+"And Dates between : From Date "+$("#fromdate").val()+" To Date "+$("#todate").val()+" ";
-					}else if($("#dateradio").val()=="curmnt"){
-						QUERY=QUERY+" AND to_char(TRANS_DATE,'mm/yyyy')=to_char(sysdate,'mm/yyyy')";
-						SEARCHBYDT=SEARCHBYDT+"And Current Month ";
-					}else if($("#dateradio").val()=="quartly"){
-						QUERY=QUERY+" AND to_char(TRANS_DATE,'Q')=to_char(sysdate,'Q')";	
-						SEARCHBYDT=SEARCHBYDT+"And Quarterly ";
-					}
-					
-					
-					if($('#agentuserid').val()!=""){
-						QUERY=QUERY+" AND UPPER(decode(STATUS,'P','Request','A','Approved','R','Rejected'))=UPPER('"+$("#agentuserid").val()+"')";
-						SEARCHBYDT=SEARCHBYDT+"And complaint status : "+$("#agentuserid").val()+" ";
-					}
-					
-					
-					//console.log(QUERY);
-					$("#fieldsval").val("USER ID, REQUEST DATE, ACCOUNT NUMBER,  MODE OF COLLECTION, BENEFICIARY ACCOUNT NO, TRAVEL DESTINATION, AMOUNT, TRAVEL DATE, TICKET NUMBER, PICKUP BRANCH, EMAIL, RATE, ALERT TYPE, FX PURCHAGE TYPE, STATUS,NOTIFICATION FEE, ACTION USER ID, ACTION DATE, REASON"); 
 					$("#query").val(QUERY);
 					$("#searchby").val(SEARCHBYDT);
 				}
@@ -5197,7 +5065,7 @@ $('#searchagentuserid').html("Account Type <font color=\"red\">*</font>");
 				
 		}
 		
-	}else if($("#Report").val()=="Transaction_Report" || $("#Report").val()=="Transaction_without_rev_Report" || $("#Report").val()=="ReversalTimeReport" || $("#Report").val()=="ReversalSummary" || $("#Report").val()=="MTNFeeReports" || $("#Report").val()=="MTNFeeTotalReport"  || $("#Report").val()=="EstimateTimeReport" || $("#Report").val()=="Transaction_summary_report" || $("#Report").val()=="All_Commission_Report"  || $("#Report").val()=="All_Commission_summary_Open" || $("#Report").val()=="cardless_withdrawal" || $("#Report").val()=="debit_card_validation_report" || $("#Report").val()=="sms_data" || $("#Report").val()=="complaint_management_reports" || $("#Report").val()=="fx_purchaset_reports" || $("#Report").val()=="ErrorReport"  || $("#Report").val()=="AgentLocatorSummary"  || $("#Report").val()=="AgentLocatorReports" || $("#Report").val()=="Unsettlement_69_Reports" || $("#Report").val()=="failed_card_transaction_reports" || $("#Report").val()=="card_transaction_09_reports" || $("#Report").val()=="wallet_agent_commission_reports" || $("#Report").val()=="wallet_commission_reports"|| $("#Report").val()=="failed_transaction_reports"){
+	}else if($("#Report").val()=="Transaction_Report" || $("#Report").val()=="Transaction_without_rev_Report" || $("#Report").val()=="ReversalTimeReport" || $("#Report").val()=="ReversalSummary" || $("#Report").val()=="MTNFeeReports" || $("#Report").val()=="MTNFeeTotalReport"  || $("#Report").val()=="EstimateTimeReport" || $("#Report").val()=="Transaction_summary_report" || $("#Report").val()=="All_Commission_Report"  || $("#Report").val()=="All_Commission_summary_Open" || $("#Report").val()=="cardless_withdrawal" || $("#Report").val()=="debit_card_validation_report" || $("#Report").val()=="sms_data"  || $("#Report").val()=="ErrorReport"  || $("#Report").val()=="AgentLocatorSummary"  || $("#Report").val()=="AgentLocatorReports" || $("#Report").val()=="Unsettlement_69_Reports" || $("#Report").val()=="failed_card_transaction_reports" || $("#Report").val()=="card_transaction_09_reports" || $("#Report").val()=="wallet_agent_commission_reports" || $("#Report").val()=="wallet_commission_reports"){
 		
 		$("#tabdate1").css({"display":""});
 		$("#refnodis2").css({"display":""});
@@ -5229,12 +5097,12 @@ $('#searchagentuserid').html("Account Type <font color=\"red\">*</font>");
 		}
 		
 		
-		if($("#Report").val()=="Unsettlement_69_Reports" || $("#Report").val()=="failed_card_transaction_reports" || $("#Report").val()=="card_transaction_09_reports" || $("#Report").val()=="wallet_agent_commission_reports" || $("#Report").val()=="wallet_commission_reports"|| $("#Report").val()=="failed_transaction_reports"){
+		if($("#Report").val()=="Unsettlement_69_Reports" || $("#Report").val()=="failed_card_transaction_reports" || $("#Report").val()=="card_transaction_09_reports" || $("#Report").val()=="wallet_agent_commission_reports" || $("#Report").val()=="wallet_commission_reports"){
 			$("#tab11").css({"display":"none"});
 			$("#tab12").css({"display":"none"});
 		}
 		
-		if($("#Report").val()=="debit_card_validation_report" || $("#Report").val()=="sms_data" || $("#Report").val()=="complaint_management_reports" || $("#Report").val()=="fx_purchaset_reports"  || $("#Report").val()=="ErrorReport"  || $("#Report").val()=="AgentLocatorSummary"  || $("#Report").val()=="AgentLocatorReports" || $("#Report").val()=="MTNFeeReports" || $("#Report").val()=="MTNFeeTotalReport"  || $("#Report").val()=="Transaction_without_rev_Report" || $("#Report").val()=="ReversalTimeReport" || $("#Report").val()=="ReversalSummary" || $("#Report").val()=="Unsettlement_69_Reports" || $("#Report").val()=="failed_card_transaction_reports" || $("#Report").val()=="card_transaction_09_reports" || $("#Report").val()=="wallet_agent_commission_reports" || $("#Report").val()=="wallet_commission_reports"|| $("#Report").val()=="failed_transaction_reports"){
+		if($("#Report").val()=="debit_card_validation_report" || $("#Report").val()=="sms_data"  || $("#Report").val()=="ErrorReport"  || $("#Report").val()=="AgentLocatorSummary"  || $("#Report").val()=="AgentLocatorReports" || $("#Report").val()=="MTNFeeReports" || $("#Report").val()=="MTNFeeTotalReport"  || $("#Report").val()=="Transaction_without_rev_Report" || $("#Report").val()=="ReversalTimeReport" || $("#Report").val()=="ReversalSummary" || $("#Report").val()=="Unsettlement_69_Reports" || $("#Report").val()=="failed_card_transaction_reports" || $("#Report").val()=="card_transaction_09_reports" || $("#Report").val()=="wallet_agent_commission_reports" || $("#Report").val()=="wallet_commission_reports"){
 			
 			$("#st3").css({"display":"none"});
 			$("#st4").css({"display":"none"});
@@ -5261,16 +5129,6 @@ $('#searchagentuserid').html("Account Type <font color=\"red\">*</font>");
 		
 		
 		var formInput="reporttype=APPLICATION-CHANNEL";
-		
-		if($("#Report").val()=="complaint_management_reports"){
-			$('#searchagentuserid').text("Status");
-			var formInput="reporttype=APPLICATION-COMPLAINTS";
-		}
-		
-		if($("#Report").val()=="fx_purchaset_reports"){
-			$('#searchagentuserid').text("Status");
-			var formInput="reporttype=APPLICATION-FXREPORT";
-		}
 		
 		$.ajax({
 			
