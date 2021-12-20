@@ -1865,8 +1865,7 @@ public String ajaxWalletTransactioninfo() {
 								sb.append("<tr><td>Response</td><td>Wallet Credit Failed</td></tr>");
 							}
 						}else {
-							///entityQry="select PAYMENTREFERENCE,USERID,DEBITTRANSACTIONID,CREDITACCCOUNTNUMBER,TRNS_AMT,CHANNEL,RESPONSECODE,to_char(TRANS_DATE,'dd-mm-yyyy hh:mi:ss'),TRANS_TYPE from AGENT_FUND_TRANSFER_TBL where PAYMENTREFERENCE= '"+sid.split("-")[0]+"'";	
-							  entityQry=" select  PAY_REF_NO,USERID,DR_ACCT_NO,CR_NARRATION,TRNS_AMT,CHANNEL,RESP_CODE,to_char(TRANS_DATE,'dd-mm-yyyy hh:mi:ss'),TRANS_TYPE from  wallet_agncore_txntbl where PAY_REF_NO ='"+sid.split("-")[0]+"'";
+							entityQry="select PAYMENTREFERENCE,USERID,DEBITTRANSACTIONID,CREDITACCCOUNTNUMBER,TRNS_AMT,CHANNEL,RESPONSECODE,to_char(TRANS_DATE,'dd-mm-yyyy hh:mi:ss'),TRANS_TYPE from AGENT_FUND_TRANSFER_TBL where PAYMENTREFERENCE='"+sid.split("-")[0]+"'";	
 							searchPstmt = connection.prepareStatement(entityQry);
 							searchRS = searchPstmt.executeQuery();
 							if (searchRS.next()){
@@ -1948,11 +1947,7 @@ public String ajaxWalletTransactioninfo() {
 						}
 						
 					}else {
-						//entityQry="select AMOUNT,FROM_ACCOUNT,TO_ACCOUNT,CHANNEL,BANK_CODE,BANK_NAME,FTO_RESP_CODE,FTO_RESP_DESC,FTBATCHID,USER_ID from AGENT_WALLET_FTO_TRANS_TBL where FTBATCHID='"+sid.split("-")[0]+"'";							
-						  entityQry="select TRNS_AMT,DR_ACCT_NO,BEN_PAYBILL_ACTNO,CHANNEL,BEN_BANK_CODE,'',RESP_CODE,RESP_MSG,pay_REF_NO,USERID  from WALLET_AGNCORE_TXNTBL  where pay_ref_no='"+sid.split("-")[0]+"'";
-						//for prod entityQry="select TRNS_AMT,(JSON_VALUE(JREQUEST,'$.OriginatorAccountNumber') ),BEN_PAYBILL_ACTNO,CHANNEL,BEN_BANK_CODE,(JSON_VALUE(JREQUEST,'$.bankname') ),RESP_CODE,RESP_MSG,pay_REF_NO,USERID  from WALLET_AGNCORE_TXNTBL  where pay_ref_no='"+sid.split("-")[0]+"'";
-					
-						
+						entityQry="select AMOUNT,FROM_ACCOUNT,TO_ACCOUNT,CHANNEL,BANK_CODE,BANK_NAME,FTO_RESP_CODE,FTO_RESP_DESC,FTBATCHID,USER_ID from AGENT_WALLET_FTO_TRANS_TBL where FTBATCHID='"+sid.split("-")[0]+"'";	
 						searchPstmt = connection.prepareStatement(entityQry);
 						searchRS = searchPstmt.executeQuery();
 						sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
@@ -1973,24 +1968,13 @@ public String ajaxWalletTransactioninfo() {
 						}
 						searchPstmt.close();
 						searchRS.close();
-						/*sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
+						sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
 						sb.append("<tr><td colspan=\"2\" style=\"color:red\">Wallet Transaction Details </td></tr>");
-						sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");*/
+						sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
 						entityQry="select WFT.EXT_TXN_REF_NO,WFT.USER_ID,AWFT.FROM_ACCOUNT,AWFT.TO_ACCOUNT,WFT.AMOUNT,WFT.CHANNEL,DECODE(SUBSTR(TXN_REF_NO,1,1),'R','Reversal Successful','Wallet Debit Successful'),to_char(WFT.TXN_STAMP,'dd-mm-yyyy hh:mi:ss'),WFT.SERVICECODE,WFT.TXN_AMT,WFT.FEE_AMT,(Select BANK_NAME from BANKS_DATA where NIBSSCODE=AWFT.TO_BRANCH_CODE) from WALLET_FIN_TXN WFT,AGENT_WALLET_FTO_TRANS_TBL AWFT " + 
 								" where  WFT.EXT_TXN_REF_NO=AWFT.FTBATCHID AND EXT_TXN_REF_NO='"+sid.split("-")[0]+"' ORDER BY  WFT.TXN_STAMP asc ";	
-						searchPstmt = connection.prepareStatement(entityQry,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+						searchPstmt = connection.prepareStatement(entityQry);
 						searchRS = searchPstmt.executeQuery();
-						int count=0;
-							if(searchRS.last())
-							{
-								//if(searchRS.getRow()>0){
-									sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
-							sb.append("<tr><td colspan=\"2\" style=\"color:red\">Wallet Transaction Details </td></tr>");
-							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
-							       searchRS.beforeFirst();
-								//}
-								
-							}
 						int i=0;
 						while (searchRS.next()){
 							sb.append("<tr style=\"color:orange\"><td>Transaction Status</td><td>"+searchRS.getString(7)+"</td></tr>");
@@ -2004,9 +1988,9 @@ public String ajaxWalletTransactioninfo() {
 						if(i==1) {
 							sb.append("<tr style=\"bgcolor:red\"><td colspan='2'>Transaction pending for reversal </td></tr>");
 						}
-						/*if(i==0) {
+						if(i==0) {
 							sb.append("<tr><td>Some thing went wrong</td></tr>");
-						}*/
+						}
 					}
 						sb.append("</table>");
 					}else if("Fund Transfer Own Bank".equalsIgnoreCase(sid.split("-")[1])) {
@@ -2050,14 +2034,7 @@ public String ajaxWalletTransactioninfo() {
 						
 						}else {
 							
-							//entityQry="select USER_ID,FTBATCHID,AMOUNT,FROM_ACCOUNT,TO_ACCOUNT,CHANNEL,FTO_RESP_CODE,FTO_RESP_DESC from AGENT_WALLET_TRANS_TBL WHERE FTBATCHID='"+sid.split("-")[0]+"' ";	
-                            entityQry="select USERID,pay_REF_NO,TRNS_AMT,'',BEN_PAYBILL_ACTNO,CHANNEL,RESP_CODE,RESP_MSG  from WALLET_AGNCORE_TXNTBL  where pay_ref_no='"+sid.split("-")[0]+"'";
-					
-						
-						//for prod	entityQry="select USERID,pay_REF_NO,TRNS_AMT,(JSON_VALUE(JREQUEST,'$.OriginatorAccountNumber') ),BEN_PAYBILL_ACTNO,CHANNEL,RESP_CODE,RESP_MSG  from WALLET_AGNCORE_TXNTBL  where pay_ref_no='"+sid.split("-")[0]+"'";
-					
-							
-							
+							entityQry="select USER_ID,FTBATCHID,AMOUNT,FROM_ACCOUNT,TO_ACCOUNT,CHANNEL,FTO_RESP_CODE,FTO_RESP_DESC from AGENT_WALLET_TRANS_TBL WHERE FTBATCHID='"+sid.split("-")[0]+"' ";	
 							searchPstmt = connection.prepareStatement(entityQry);
 							searchRS = searchPstmt.executeQuery();
 							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
@@ -2079,26 +2056,15 @@ public String ajaxWalletTransactioninfo() {
 							searchPstmt.close();
 							searchRS.close();
 							
-							/*sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
+							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
 							sb.append("<tr><td colspan=\"2\" style=\"color:red\">Wallet Transaction Details </td></tr>");
-							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");*/
+							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
 							
 							entityQry="select WFT.EXT_TXN_REF_NO,AWTT.USER_ID,AWTT.FROM_ACCOUNT,AWTT.TO_ACCOUNT,AWTT.AMOUNT,AWTT.CHANNEL,DECODE(SUBSTR(TXN_REF_NO,1,1),'R','Reversal Successful','Wallet Debit Successful'),to_char(WFT.TXN_STAMP,'dd-mm-yyyy hh:mi:ss'),'Fund Transfer Own bank',NVL(WFT.AMOUNT,0),NVL(WFT.FEE_AMT,0) from AGENT_WALLET_TRANS_TBL AWTT, WALLET_FIN_TXN WFT   " + 
 									" where  AWTT.FTBATCHID=WFT.EXT_TXN_REF_NO AND EXT_TXN_REF_NO='"+sid.split("-")[0]+"' order by WFT.TXN_STAMP asc";	
-							searchPstmt = connection.prepareStatement(entityQry,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+							searchPstmt = connection.prepareStatement(entityQry);
 							searchRS = searchPstmt.executeQuery();
 							int i=0;
-							int count=0;
-							if(searchRS.last())
-							{
-								//if(searchRS.getRow()>0){
-									sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
-							sb.append("<tr><td colspan=\"2\" style=\"color:red\">Wallet Transaction Details </td></tr>");
-							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
-							       searchRS.beforeFirst();
-								//}
-								
-							}
 							while (searchRS.next()){
 								sb.append("<tr style=\"color:orange\"><td>Transaction Status</td><td>"+searchRS.getString(7)+"</td></tr>");
 								
@@ -2117,9 +2083,9 @@ public String ajaxWalletTransactioninfo() {
 								sb.append("<tr style=\"bgcolor:red\"><td colspan='2'>Transaction pending for reversal </td></tr>");
 							}
 							
-							/*if(i==0) {
+							if(i==0) {
 								sb.append("<tr><td>Some thing went wrong</td></tr>");
-							}*/
+							}
 						}
 						sb.append("</table>");
 					}else if("Paybill".equalsIgnoreCase(sid.split("-")[1]) || "Paybill Airtime Recharge".equalsIgnoreCase(sid.split("-")[1])) {
@@ -2190,10 +2156,7 @@ public String ajaxWalletTransactioninfo() {
 							}
 						}else {
 							
-							//entityQry="select USER_ID,FTBATCHID,AMOUNT,FROM_ACCOUNT,CHANNEL,PB_RESP_CODE,PB_RESP_DESC from AGENT_WALLET_PB_TRANS_TBL WHERE FTBATCHID='"+sid.split("-")[0]+"' ";	
-							  entityQry="select USERID,pay_REF_NO,TRNS_AMT,DR_ACCT_NO,CHANNEL,RESP_CODE,RESP_MSG  from WALLET_AGNCORE_TXNTBL  where pay_ref_no='"+sid.split("-")[0]+"'";
-				            // for prod     //  entityQry="select USERID,pay_REF_NO,TRNS_AMT,JSON_VALUE(JREQUEST,'$.account') ),CHANNEL,RESP_CODE,RESP_MSG  from WALLET_AGNCORE_TXNTBL  where pay_ref_no='"+sid.split("-")[0]+"'";
-				                    
+							entityQry="select USER_ID,FTBATCHID,AMOUNT,FROM_ACCOUNT,CHANNEL,PB_RESP_CODE,PB_RESP_DESC from AGENT_WALLET_PB_TRANS_TBL WHERE FTBATCHID='"+sid.split("-")[0]+"' ";	
 							searchPstmt = connection.prepareStatement(entityQry);
 							searchRS = searchPstmt.executeQuery();
 							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
@@ -2214,32 +2177,18 @@ public String ajaxWalletTransactioninfo() {
 							searchPstmt.close();
 							searchRS.close();
 							
-							//sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
-							//sb.append("<tr><td colspan=\"2\" style=\"color:red\">Wallet Transaction Details </td></tr>");
-							//sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
+							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
+							sb.append("<tr><td colspan=\"2\" style=\"color:red\">Wallet Transaction Details </td></tr>");
+							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
 							
 							
 							
 							entityQry="select WFT.EXT_TXN_REF_NO,AWPT.USER_ID,AWPT.FROM_ACCOUNT,' ',AWPT.AMOUNT,AWPT.CHANNEL,DECODE(SUBSTR(TXN_REF_NO,1,1),'R','Reversal Successful','Wallet Debit Successful'),to_char(WFT.TXN_STAMP,'dd-mm-yyyy hh:mi:ss'),'Pay Bill',NVL(WFT.AMOUNT,0),NVL(WFT.FEE_AMT,0)  from AGENT_WALLET_PB_TRANS_TBL AWPT,WALLET_FIN_TXN WFT  " + 
 									" where  AWPT.FTBATCHID=WFT.EXT_TXN_REF_NO AND EXT_TXN_REF_NO='"+sid.split("-")[0]+"' order by WFT.TXN_STAMP asc";	
-							searchPstmt = connection.prepareStatement(entityQry,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+							searchPstmt = connection.prepareStatement(entityQry);
 							searchRS = searchPstmt.executeQuery();
-							int count=0;
-							if(searchRS.last())
-							{
-								//if(searchRS.getRow()>0){
-									sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
-							sb.append("<tr><td colspan=\"2\" style=\"color:red\">Wallet Transaction Details </td></tr>");
-							sb.append("<tr><td colspan=\"2\" style=\"color:red\"></td></tr>");
-							       searchRS.beforeFirst();
-								//}
-								
-							}
-							
 							int i=0;
 							while (searchRS.next()){
-
-
 								sb.append("<tr style=\"color:orange\"><td>Transaction Status</td><td>"+searchRS.getString(7)+"</td></tr>");
 								//sb.append("<tr><td colspan=\"2\" style=\"color:red\">-----------------------------------------------------------------------------------------</td></tr>");
 								
@@ -2259,10 +2208,9 @@ public String ajaxWalletTransactioninfo() {
 							if(i==1) {
 								sb.append("<tr style=\"bgcolor:red\"><td colspan='2'>Transaction pending for reversal </td></tr>");
 							}
-							/*if(i==0) {
+							if(i==0) {
 								sb.append("<tr><td>Some thing went wrong</td></tr>");
-							}*/
-							
+							}
 						}
 						sb.append("</table>");
 					}else if("Cashwithdrawal Card Other bank".equalsIgnoreCase(sid.split("-")[1]) || "Cashwithdrawal Card Union bank".equalsIgnoreCase(sid.split("-")[1]) || "Fundtransfer Card Otherbank".equalsIgnoreCase(sid.split("-")[1]) || "Fundtransfer Card Union bank".equalsIgnoreCase(sid.split("-")[1])) {
